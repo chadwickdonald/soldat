@@ -91,6 +91,21 @@ class CreatePvsysts < ActiveRecord::Migration[7.0]
     	t.float :aux_loss_constant
     	t.float :aux_loss_power_thresh
     	t.float :night_aux_consumption
+    	# main system params
+    	t.string :system_type
+    	t.float :field_orientation_axis_tilt
+    	t.float :field_orientation_axis_azimuth
+    	t.string :pv_modules_model
+    	t.string :pv_modules_pnom_total
+    	t.integer :pv_array_number_modules
+    	t.integer :pv_array_pnom_total
+    	t.string :main_system_inverter_model
+    	t.integer :main_system_pnom
+    	t.float :main_system_inverter_pack
+    	t.integer :main_system_pnom_total
+    	t.float :user_needs_unlimited_load
+    	t.float :user_needs_cos_phi
+
       t.timestamps
     end
   end
