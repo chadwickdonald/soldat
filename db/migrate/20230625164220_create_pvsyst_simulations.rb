@@ -2,6 +2,7 @@ class CreatePvsystSimulations < ActiveRecord::Migration[7.0]
   def change
     create_table :pvsyst_simulations do |t|
     	t.integer :simulation_id, foreign_key: true
+    	t.datetime :simulation_time, null: false
     	t.float :glob_hor
     	t.float :diff_hor
     	t.float :beam_hor

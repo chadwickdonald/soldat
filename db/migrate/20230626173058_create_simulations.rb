@@ -9,7 +9,6 @@ class CreateSimulations < ActiveRecord::Migration[7.0]
     	t.string :simulation_variant
     	t.datetime :simulation_date
     	t.string :simulation_hourly_values
-    	t.datetime :simulation_time
       t.timestamps
     end
   end
