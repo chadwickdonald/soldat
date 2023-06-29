@@ -1,6 +1,6 @@
-class CreateSimulations < ActiveRecord::Migration[7.0]
+class CreateProjects < ActiveRecord::Migration[7.0]
   def change
-    create_table :simulations do |t|
+    create_table :projects do |t|
       t.string :project
       t.string :pvsyst_version
       t.string :geographical_site

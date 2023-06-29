@@ -1,0 +1,2 @@
+class PvsystSimulation < ApplicationRecord
+end

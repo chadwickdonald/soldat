@@ -11,6 +11,19 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2023_06_26_173058) do
+  create_table "projects", force: :cascade do |t|
+    t.string "project"
+    t.string "pvsyst_version"
+    t.string "geographical_site"
+    t.string "meteo_data"
+    t.string "satelite_data"
+    t.string "simulation_variant"
+    t.datetime "simulation_date"
+    t.string "simulation_hourly_values"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "pvsyst_simulations", force: :cascade do |t|
     t.integer "simulation_id"
     t.datetime "simulation_time", null: false
@@ -300,19 +313,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_26_173058) do
     t.float "yf_produced_useful_nov"
     t.float "yf_produced_useful_dec"
     t.float "yf_produced_useful_year"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "simulations", force: :cascade do |t|
-    t.string "project"
-    t.string "pvsyst_version"
-    t.string "geographical_site"
-    t.string "meteo_data"
-    t.string "satelite_data"
-    t.string "simulation_variant"
-    t.datetime "simulation_date"
-    t.string "simulation_hourly_values"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
