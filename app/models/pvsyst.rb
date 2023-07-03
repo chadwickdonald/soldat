@@ -1,2 +1,2 @@
-Class Pvsyst < ApplicationRecord
+class Pvsyst < ApplicationRecord
 end
