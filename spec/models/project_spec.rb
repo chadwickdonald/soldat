@@ -1,7 +1,6 @@
 # spec/models/project_spec.rb
 
-# require 'spec_helper'
-require 'project'
+require 'spec_helper'
 
 describe Project do
   it "is valid with valid attributes"
