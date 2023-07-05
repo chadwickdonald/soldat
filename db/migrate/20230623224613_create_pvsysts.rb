@@ -1,7 +1,9 @@
+# db/migrate/20230626173058_create_projects.rb
+
 class CreatePvsysts < ActiveRecord::Migration[7.0]
   def change
     create_table :pvsysts do |t|
-      t.string :project
+      t.string :project, 
       t.string :version
       t.string :geographical_site
       t.string :situation_latitude

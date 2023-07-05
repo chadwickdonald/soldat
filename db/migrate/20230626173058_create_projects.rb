@@ -1,3 +1,5 @@
+# db/migrate/20230626173058_create_projects.rb
+
 class CreateProjects < ActiveRecord::Migration[7.0]
   def change
     create_table :projects do |t|
