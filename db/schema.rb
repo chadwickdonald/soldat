@@ -25,7 +25,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_26_173058) do
   end
 
   create_table "pvsyst_simulations", force: :cascade do |t|
-    t.integer "simulation_id"
+    t.integer "project_id"
     t.datetime "simulation_time", null: false
     t.float "glob_hor"
     t.float "diff_hor"
