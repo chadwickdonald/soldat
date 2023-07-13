@@ -35,6 +35,120 @@
 				<td>Simulation Hourly Values: </td>
 				<td><%= project.simulation_hourly_values %></td>
 			</tr>
+			<% project.pvsyst_simulations.each do |simulation| %>
+				<tr>
+					<td>Simulation Id: </td>
+					<td><%= simulation.id %></td>
+				</tr>
+				<tr>
+					<td>Simulation Time: </td>
+					<td><%= simulation.simulation_time %></td>
+				</tr>
+				<tr>
+					<td>GlobHor: </td>
+					<td><%= simulation.glob_hor %></td>
+				</tr>
+				<tr>
+					<td>DiffHor: </td>
+					<td><%= simulation.diff_hor %></td>
+				</tr>
+				<tr>
+					<td>BeamHor: </td>
+					<td><%= simulation.beam_hor %></td>
+				</tr>
+				<tr>
+					<td>TAmb: </td>
+					<td><%= simulation.t_amb %></td>
+				</tr>
+				<tr>
+					<td>WindVel: </td>
+					<td><%= simulation.wind_vel %></td>
+				</tr>
+				<tr>
+					<td>GlobInc: </td>
+					<td><%= simulation.glob_inc %></td>
+				</tr>
+				<tr>
+					<td>ShdLoss: </td>
+					<td><%= simulation.shd_loss %></td>
+				</tr>
+				<tr>
+					<td>IamLoss: </td>
+					<td><%= simulation.iam_loss %></td>
+				</tr>
+				<tr>
+					<td>SlgLoss: </td>
+					<td><%= simulation.slg_loss %></td>
+				</tr>
+				<tr>
+					<td>GlobEff: </td>
+					<td><%= simulation.glob_eff %></td>
+				</tr>
+				<tr>
+					<td>EArrNom: </td>
+					<td><%= simulation.e_arr_nom %></td>
+				</tr>
+				<tr>
+					<td>GIncLss: </td>
+					<td><%= simulation.g_inc_lss %></td>
+				</tr>
+				<tr>
+					<td>TempLss: </td>
+					<td><%= simulation.temp_lss %></td>
+				</tr>
+				<tr>
+					<td>ModQual: </td>
+					<td><%= simulation.mod_qual %></td>
+				</tr>
+				<tr>
+					<td>MisLoss: </td>
+					<td><%= simulation.mis_loss %></td>
+				</tr>
+				<tr>
+					<td>OhmLoss: </td>
+					<td><%= simulation.ohm_loss %></td>
+				</tr>
+				<tr>
+					<td>EArrMpp: </td>
+					<td><%= simulation.e_arr_mpp %></td>
+				</tr>
+				<tr>
+					<td>EArray: </td>
+					<td><%= simulation.e_array %></td>
+				</tr>
+				<tr>
+					<td>TArray: </td>
+					<td><%= simulation.t_array %></td>
+				</tr>
+				<tr>
+					<td>IlOper: </td>
+					<td><%= simulation.il_oper %></td>
+				</tr>
+				<tr>
+					<td>IlPmin: </td>
+					<td><%= simulation.il_pmin %></td>
+				</tr>
+				<tr>
+					<td>IlPmax: </td>
+					<td><%= simulation.il_pmax %></td>
+				</tr>
+				<tr>
+					<td>IlVmin: </td>
+					<td><%= simulation.il_vmin %></td>
+				</tr>
+				<tr>
+					<td>EOutInv: </td>
+					<td><%= simulation.e_out_inv %></td>
+				</tr>
+				<tr>
+					<td>EGrid: </td>
+					<td><%= simulation.e_grid %></td>
+				</tr>
+				<tr>
+					<td>UArray: </td>
+					<td><%= simulation.u_array %></td>
+				</tr>
+			<% end %>
 		<% end %>
 	</tbody>
 </table>
