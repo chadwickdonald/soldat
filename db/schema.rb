@@ -11,14 +11,17 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2023_06_26_173058) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "projects", force: :cascade do |t|
-    t.string "project"
+    t.string "project", null: false
     t.string "pvsyst_version"
     t.string "geographical_site"
     t.string "meteo_data"
     t.string "satelite_data"
     t.string "simulation_variant"
-    t.datetime "simulation_date"
+    t.datetime "simulation_date", null: false
     t.string "simulation_hourly_values"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
