@@ -61,18 +61,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_26_173058) do
   end
 
   create_table "pvsysts", force: :cascade do |t|
-    t.string "project"
-    t.string "version"
-    t.string "geographical_site"
+    t.integer "project_id"
     t.string "situation_latitude"
     t.string "situation_longitude"
     t.string "time_defined_as"
     t.string "time_zone"
     t.string "altitude"
-    t.string "meteo_data"
     t.string "country"
-    t.string "simulation_variant"
-    t.datetime "simulation_date"
     t.integer "axis_tilt"
     t.integer "axis_azimuth"
     t.integer "minimum_phi"

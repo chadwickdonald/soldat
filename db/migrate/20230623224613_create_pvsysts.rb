@@ -3,18 +3,13 @@
 class CreatePvsysts < ActiveRecord::Migration[7.0]
   def change
     create_table :pvsysts do |t|
-      t.string :project
-      t.string :version
-      t.string :geographical_site
+      t.integer :project_id, foreign_key: true
       t.string :situation_latitude
       t.string :situation_longitude
       t.string :time_defined_as
       t.string :time_zone
       t.string :altitude
-      t.string :meteo_data
       t.string :country
-      t.string :simulation_variant
-      t.datetime :simulation_date
       # simlulation params
       t.integer :axis_tilt
       t.integer :axis_azimuth

@@ -1,3 +1,3 @@
 class Pvsyst < ApplicationRecord
-	validates :project, presence: true
+	belongs_to :project
 end

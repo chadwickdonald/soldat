@@ -1,0 +1,138 @@
+<h1>Projects and Pvsysts</h1>
+
+<table>
+	<tbody>
+		<% @projects.each do |project| %>
+			<tr>
+				<td>Project Name: </td>
+				<td><%= project.project %></td>
+			</tr>
+			<tr>
+				<td>Version: </td>
+				<td><%= project.pvsyst_version %></td>
+			</tr>
+			<tr>
+				<td>Geographical Site: </td>
+				<td><%= project.geographical_site %></td>
+			</tr>
+			<tr>
+				<td>Meteo Data: </td>
+				<td><%= project.meteo_data %></td>
+			</tr>
+			<tr>
+				<td>Satelite Data</td>
+				<td><%= project.satelite_data %></td>
+			</tr>
+			<tr>
+				<td>Simulation Date: </td>
+				<td><%= project.simulation_date %></td>
+			</tr>
+			<tr>
+				<td>Simulation Variant: </td>
+				<td><%= project.simulation_variant %></td>
+			</tr>
+			<tr>
+				<td>Simulation Hourly Values: </td>
+				<td><%= project.simulation_hourly_values %></td>
+			</tr>
+			<% project.pvsysts.each do |pvsyst| %>
+				<tr>
+					<td>Pvsyst Id: </td>
+					<td><%= pvsyst.id %></td>
+				</tr>
+				<tr>
+					<td>Situation Latitude: </td>
+					<td><%= pvsyst.situation_latitude %></td>
+				</tr>
+				<tr>
+					<td>Situation Longitude: </td>
+					<td><%= pvsyst.situation_longitude %></td>
+				</tr>
+				<tr>
+					<td>Time Defined as: </td>
+					<td><%= pvsyst.time_defined_as %></td>
+				</tr>
+				<tr>
+					<td>Altitude: </td>
+					<td><%= pvsyst.altitude %></td>
+				</tr>
+				<tr>
+					<td>Country: </td>
+					<td><%= pvsyst.country %></td>
+				</tr>
+				<tr>
+					<td>Axis Tilt: </td>
+					<td><%= pvsyst.axis_tilt %></td>
+				</tr>
+				<tr>
+					<td>Axis Azimuth: </td>
+					<td><%= pvsyst.axis_azimuth %></td>
+				</tr>
+				<tr>
+					<td>Minimum Phi: </td>
+					<td><%= pvsyst.minimum_phi %></td>
+				</tr>
+				<tr>
+					<td>Maximum Phi: </td>
+					<td><%= pvsyst.maximum_phi %></td>
+				</tr>
+				<tr>
+					<td>Tracking Algorithm: </td>
+					<td><%= pvsyst.tracking_algorithm %></td>
+				</tr>
+				<tr>
+					<td>Number of Trackers: </td>
+					<td><%= pvsyst.number_of_trackers %></td>
+				</tr>
+				<tr>
+					<td>Tracker Spacing: </td>
+					<td><%= pvsyst.tracker_spacing %></td>
+				</tr>
+				<tr>
+					<td>Collector Width: </td>
+					<td><%= pvsyst.collector_width %></td>
+				</tr>
+				<tr>
+					<td>Phi Limits: </td>
+					<td><%= pvsyst.phi_limits %></td>
+				</tr>
+				<tr>
+					<td>Ground Cover Ratio: </td>
+					<td><%= pvsyst.ground_cover_ratio %></td>
+				</tr>
+				<tr>
+					<td>Models Used: </td>
+					<td><%= pvsyst.models_used %></td>
+				</tr>
+								<tr>
+					<td>Horizon: </td>
+					<td><%= pvsyst.horizon %></td>
+				</tr>
+				<tr>
+					<td>Near Shadings: </td>
+					<td><%= pvsyst.near_shadings %></td>
+				</tr>
+				<tr>
+					<td>Users Needs: </td>
+					<td><%= pvsyst.users_needs %></td>
+				</tr>
+				<tr>
+					<td>Grid Power Limitation Active Power: </td>
+					<td><%= pvsyst.grid_power_limitation_active_power %></td>
+				</tr>
+				<tr>
+					<td>Grid Power Limitation Pnom Ratio: </td>
+					<td><%= pvsyst.grid_power_limitation_pnom_ratio %></td>
+				</tr>
+				<tr>
+					<td>Power Factor Cos: </td>
+					<td><%= pvsyst.power_factor_cos %></td>
+				</tr>
+				<tr>
+					<td>Power Factor Phi: </td>
+					<td><%= pvsyst.power_factor_phi %></td>
+				</tr>				
+			<% end %>
+		<% end %>
+	</tbody>
+</table>

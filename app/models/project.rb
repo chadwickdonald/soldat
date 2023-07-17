@@ -1,5 +1,6 @@
 class Project < ApplicationRecord
 	has_many :pvsyst_simulations, dependent: :destroy
+	has_many :pvsysts, dependent: :destroy
 
 	validates :project, presence: true
 	validates :pvsyst_version, presence: true

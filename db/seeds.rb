@@ -122,3 +122,31 @@ simulation3 = PvsystSimulation.create({
 	u_array: 165.1
 	})
 
+pvsyst1 = Pvsyst.create({
+	project_id: project1.id,
+	situation_latitude: '32.35° N',
+	situation_longitude: '-83.75° W',
+	time_defined_as: 'Legal Time',
+	altitude: '135 m',
+	country: 'United States',
+	axis_tilt: 0,
+	axis_azimuth: 0,
+	minimum_phi: -60,
+	maximum_phi: 60,
+	tracking_algorithm: 'Astronomic Calculation',
+	number_of_trackers: 2660,
+	tracker_spacing: 5.07,
+	collector_width: 2.03,
+	phi_limits: 66.1,
+	ground_cover_ratio: 40.0,
+	models_used: 'Transposition',
+	horizon: 'Free Horizon',
+	near_shadings: 'Linear Shadings',
+	users_needs: 'Unlimited Load (grid)',
+	grid_power_limitation_active_power: 68.0,
+	grid_power_limitation_pnom_ratio: 1.473,
+	power_factor_cos: 0.900,
+	power_factor_phi: 25.8
+})
+
+
