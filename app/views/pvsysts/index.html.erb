@@ -4,6 +4,9 @@
 	<tbody>
 		<% @projects.each do |project| %>
 			<tr>
+				<td><h3>---------------------------------------</h3></td>
+			</tr>
+			<tr>
 				<td>Project Name: </td>
 				<td><%= project.project %></td>
 			</tr>
@@ -36,6 +39,9 @@
 				<td><%= project.simulation_hourly_values %></td>
 			</tr>
 			<% project.pvsysts.each do |pvsyst| %>
+				<tr>
+					<td><h3>---------------------------------------</h3></td>
+				</tr>
 				<tr>
 					<td>Pvsyst Id: </td>
 					<td><%= pvsyst.id %></td>
@@ -131,8 +137,73 @@
 				<tr>
 					<td>Power Factor Phi: </td>
 					<td><%= pvsyst.power_factor_phi %></td>
+				</tr>
+				<tr>
+					<td>PV Module: </td>
+					<td><%= pvsyst.pv_module %></td>
+				</tr>
+				<tr>
+					<td>Original Pysyst DB Manufacturer: </td>
+					<td><%= pvsyst.original_pysyst_db_manufacturer %></td>
+				</tr>				
+				<tr>
+					<td>PV Modules in Series: </td>
+					<td><%= pvsyst.pv_modules_in_series %></td>
+				</tr>
+				<tr>
+					<td>PV Modules in Parallel: </td>
+					<td><%= pvsyst.pv_modules_in_parallel %></td>
+				</tr>				
+				<tr>
+					<td>Total PV Modules: </td>
+					<td><%= pvsyst.total_pv_modules %></td>
+				</tr>
+				<tr>
+					<td>Module Unit Nom Power: </td>
+					<td><%= pvsyst.module_unit_nom_power %></td>
+				</tr>				
+				<tr>
+					<td>Global Power Nominal: </td>
+					<td><%= pvsyst.global_power_nominal %></td>
+				</tr>
+				<tr>
+					<td>Global Power Operating Cond: </td>
+					<td><%= pvsyst.global_power_operating_cond %></td>
+				</tr>				
+				<tr>
+					<td>U Mpp: </td>
+					<td><%= pvsyst.u_mpp %></td>
+				</tr>
+				<tr>
+					<td>I Mpp: </td>
+					<td><%= pvsyst.i_mpp %></td>
+				</tr>				
+				<tr>
+					<td>Module Area: </td>
+					<td><%= pvsyst.module_area %></td>
+				</tr>
+				<tr>
+					<td>Cell Area: </td>
+					<td><%= pvsyst.cell_area %></td>
+				</tr>				
+				<tr>
+					<td>Inverter Model: </td>
+					<td><%= pvsyst.inverter_model %></td>
+				</tr>
+				<tr>
+					<td>Custom Params Def Manufacturer: </td>
+					<td><%= pvsyst.custom_params_def_manufacturer %></td>
+				</tr>				
+				<tr>
+					<td>Operating Voltage: </td>
+					<td><%= pvsyst.operating_voltage %></td>
+				</tr>
+				<tr>
+					<td>Inverter Unit Nom Power: </td>
+					<td><%= pvsyst.inverter_unit_nom_power %></td>
 				</tr>				
 			<% end %>
 		<% end %>
 	</tbody>
 </table>
+

@@ -146,7 +146,26 @@ pvsyst1 = Pvsyst.create({
 	grid_power_limitation_active_power: 68.0,
 	grid_power_limitation_pnom_ratio: 1.473,
 	power_factor_cos: 0.900,
-	power_factor_phi: 25.8
+	power_factor_phi: 25.8,
+	pv_module: 'CdTe',
+	original_pysyst_db_manufacturer: 'First Solar',
+	pv_modules_in_series: 6,
+	pv_modules_in_parallel: 38380,
+	total_pv_modules: 230280,
+	module_unit_nom_power: 435,
+	global_power_nominal: 100172,
+	global_power_operating_cond: 92093,
+	u_mpp: 999,
+	i_mpp: 92148,
+	module_area: 569963,
+	cell_area: 522220,
+	inverter_model: 'Sunny Central 4000 UP',
+  custom_params_def_manufacturer: 'SMA',
+  operating_voltage: '880-1325 V',
+  inverter_unit_nom_power: 4000
 })
+
+
+
 
 

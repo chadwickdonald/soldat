@@ -1,8 +1,11 @@
-<h1>Projects</h1>
+<h1>Projects and Simulations</h1>
 
 <table>
 	<tbody>
 		<% @projects.each do |project| %>
+			<tr>
+				<td><h3>-------------------------------------------------</h3></td>
+			</tr>
 			<tr>
 				<td>Project Name: </td>
 				<td><%= project.project %></td>
@@ -36,6 +39,9 @@
 				<td><%= project.simulation_hourly_values %></td>
 			</tr>
 			<% project.pvsyst_simulations.each do |simulation| %>
+				<tr>
+					<td><h3>-------------------------------------------------</h3></td>
+				</tr>
 				<tr>
 					<td>Simulation Id: </td>
 					<td><%= simulation.id %></td>
