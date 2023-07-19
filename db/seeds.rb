@@ -162,10 +162,18 @@ pvsyst1 = Pvsyst.create({
 	inverter_model: 'Sunny Central 4000 UP',
   custom_params_def_manufacturer: 'SMA',
   operating_voltage: '880-1325 V',
-  inverter_unit_nom_power: 4000
+  inverter_unit_nom_power: 4000,
+  avg_loss_fraction: 3.5,
+  array_soiling_losses_jan: 2.3,
+  array_soiling_losses_feb: 1.2,
+  array_soiling_losses_mar: 3.4,
+  array_soiling_losses_apr: 4.5,
+  array_soiling_losses_may: 2.1,
+  array_soiling_losses_jun: 3.3,
+  array_soiling_losses_jul: 5.5,
+  array_soiling_losses_aug: 6.5,
+  array_soiling_losses_sep: 3.2,
+  array_soiling_losses_oct: 1.2,
+  array_soiling_losses_nov: 3.5,
+  array_soiling_losses_dec: 3.2
 })
-
-
-
-
-
