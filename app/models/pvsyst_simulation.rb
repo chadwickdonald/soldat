@@ -3,12 +3,40 @@ class PvsystSimulation < ApplicationRecord
 
   def self.import(file)
     puts "---file: #{file.inspect}"
+    project = Project.new
     File.foreach(file.path).with_index do |line, index|
       puts "---index: #{index}, line: #{line}"
+      file_line = line.split(',')
+      if file_line[0] == 'PVSYST'
+        project.version = file_line[1]
+      elsif file_line[0] == 'Project'
+        project.project = file_line[1]
+        project.project_file_date = fix_date(file_line[2])
+        project.project_description = file_line[3]
+      elsif file_line[0] == 'Geographical Site'
+        project.geographical_site = file_line[1]
+        project.geographical_site_file_date = fix_date(file_line[2])
+        project.geographical_site_description = file_line[3]
+      elsif file_line[0] == 'Meteo data'
+        project.meteo_data = file_line[1]
+        project.meteo_data_file_date = fix_date(file_line[2])
+        project.meteo_data_description = file_line[3]
+        project.satelite_data = file_line[5]
+      elsif file_line[0] == 'Simulation variant'
+        project.simulation_variant = file_line[1]
+        project.simulation_variant_file_date = fix_date(file_line[2])
+        project.simulation_variant_description = file_line[3]
+      elsif file_line[0] == 'Simulation date'
+        project.simulation_date = fix_date(file_line[2])
+      elsif file_line[0] == 'Simulation:'
+        project.simulation_hourly_values_from = file_line[2]
+        project.simulation_hourly_values_to = file_line[3]
+        project.save
+      end
+      # if index > 13
       if index == 21
-        file_line = line.split(',')
         pvsyst = PvsystSimulation.new
-        pvsyst.project_id = Project.first.id
+        pvsyst.project_id = project.id
         pvsyst.simulation_time = fix_date(file_line[0])
         pvsyst.glob_hor = file_line[1].to_f
         pvsyst.diff_hor = file_line[2].to_f
