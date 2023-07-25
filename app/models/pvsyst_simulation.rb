@@ -6,34 +6,45 @@ class PvsystSimulation < ApplicationRecord
     project = Project.new
     File.foreach(file.path).with_index do |line, index|
       puts "---index: #{index}, line: #{line}"
-      file_line = line.split(',')
-      if file_line[0] == 'PVSYST'
-        project.version = file_line[1]
-      elsif file_line[0] == 'Project'
-        project.project = file_line[1]
-        project.project_file_date = fix_date(file_line[2])
-        project.project_description = file_line[3]
-      elsif file_line[0] == 'Geographical Site'
-        project.geographical_site = file_line[1]
-        project.geographical_site_file_date = fix_date(file_line[2])
-        project.geographical_site_description = file_line[3]
-      elsif file_line[0] == 'Meteo data'
-        project.meteo_data = file_line[1]
-        project.meteo_data_file_date = fix_date(file_line[2])
-        project.meteo_data_description = file_line[3]
-        project.satelite_data = file_line[5]
-      elsif file_line[0] == 'Simulation variant'
-        project.simulation_variant = file_line[1]
-        project.simulation_variant_file_date = fix_date(file_line[2])
-        project.simulation_variant_description = file_line[3]
-      elsif file_line[0] == 'Simulation date'
-        project.simulation_date = fix_date(file_line[2])
-      elsif file_line[0] == 'Simulation:'
-        project.simulation_hourly_values_from = file_line[2]
-        project.simulation_hourly_values_to = file_line[3]
-        project.save
+      begin
+        file_line = line.split(',')
+      rescue => exception
+        puts "---exception: #{exception.inspect}"
+      end
+      if index < 10
+        if file_line[0][0..5] == 'PVSYST'
+          project.pvsyst_version = file_line[0][7..].strip
+        elsif file_line[0] == 'Project'
+          project.project = file_line[1].strip
+          project.project_file_date = fix_date(file_line[2])
+          project.project_description = file_line[3].strip
+        elsif file_line[0] == 'Geographical Site'
+          project.geographical_site = file_line[1].strip
+          project.geographical_site_file_date = fix_date(file_line[2])
+          project.geographical_site_description = file_line[3].strip
+        elsif file_line[0] == 'Meteo data'
+          project.meteo_data = file_line[1].strip
+          project.meteo_data_file_date = fix_date(file_line[2])
+          project.meteo_data_description = file_line[3].strip
+          project.satelite_data = file_line[5].strip
+        elsif file_line[0] == 'Simulation variant'
+          project.simulation_variant = file_line[1].strip
+          project.simulation_variant_file_date = fix_date(file_line[2])
+          project.simulation_variant_description = file_line[3].strip
+        elsif file_line[0] == 'Simulation date'
+          project.simulation_date = fix_date(file_line[2])
+        elsif file_line[0] == 'Simulation:'
+          project.simulation_hourly_values_from = file_line[2].strip
+          project.simulation_hourly_values_to = file_line[3].strip
+          begin
+            project.save!
+          rescue => exception
+            puts "---exception: #{exception.inspect}"
+          end
+        end
       end
       # if index > 13
+      # if [21, 22, 23].include?(index)
       if index == 21
         pvsyst = PvsystSimulation.new
         pvsyst.project_id = project.id
@@ -64,7 +75,12 @@ class PvsystSimulation < ApplicationRecord
         pvsyst.e_out_inv =file_line[24].to_f
         pvsyst.e_grid = file_line[25].to_f
         pvsyst.u_array = file_line[26].to_f
-        pvsyst.save
+        begin
+          pvsyst.save!
+        rescue => exception
+          puts "---exception: #{exception.inspect}"
+        end
+        break
       end
     end
   end
@@ -75,7 +91,7 @@ class PvsystSimulation < ApplicationRecord
     year = date_2[2]
     new_year = nil
     if year.length == 2
-      if year.to_i <= 99
+      if year.to_i <= 99 && year.to_i > 60
         new_year = '19' + year
       else
         new_year = '20' + year

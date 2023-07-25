@@ -5,7 +5,6 @@ class PvsystsController < ApplicationController
 	end
 
 	def new_import
-		@pvsyst_simulations = Project.first.pvsyst_simulations.first
 	end
 
 	def import

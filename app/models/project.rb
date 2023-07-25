@@ -9,5 +9,6 @@ class Project < ApplicationRecord
 	validates :satelite_data, presence: true
 	validates :simulation_date, presence: true
 	validates :simulation_variant, presence: true
-	validates :simulation_hourly_values, presence: true
+	validates :simulation_hourly_values_from, presence: true
+	validates :simulation_hourly_values_to, presence: true
 end

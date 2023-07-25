@@ -35,8 +35,12 @@
 				<td><%= project.simulation_variant %></td>
 			</tr>
 			<tr>
-				<td>Simulation Hourly Values: </td>
-				<td><%= project.simulation_hourly_values %></td>
+				<td>Simulation Hourly Values To: </td>
+				<td><%= project.simulation_hourly_values_to %></td>
+			</tr>
+			<tr>
+				<td>Simulation Hourly Values From: </td>
+				<td><%= project.simulation_hourly_values_from %></td>
 			</tr>
 			<% project.pvsyst_simulations.each do |simulation| %>
 				<tr>
