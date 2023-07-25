@@ -16,7 +16,7 @@ class PvsystsController < ApplicationController
 		rescue => exception
 			flash[:error] = "There was a problem importing Pvsyst Simulation file.<br>
 				<strong>#{exception.message}</strong><br>"
-			# redirect_to import_pvsyst_simulations_path
+			redirect_to root_path
 		end
 	end
 end
