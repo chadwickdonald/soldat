@@ -10,7 +10,7 @@ class PvsystsController < ApplicationController
 	def import
 		begin
 			file = params[:file]
-			PvsystSimulation.import(params[:file])
+			SimulationImportJob.new(file).perform
 			flash[:success] = "<strong>Pvsyst Simulation imported</strong>"
 			redirect_to projects_path
 		rescue => exception
