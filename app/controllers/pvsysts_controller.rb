@@ -1,7 +1,6 @@
 class PvsystsController < ApplicationController
 	def index
-		@projects = Project.all
-		@pvsyst_simulations = @projects.first.pvsyst_simulations
+		@pvsysts = Pvsyst.all
 	end
 
 	def new_import
@@ -10,11 +9,11 @@ class PvsystsController < ApplicationController
 	def import
 		begin
 			file = params[:file]
-			SimulationImportJob.new(file).perform
-			flash[:success] = "<strong>Pvsyst Simulation imported</strong>"
-			redirect_to projects_path
+			PvsystImportJob.new(file).perform
+			flash[:success] = "<strong>Pvsyst imported</strong>"
+			redirect_to pvsyts_path
 		rescue => exception
-			flash[:error] = "There was a problem importing Pvsyst Simulation file.<br>
+			flash[:error] = "There was a problem importing Pvsyst file.<br>
 				<strong>#{exception.message}</strong><br>"
 			redirect_to root_path
 		end

@@ -83,6 +83,19 @@ class Importer
     end
   end
 
+  def self.import_pvsysts(file)
+    puts "--file: #{file.inspect}"
+    pvsyst = Pvsyst.new
+    File.foreach(file.path).with_index do |line, index|
+      puts "---index: #{index}, line: #{line.inspect}"
+      begin
+        file_line = line.split(',')
+      rescue => exception
+        puts "--exception: #{exception.inspect}"
+      end
+    end
+  end
+
   def self.fix_date(date_str)
     date_1 = date_str.split(' ')
     date_2 = date_1.first.split('/')
