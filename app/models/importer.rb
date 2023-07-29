@@ -1,4 +1,5 @@
 class Importer
+  require 'pdf-reader'
 
   def self.import_simulations(file)
     puts "---file: #{file.inspect}"
@@ -84,12 +85,13 @@ class Importer
   end
 
   def self.import_pvsysts(file)
-    puts "--file: #{file.inspect}"
+    puts "--import_pvsysts---file: #{file.inspect}"
     pvsyst = Pvsyst.new
-    File.foreach(file.path).with_index do |line, index|
-      puts "---index: #{index}, line: #{line.inspect}"
+    reader = PDF::Reader.new(Rails.root.join(file))
+    reader.pages.each_with_index do |page, index|
+      puts "---index: #{index}, line: #{page.text}"
       begin
-        file_line = line.split(',')
+        # file_line = line.split(',')
       rescue => exception
         puts "--exception: #{exception.inspect}"
       end
