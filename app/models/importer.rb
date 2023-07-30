@@ -89,13 +89,16 @@ class Importer
     pvsyst = Pvsyst.new
     reader = PDF::Reader.new(Rails.root.join(file))
     reader.pages.each_with_index do |page, index|
-      puts "---index: #{index}, line: #{page.text}"
       page_text = page.text.split(' ')
-      puts "---page_text: #{page_text.inspect}"
-      begin
-        # file_line = line.split(',')
-      rescue => exception
-        puts "--exception: #{exception.inspect}"
+      page_text.each_with_index do |word, index|
+        if word == 'Situation'
+          if page_text[index+1] == 'Latitude'
+            pvsyst.situation_latitude = page_text[index+2] + ' ' + page_text[index+3]
+          end
+          if page_text[index+4] == 'Longitude'
+            pvsyst.situation_longitude = page_text[index+5] + ' ' + page_text[index+6]
+          end
+        end
       end
     end
   end
