@@ -90,6 +90,8 @@ class Importer
     reader = PDF::Reader.new(Rails.root.join(file))
     reader.pages.each_with_index do |page, index|
       puts "---index: #{index}, line: #{page.text}"
+      page_text = page.text.split(' ')
+      puts "---page_text: #{page_text.inspect}"
       begin
         # file_line = line.split(',')
       rescue => exception
