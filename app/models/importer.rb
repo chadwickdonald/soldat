@@ -89,18 +89,61 @@ class Importer
     pvsyst = Pvsyst.new
     reader = PDF::Reader.new(Rails.root.join(file))
     reader.pages.each_with_index do |page, index|
+      break unless index == 0
       page_text = page.text.split(' ')
-      page_text.each_with_index do |word, index|
-        if word == 'Situation'
-          if page_text[index+1] == 'Latitude'
-            pvsyst.situation_latitude = page_text[index+2] + ' ' + page_text[index+3]
+      puts page_text.inspect
+      page_text.each_with_index do |word, i|
+        # puts "i: #{i}, word: #{word}"
+        word2 = "#{word} #{page_text[i+1]}"
+        begin
+          if word == 'Situation'
+            if page_text[i+1] == 'Latitude'
+              pvsyst.situation_latitude = page_text[i+2] + ' ' + page_text[i+3]
+            end
+            if page_text[i+4] == 'Longitude'
+              pvsyst.situation_longitude = page_text[i+5] + ' ' + page_text[i+6]
+            end
+          elsif "#{word2} #{page_text[i+2]}" == 'Time defined as'
+            pvsyst.time_defined_as = page_text[i+3] + ' ' + page_text[i+4]
+          elsif word2 == 'Time zone'
+            pvsyst.time_zone = page_text[i+2]
+          elsif word == 'Altitude'
+            pvsyst.altitude = page_text[i+1]
+          elsif word == 'Country'
+            pvsyst.country = "#{page_text[i+1]} #{page_text[i+2]}"
+          elsif word2 == 'Axis Tilt'
+            pvsyst.axis_tilt = page_text[i+2]
+          elsif word2 == 'Axis Azimuth'
+            pvsyst.axis_azimuth = page_text[i+2]
+          elsif word2 == 'Minimum Phi'
+            pvsyst.minimum_phi = page_text[i+2]
+          elsif word2 == 'Maximum Phi'
+            pvsyst.maximum_phi = page_text[i+2]
+          elsif word2 == 'Tracking algorithm'
+            pvsyst.tracking_algorithm = "#{page_text[i+2]} #{page_text[i+3]}"
+          elsif "#{word2} #{page_text[i+2]}" == 'Nb. of trackers'
+            pvsyst.number_of_trackers = page_text[i+3]
+          elsif word2 == 'Tracker Spacing'
+            pvsyst.tracker_spacing = page_text[i+2]
+          elsif word2 == 'Collector width'
+            pvsyst.collector_width = page_text[i+2]
+          elsif word2 == 'Phi limits'
+            pvsyst.phi_limits = page_text[i+3]
+          elsif "#{word2} #{page_text[i+2]} #{page_text[i+3]}" == 'Ground cov. Ratio (GCR)'
+            pvsyst.ground_cover_ratio = "#{page_text[i+4]}#{page_text[i+5]}"
+          elsif word2 == 'Models used'
+            pvsyst.models_used = page_text[i+2] + ' ' + page_text[i+3]
+          elsif word == 'Horizon'
+            pvsyst.horizon = page_text[i+1] + ' ' + page_text[i+2]
+            next
           end
-          if page_text[index+4] == 'Longitude'
-            pvsyst.situation_longitude = page_text[index+5] + ' ' + page_text[index+6]
-          end
+        rescue => exception
+          puts exception
         end
+
       end
     end
+    puts "---pvsyst: #{pvsyst.inspect}"
   end
 
   def self.fix_date(date_str)
