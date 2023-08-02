@@ -136,6 +136,20 @@ class Importer
           elsif word == 'Horizon'
             pvsyst.horizon = page_text[i+1] + ' ' + page_text[i+2]
             next
+          elsif word2 == 'Near Shadings'
+            pvsyst.near_shadings = page_text[i+2] + ' ' + page_text[i+3]
+          elsif "#{word2} #{page_text[i+2]}" == "User's needs :"
+            pvsyst.users_needs = page_text[i+3]
+          elsif word2 == 'Active Power'
+            pvsyst.grid_power_limitation_active_power = page_text[i+2]
+          elsif word2 == 'Pnom ratio'
+            pvsyst.grid_power_limitation_pnom_ratio = page_text[i+2]
+          elsif word2 == 'Power factor'
+            if page_text[i+2] == 'Cos(phi)'
+              pvsyst.power_factor_cos = page_text[i+3]
+            elsif page_text[i+5] == 'Phi'
+              pvsyst.power_factor_phi
+            end
           end
         rescue => exception
           puts exception
