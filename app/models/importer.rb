@@ -147,10 +147,23 @@ class Importer
           elsif word2 == 'Power factor'
             if page_text[i+2] == 'Cos(phi)'
               pvsyst.power_factor_cos = page_text[i+3]
-            elsif page_text[i+5] == 'Phi'
-              pvsyst.power_factor_phi
+            end
+            if page_text[i+5] == 'Phi'
+              pvsyst.power_factor_phi = page_text[i+6]
+            end
+          elsif word2 == 'PV module'
+            pvsyst.pv_module = page_text[i+4]
+          elsif "#{word2} #{page_text[i+2]} #{page_text[i+3]}" == 'Original PVsyst database Manufacturer'
+            pvsyst. original_pysyst_db_manufacturer = "#{page_text[i+4]} #{page_text[i+5]}"
+          elsif "#{word2} #{page_text[i+2]} #{page_text[i+3]}" == 'Number of PV modules'
+            if page_text[i+5] == 'series'
+              pvsyst.pv_modules_in_series = page_text[i+6]
+            end
+            if page_text[i+9] == 'parallel'
+              pvsyst.pv_modules_in_parallel = page_text[i+10]
             end
           end
+
         rescue => exception
           puts exception
         end
