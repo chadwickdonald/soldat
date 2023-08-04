@@ -133,7 +133,7 @@ class Importer
             pvsyst.ground_cover_ratio = "#{page_text[i+4]}#{page_text[i+5]}"
           elsif word2 == 'Models used'
             pvsyst.models_used = page_text[i+2] + ' ' + page_text[i+3]
-          elsif word == 'Horizon'
+          elsif word == 'Horizon' && page_text[i+3] == 'Near'
             pvsyst.horizon = page_text[i+1] + ' ' + page_text[i+2]
             next
           elsif word2 == 'Near Shadings'
@@ -162,7 +162,22 @@ class Importer
             if page_text[i+9] == 'parallel'
               pvsyst.pv_modules_in_parallel = page_text[i+10]
             end
+          elsif "#{word2} #{page_text[i+2]} #{page_text[i+3]} #{page_text[i+4]}" == 'Total number of PV modules'
+            if "#{page_text[i+5]} #{page_text[i+6]}" == 'Nb. modules'
+              pvsyst.total_pv_modules = page_text[i+7]
+            end
+            if "#{page_text[i+8]} #{page_text[i+9]} #{page_text[i+10]}" == 'Unit Nom. Power'
+              pvsyst.module_unit_nom_power = page_text[i+11]
+            end
+          elsif "#{word2} #{page_text[i+2]}" == 'Array global power'
+            if "#{page_text[i+3]} #{page_text[i+4]}" == 'Nominal (STC)'
+              pvsyst.global_power_nominal = page_text[i+5]
+            end
+            if "#{page_text[i+7]} #{page_text[i+8]} #{page_text[i+9]}" == 'At operating cond.'
+              pvsyst.global_power_operating_cond = page_text[i+10]
+            end
           end
+
 
         rescue => exception
           puts exception
