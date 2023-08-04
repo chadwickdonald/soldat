@@ -95,6 +95,7 @@ class Importer
       page_text.each_with_index do |word, i|
         # puts "i: #{i}, word: #{word}"
         word2 = "#{word} #{page_text[i+1]}"
+        word3 = "#{word2} #{page_text[i+2]}"
         begin
           if word == 'Situation'
             if page_text[i+1] == 'Latitude'
@@ -175,6 +176,20 @@ class Importer
             end
             if "#{page_text[i+7]} #{page_text[i+8]} #{page_text[i+9]}" == 'At operating cond.'
               pvsyst.global_power_operating_cond = page_text[i+10]
+            end
+          elsif word3 == 'Array operating characteristics'
+            if "#{page_text[i+4]} #{page_text[i+5]}" == 'U mpp'
+              pvsyst.u_mpp = page_text[i+6]
+            end
+            if "#{page_text[i+8]} #{page_text[i+9]}" == 'I mpp'
+              pvsyst.i_mpp = page_text[i+10]
+            end
+          elsif word2 == 'Total area'
+            if "#{page_text[i+2]} #{page_text[i+3]}" == 'Module area'
+              pvsyst.module_area = page_text[i+4]
+            end
+            if "#{page_text[i+6]} #{page_text[i+7]}" == 'Cell area'
+              pvsyst.cell_area = page_text[i+8]
             end
           end
 
