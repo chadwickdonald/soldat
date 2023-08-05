@@ -191,6 +191,35 @@ class Importer
             if "#{page_text[i+6]} #{page_text[i+7]}" == 'Cell area'
               pvsyst.cell_area = page_text[i+8]
             end
+          elsif word2 == 'Inverter Model'
+            pvsyst.inverter_model = "#{page_text[i+2]} #{page_text[i+3]} #{page_text[i+4]} #{page_text[i+5]}"
+          elsif word3 == 'Custom parameters definition'
+            pvsyst.custom_params_def_manufacturer = page_text[i+4]
+          elsif word == 'Characteristics'
+            if "#{page_text[i+1]} #{page_text[i+2]}" == 'Operating Voltage'
+              pvsyst.operating_voltage = page_text[i+3]
+            end
+            if "#{page_text[i+5]} #{page_text[i+6]} #{page_text[i+7]}" == 'Unit Nom. Power'
+              pvsyst.inverter_unit_nom_power = page_text[i+8]
+            end
+          elsif "#{page_text[i+3]} #{page_text[i+4]} #{page_text[i+5]}" == 'Average loss Fraction'
+            pvsyst.avg_loss_fraction = page_text[i+6]
+          elsif word3 == 'Thermal Loss factor'
+            if "#{page_text[i+3]} #{page_text[i+4]}" == 'Uc (const)'
+              pvsyst.thermal_loss_factor_uc = page_text[i+5]
+            end
+            if "#{page_text[i+7]} #{page_text[i+8]}" == 'Uv (wind)'
+              pvsyst.thermal_loss_factor_uv = page_text[i+9]
+            end
+          elsif word3 == 'Wiring Ohmic Loss'
+            if "#{page_text[i+3]} #{page_text[i+4]} #{page_text[i+5]}" == 'Global array res.'
+              pvsyst.wiring_ohmic_loss_global_array_res = page_text[i+6]
+            end
+            if "#{page_text[i+8]} #{page_text[i+9]}" == 'Loss Fraction'
+              pvsyst.wiring_ohmic_loss_fraction = page_text[i+10]
+            end
+
+
           end
 
 
