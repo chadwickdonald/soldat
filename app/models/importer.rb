@@ -218,8 +218,12 @@ class Importer
             if "#{page_text[i+8]} #{page_text[i+9]}" == 'Loss Fraction'
               pvsyst.wiring_ohmic_loss_fraction = page_text[i+10]
             end
-
-
+          elsif word3 == 'Module Quality Loss'
+            pvsyst.module_quality_loss_fraction = page_text[i+5]
+          elsif word3 == 'Module Mismatch Losses'
+            pvsyst.module_mismatch_loss_fraction = page_text[i+5]
+          elsif word3 == 'Strings Mismatch loss'
+            pvsyst.strings_mismatch_loss_fraction = page_text[i+5]
           end
 
 
