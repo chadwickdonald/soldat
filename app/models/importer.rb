@@ -88,6 +88,11 @@ class Importer
     puts "--import_pvsysts---file: #{file.inspect}"
     pvsyst = Pvsyst.new
     reader = PDF::Reader.new(Rails.root.join(file))
+    project_name = reader.pages.first.text.split(' ')[16]
+    # project_date = project.project_file_date.strftime("%D")
+    project = Project.where(project_description: project_name).last
+    return nil if project.nil?
+    pvsyst.project_id = project.id
     reader.pages.each_with_index do |page, index|
       break unless index == 0
       page_text = page.text.split(' ')
@@ -226,12 +231,31 @@ class Importer
             pvsyst.strings_mismatch_loss_fraction = page_text[i+5]
           end
 
+          soiling_losses = page.runs[145..156].map(&:to_s)
+          pvsyst.array_soiling_losses_jan = soiling_losses[0]
+          pvsyst.array_soiling_losses_feb = soiling_losses[1]
+          pvsyst.array_soiling_losses_mar = soiling_losses[2]
+          pvsyst.array_soiling_losses_apr = soiling_losses[3]
+          pvsyst.array_soiling_losses_may = soiling_losses[4]
+          pvsyst.array_soiling_losses_jun = soiling_losses[5]
+          pvsyst.array_soiling_losses_jul = soiling_losses[6]
+          pvsyst.array_soiling_losses_aug = soiling_losses[7]
+          pvsyst.array_soiling_losses_sep = soiling_losses[8]
+          pvsyst.array_soiling_losses_oct = soiling_losses[9]
+          pvsyst.array_soiling_losses_nov = soiling_losses[10]
+          pvsyst.array_soiling_losses_dec = soiling_losses[11]
 
         rescue => exception
           puts exception
         end
 
+
       end
+    end
+    begin
+      # pvsyst.save!
+    rescue => exception
+      puts "---exception: #{exception.inspect}"
     end
     puts "---pvsyst: #{pvsyst.inspect}"
   end
