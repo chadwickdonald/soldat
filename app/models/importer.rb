@@ -94,7 +94,7 @@ class Importer
     return nil if project.nil?
     pvsyst.project_id = project.id
     reader.pages.each_with_index do |page, index|
-      break unless index == 0 || index == 1
+      break unless index == 0 || index == 1 || index == 2
       page_text = page.text.split(' ')
       puts page_text.inspect
       page_number = page.number
@@ -252,7 +252,6 @@ class Importer
         end
       elsif page_number == 2
         begin
-          byebug
           page_runs = page.runs[15..23].map(&:to_s)
           pvsyst.incidence_effect_0  = page_runs[0]
           pvsyst.incidence_effect_30 = page_runs[1]
@@ -275,6 +274,24 @@ class Importer
           pvsyst.night_aux_consumption = page.runs[47].to_s
         rescue => exception
           puts "---exception: #{exception.inspect}"
+        end
+      elsif page_number == 3
+        begin
+          pvsyst.system_type = page.runs[11].to_s
+          pvsyst.field_orientation_axis_tilt = page.runs[16].to_s
+          pvsyst.field_orientation_axis_azimuth = page.runs[18].to_s
+          pvsyst.pv_modules_model = page.runs[21].to_s
+          pvsyst.pv_modules_pnom_total = page.runs[23].to_s
+          pvsyst.pv_array_number_modules = page.runs[26].to_s
+          pvsyst.pv_array_pnom_total = page.runs[28].to_s
+          pvsyst.main_system_inverter_model = page.runs[31].to_s
+          pvsyst.main_system_pnom = page.runs[33].to_s
+          pvsyst.main_system_inverter_pack = page.runs[36].to_s
+          pvsyst.main_system_pnom_total = page.runs[38].to_s
+          pvsyst.user_needs_unlimited_load = page.runs[40].to_s
+          pvsyst.user_needs_cos_phi = page.runs[42].to_s
+        rescue => exception
+          puts "---exception: #{excption.inspect}"
         end
       end
     end
