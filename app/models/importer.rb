@@ -94,7 +94,7 @@ class Importer
     return nil if project.nil?
     pvsyst.project_id = project.id
     reader.pages.each_with_index do |page, index|
-      break unless index == 0 || index == 1 || index == 2
+      break unless index == 0 || index == 1 || index == 2 || index == 3
       page_text = page.text.split(' ')
       puts page_text.inspect
       page_number = page.number
@@ -247,7 +247,7 @@ class Importer
             pvsyst.array_soiling_losses_dec = soiling_losses[11]
 
           rescue => exception
-            puts "---exception: #{exception.inspect}"
+            puts "---page 1 exception: #{exception.inspect}"
           end
         end
       elsif page_number == 2
@@ -273,25 +273,46 @@ class Importer
           pvsyst.aux_loss_power_thresh = page.runs[45].to_s
           pvsyst.night_aux_consumption = page.runs[47].to_s
         rescue => exception
-          puts "---exception: #{exception.inspect}"
+          puts "---page 2 exception: #{exception.inspect}"
         end
       elsif page_number == 3
         begin
-          pvsyst.system_type = page.runs[11].to_s
-          pvsyst.field_orientation_axis_tilt = page.runs[16].to_s
-          pvsyst.field_orientation_axis_azimuth = page.runs[18].to_s
-          pvsyst.pv_modules_model = page.runs[21].to_s
-          pvsyst.pv_modules_pnom_total = page.runs[23].to_s
-          pvsyst.pv_array_number_modules = page.runs[26].to_s
-          pvsyst.pv_array_pnom_total = page.runs[28].to_s
-          pvsyst.main_system_inverter_model = page.runs[31].to_s
-          pvsyst.main_system_pnom = page.runs[33].to_s
-          pvsyst.main_system_inverter_pack = page.runs[36].to_s
-          pvsyst.main_system_pnom_total = page.runs[38].to_s
-          pvsyst.user_needs_unlimited_load = page.runs[40].to_s
-          pvsyst.user_needs_cos_phi = page.runs[42].to_s
+          page_runs = page.runs
+          pvsyst.system_type = page_runs[11].to_s
+          pvsyst.field_orientation_axis_tilt = page_runs[16].to_s
+          pvsyst.field_orientation_axis_azimuth = page_runs[18].to_s
+          pvsyst.pv_modules_model = page_runs[21].to_s
+          pvsyst.pv_modules_pnom_total = page_runs[23].to_s
+          pvsyst.pv_array_number_modules = page_runs[26].to_s
+          pvsyst.pv_array_pnom_total = page_runs[28].to_s
+          pvsyst.main_system_inverter_model = page_runs[31].to_s
+          pvsyst.main_system_pnom = page_runs[33].to_s
+          pvsyst.main_system_inverter_pack = page_runs[36].to_s
+          pvsyst.main_system_pnom_total = page_runs[38].to_s
+          pvsyst.user_needs_unlimited_load = page_runs[40].to_s
+          pvsyst.user_needs_cos_phi = page_runs[42].to_s
         rescue => exception
-          puts "---exception: #{excption.inspect}"
+          puts "---page 3 exception: #{excption.inspect}"
+        end
+      elsif page_number == 4
+        begin
+          page_runs = page.runs
+          pvsyst.main_simulation_produced_energy = page_runs[46].to_s
+          pvsyst.main_simulation_specific_prod = page_runs[47].to_s
+          pvsyst.main_simulation_aparent_energy = page_runs[49].to_s
+          pvsyst.main_simulation_perf_ratio = page_runs[51].to_s
+
+          monthly_data(pvsyst, page_runs, 'globhor', 168)
+          monthly_data(pvsyst, page_runs, 'diffhor', 169)
+          monthly_data(pvsyst, page_runs, 'tamb', 170)
+          monthly_data(pvsyst, page_runs, 'globinc', 171)
+          monthly_data(pvsyst, page_runs, 'globeff', 172)
+          monthly_data(pvsyst, page_runs, 'earray', 173)
+          monthly_data(pvsyst, page_runs, 'egrid', 174)
+          monthly_data(pvsyst, page_runs, 'pr', 175)
+
+        rescue => exception
+          puts "---page 4 exception: #{exception.inspect}"
         end
       end
     end
@@ -301,6 +322,13 @@ class Importer
     #   puts "---exception: #{exception.inspect}"
     # end
     puts "---pvsyst: #{pvsyst.inspect}"
+  end
+
+  def self.monthly_data(pvsyst, page_runs, field, run_start)
+    months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec', 'year']
+    months.each_with_index do |month, i|
+      pvsyst.send("main_#{field}_#{month}=", page_runs[run_start+(i*9)].to_s)
+    end
   end
 
   def self.fix_date(date_str)
