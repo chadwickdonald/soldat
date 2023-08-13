@@ -10,6 +10,7 @@ class PvsystsController < ApplicationController
 		begin
 			file = params[:file]
 			PvsystImportJob.new(file).perform
+			# PvsystImportJob.perform_async(file)
 			flash[:success] = "<strong>Pvsyst imported</strong>"
 			redirect_to pvsyts_path
 		rescue => exception

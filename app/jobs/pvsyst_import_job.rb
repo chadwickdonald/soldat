@@ -1,9 +1,15 @@
 class PvsystImportJob < ApplicationJob
+
   def initialize(file)
     @file = file
   end
 
   def perform
-    Importer.import_pvsysts(@file)
+    begin
+      Importer.import_pvsysts(@file)
+    rescue => exception
+      puts exception.inspect
+      puts exception.backtrace
+    end
   end
 end

@@ -316,11 +316,11 @@ class Importer
         end
       end
     end
-    # begin
-    #   # pvsyst.save!
-    # rescue => exception
-    #   puts "---exception: #{exception.inspect}"
-    # end
+    begin
+      pvsyst.save!
+    rescue => exception
+      puts "---exception while saving pvsyst: #{exception.inspect}"
+    end
     puts "---pvsyst: #{pvsyst.inspect}"
   end
 
