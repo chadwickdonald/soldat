@@ -6,7 +6,7 @@ class PvsystImportJob < ApplicationJob
 
   def perform
     begin
-      Importer.import_pvsysts(@file)
+      Importer.new(@file).import_pvsysts
     rescue => exception
       puts exception.inspect
       puts exception.backtrace

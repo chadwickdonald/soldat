@@ -4,6 +4,6 @@ class SimulationImportJob < ApplicationJob
 	end
 
 	def perform
-		Importer.import_simulations(@file)
+		Importer.new(@file).import_simulations
 	end
 end

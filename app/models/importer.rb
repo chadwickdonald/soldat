@@ -1,7 +1,12 @@
 class Importer
   require 'pdf-reader'
+  attr_accessor :file
 
-  def self.import_simulations(file)
+  def initialize(file)
+    @file = file
+  end
+
+  def import_simulations
     puts "---file: #{file.inspect}"
     project = Project.new
     File.foreach(file.path).with_index do |line, index|
@@ -84,7 +89,7 @@ class Importer
     end
   end
 
-  def self.import_pvsysts(file)
+  def import_pvsysts
     puts "--import_pvsysts---file: #{file.inspect}"
     pvsyst = Pvsyst.new
     reader = PDF::Reader.new(Rails.root.join(file))
@@ -324,14 +329,14 @@ class Importer
     puts "---pvsyst: #{pvsyst.inspect}"
   end
 
-  def self.monthly_data(pvsyst, page_runs, field, run_start)
+  def monthly_data(pvsyst, page_runs, field, run_start)
     months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec', 'year']
     months.each_with_index do |month, i|
       pvsyst.send("main_#{field}_#{month}=", page_runs[run_start+(i*9)].to_s)
     end
   end
 
-  def self.fix_date(date_str)
+  def fix_date(date_str)
     date_1 = date_str.split(' ')
     date_2 = date_1.first.split('/')
     year = date_2[2]
