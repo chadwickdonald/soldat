@@ -237,3 +237,6 @@ pvsyst1 = Pvsyst.create({
   main_diffhor_dec: 29.07,
   main_diffhor_year: 644.18
 })
+
+units = ["W/m²", "°C", "m/s", "kW", "V"]
+units.each { |str| Unit.create(description: str) }
