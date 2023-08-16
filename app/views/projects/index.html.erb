@@ -1,164 +1,84 @@
+<link rel="stylesheet" href="/DataTables/datatables.css" /> 
+<script src="/DataTables/datatables.js"></script>
+<% project = @projects.last %>
 <h1>Projects and Simulations</h1>
+<h4>Project Name: <%= project.project %></h4>
+<h4>Version: <%= project.pvsyst_version %></h4>
+<h4>Geographical Site: <%= project.geographical_site %></h4>
+<h4>Meteo Data: <%= project.meteo_data %></h4>
+<h4>Satelite Data: <%= project.satelite_data %></h4>
+<h4>Simulation Date: <%= project.simulation_date %></h4>
+<h4>Simulation Variant: <%= project.simulation_variant %></h4>
+<h4>Simulation Hourly Values To: <%= project.simulation_hourly_values_to %></h4>
+<h4>Simulation Hourly Values From: <%= project.simulation_hourly_values_from %></h4>
 
-<table>
-	<tbody>
-		<% @projects.each do |project| %>
-			<tr>
-				<td><h3>-------------------------------------------------</h3></td>
-			</tr>
-			<tr>
-				<td>Project Name: </td>
-				<td><%= project.project %></td>
-			</tr>
-			<tr>
-				<td>Version: </td>
-				<td><%= project.pvsyst_version %></td>
-			</tr>
-			<tr>
-				<td>Geographical Site: </td>
-				<td><%= project.geographical_site %></td>
-			</tr>
-			<tr>
-				<td>Meteo Data: </td>
-				<td><%= project.meteo_data %></td>
-			</tr>
-			<tr>
-				<td>Satelite Data</td>
-				<td><%= project.satelite_data %></td>
-			</tr>
-			<tr>
-				<td>Simulation Date: </td>
-				<td><%= project.simulation_date %></td>
-			</tr>
-			<tr>
-				<td>Simulation Variant: </td>
-				<td><%= project.simulation_variant %></td>
-			</tr>
-			<tr>
-				<td>Simulation Hourly Values To: </td>
-				<td><%= project.simulation_hourly_values_to %></td>
-			</tr>
-			<tr>
-				<td>Simulation Hourly Values From: </td>
-				<td><%= project.simulation_hourly_values_from %></td>
-			</tr>
-			<% project.pvsyst_simulations.each do |simulation| %>
-				<tr>
-					<td><h3>-------------------------------------------------</h3></td>
-				</tr>
-				<tr>
-					<td>Simulation Id: </td>
-					<td><%= simulation.id %></td>
-				</tr>
-				<tr>
-					<td>Simulation Time: </td>
-					<td><%= simulation.simulation_time %></td>
-				</tr>
-				<tr>
-					<td>GlobHor: </td>
-					<td><%= simulation.glob_hor %></td>
-				</tr>
-				<tr>
-					<td>DiffHor: </td>
-					<td><%= simulation.diff_hor %></td>
-				</tr>
-				<tr>
-					<td>BeamHor: </td>
-					<td><%= simulation.beam_hor %></td>
-				</tr>
-				<tr>
-					<td>TAmb: </td>
-					<td><%= simulation.t_amb %></td>
-				</tr>
-				<tr>
-					<td>WindVel: </td>
-					<td><%= simulation.wind_vel %></td>
-				</tr>
-				<tr>
-					<td>GlobInc: </td>
-					<td><%= simulation.glob_inc %></td>
-				</tr>
-				<tr>
-					<td>ShdLoss: </td>
-					<td><%= simulation.shd_loss %></td>
-				</tr>
-				<tr>
-					<td>IamLoss: </td>
-					<td><%= simulation.iam_loss %></td>
-				</tr>
-				<tr>
-					<td>SlgLoss: </td>
-					<td><%= simulation.slg_loss %></td>
-				</tr>
-				<tr>
-					<td>GlobEff: </td>
-					<td><%= simulation.glob_eff %></td>
-				</tr>
-				<tr>
-					<td>EArrNom: </td>
-					<td><%= simulation.e_arr_nom %></td>
-				</tr>
-				<tr>
-					<td>GIncLss: </td>
-					<td><%= simulation.g_inc_lss %></td>
-				</tr>
-				<tr>
-					<td>TempLss: </td>
-					<td><%= simulation.temp_lss %></td>
-				</tr>
-				<tr>
-					<td>ModQual: </td>
-					<td><%= simulation.mod_qual %></td>
-				</tr>
-				<tr>
-					<td>MisLoss: </td>
-					<td><%= simulation.mis_loss %></td>
-				</tr>
-				<tr>
-					<td>OhmLoss: </td>
-					<td><%= simulation.ohm_loss %></td>
-				</tr>
-				<tr>
-					<td>EArrMpp: </td>
-					<td><%= simulation.e_arr_mpp %></td>
-				</tr>
-				<tr>
-					<td>EArray: </td>
-					<td><%= simulation.e_array %></td>
-				</tr>
-				<tr>
-					<td>TArray: </td>
-					<td><%= simulation.t_array %></td>
-				</tr>
-				<tr>
-					<td>IlOper: </td>
-					<td><%= simulation.il_oper %></td>
-				</tr>
-				<tr>
-					<td>IlPmin: </td>
-					<td><%= simulation.il_pmin %></td>
-				</tr>
-				<tr>
-					<td>IlPmax: </td>
-					<td><%= simulation.il_pmax %></td>
-				</tr>
-				<tr>
-					<td>IlVmin: </td>
-					<td><%= simulation.il_vmin %></td>
-				</tr>
-				<tr>
-					<td>EOutInv: </td>
-					<td><%= simulation.e_out_inv %></td>
-				</tr>
-				<tr>
-					<td>EGrid: </td>
-					<td><%= simulation.e_grid %></td>
-				</tr>
-				<tr>
-					<td>UArray: </td>
-					<td><%= simulation.u_array %></td>
-				</tr>
-			<% end %>
-		<% end %>
-	</tbody>
+<table id="simulations" class="display" style="width:100%">
+  <thead>
+    <tr>
+      <th>Simulation Time</th>
+      <th>GlobHor</th>
+      <th>DiffHor</th>
+      <th>BeamHor</th>
+      <th>TAmb</th>
+      <th>WindVel</th>
+      <th>GlobInc</th>
+      <th>ShdLoss</th>
+      <th>IamLoss</th>
+      <th>SlgLoss</th>
+      <th>GlobEff</th>
+      <th>EArrNom</th>
+      <th>GIncLss</th>
+      <th>TempLss</th>
+      <th>ModQual</th>
+      <th>MisLoss</th>
+      <th>OhmLoss</th>
+      <th>EArrMpp</th>
+      <th>EArray</th>
+      <th>TArray</th>
+      <th>IlOper</th>
+      <th>IlPmin</th>
+      <th>IlPmax</th>
+      <th>IlVmin</th>
+      <th>EOutInv</th>
+      <th>EGrid</th>
+      <th>UArray</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% project.pvsyst_simulations.each do |simulation| %>
+    <tr>
+      <th><%= simulation.simulation_time.strftime("%m/%d/%Y %T") %></th>
+      <th><%= simulation.glob_hor %></th>
+      <th><%= simulation.diff_hor %></th>
+      <th><%= simulation.beam_hor %></th>
+      <th><%= simulation.t_amb %></th>
+      <th><%= simulation.wind_vel %></th>
+      <th><%= simulation.glob_inc %></th>
+      <th><%= simulation.shd_loss %></th>
+      <th><%= simulation.iam_loss %></th>
+      <th><%= simulation.slg_loss %></th>
+      <th><%= simulation.glob_eff %></th>
+      <th><%= simulation.e_arr_nom %></th>
+      <th><%= simulation.g_inc_lss %></th>
+      <th><%= simulation.temp_lss %></th>
+      <th><%= simulation.mod_qual %></th>
+      <th><%= simulation.mis_loss %></th>
+      <th><%= simulation.ohm_loss %></th>
+      <th><%= simulation.e_arr_mpp %></th>
+      <th><%= simulation.e_array %></th>
+      <th><%= simulation.t_array %></th>
+      <th><%= simulation.il_oper %></th>
+      <th><%= simulation.il_pmin %></th>
+      <th><%= simulation.il_pmax %></th>
+      <th><%= simulation.il_vmin %></th>
+      <th><%= simulation.e_out_inv %></th>
+      <th><%= simulation.e_grid %></th>
+      <th><%= simulation.u_array %></th>
+    </tr>
+  <% end %>
+  </tbody>
 </table>
+
+
+
+
