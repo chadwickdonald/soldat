@@ -341,22 +341,34 @@ class Importer
   end
 
   def fix_date(date_str)
-    date_1 = date_str.split(' ')
-    date_2 = date_1.first.split('/')
-    year = date_2[2]
-    new_year = nil
-    if year.length == 2
-      if year.to_i <= 99 && year.to_i > 60
-        new_year = '19' + year
-      else
-        new_year = '20' + year
+    begin
+      date_1 = date_str.split(' ')
+      date_2 = date_1.first.split('/')
+      year = date_2[2]
+      new_year = nil
+      if year.length == 2
+        if year.to_i <= 99 && year.to_i > 60
+          new_year = '19' + year
+        else
+          new_year = '20' + year
+        end
       end
+      date_2[2] = new_year
+      date_2 = date_2.join('/')
+      date_1[0] = date_2
+      date_1 = date_1.join(' ')
+      date_1_arr = date_1.split(' ')
+      time = date_1_arr[1]
+      if time.include?('h')
+        time_arr = time.split('h')
+        new_time = "#{time_arr[0]}:#{time_arr[1]}"
+        date_1 = "#{date_1_arr[0]} #{new_time}"
+      end
+      DateTime.strptime(date_1, "%m/%d/%Y %R")
+    rescue => exception
+      puts "---fix_date exception: #{exception.inspect}"
+      puts exception.stacktrace
     end
-    date_2[2] = new_year
-    date_2 = date_2.join('/')
-    date_1[0] = date_2
-    date_1 = date_1.join(' ')
-    DateTime.strptime(date_1, "%m/%d/%Y")
   end
 
 end
