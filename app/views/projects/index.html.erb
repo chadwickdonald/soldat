@@ -2,7 +2,8 @@
 <script
   src="https://code.jquery.com/jquery-1.12.4.js"
   integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
-  crossorigin="anonymous"></script>
+  crossorigin="anonymous">
+</script>
 
 <link href="https://cdn.datatables.net/v/bs5/dt-1.13.6/datatables.min.css" rel="stylesheet">
 <script src="https://cdn.datatables.net/v/bs5/dt-1.13.6/datatables.min.js"></script>
@@ -89,6 +90,14 @@
 </table>
 
 <script>
+  window.onload = function() {
+    if (window.jQuery) {
+      alert("Yeah!");
+    } else {
+      alert("Doesn't Work");
+    }
+  }
+
   $(document).ready(function() {
     var sTable = $("#simulations").DataTable({});
   })
