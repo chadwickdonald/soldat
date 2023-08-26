@@ -5,3 +5,10 @@ import 'jquery'
 import "jquery_ujs"
 import "popper"
 import "bootstrap"
+
+import "./add_jquery.js"
+
+import {TabulatorFull as Tabulator} from 'tabulator-tables';
+window.Tabulator = Tabulator;
+
+window.bootstrap = bootstrap

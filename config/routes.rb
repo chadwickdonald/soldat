@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
   get 'home/index'
   root "home#index"
-  resources :projects, only: [:index]
   resources :pvsysts, only: [:index]
   resources :pvsyst_simulations, only: [:index]
+  resources :projects do
+    get 'table_data', on: :collection
+  end
+
 
   resources :pvsysts do
     collection do
