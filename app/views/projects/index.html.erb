@@ -1,5 +1,20 @@
 <link href="https://unpkg.com/tabulator-tables@5.5.0/dist/css/tabulator.min.css" rel="stylesheet">
 <script type="text/javascript" src="https://unpkg.com/tabulator-tables@5.5.0/dist/js/tabulator.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/luxon/3.4.1/luxon.min.js" integrity="sha512-pLpg+nu4NcwVDWeET7iDkouvX+70FrqLGgd1QUZCMLgCTzQ6V0PAAG4c4uLi9xM5QRlhvVlCqLaNBbfshLkJKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<% project = @project %>
+<h4>Project Name: <%= project.project %></h4>
+<h4>Simulation Date: <%= project.simulation_date %></h4>
+
+<!-- <h4>Version: <%= project.pvsyst_version %></h4>
+<h4>Geographical Site: <%= project.geographical_site %></h4>
+<h4>Meteo Data: <%= project.meteo_data %></h4>
+<h4>Satelite Data: <%= project.satelite_data %></h4>
+<h4>Simulation Date: <%= project.simulation_date %></h4>
+<h4>Simulation Variant: <%= project.simulation_variant %></h4>
+<h4>Simulation Hourly Values To: <%= project.simulation_hourly_values_to %></h4>
+<h4>Simulation Hourly Values From: <%= project.simulation_hourly_values_from %></h4>
+ -->
 
 <div id='simulations-table'></div>
 
@@ -14,7 +29,7 @@
     paginationSize: 48,
     paginationSizeSelector: [12, 24, 48, 96],
     columns: [
-      {title: 'Simulation Time', field: 'simulation_time', width: 150},
+      {title: 'Simulation Time', field: 'simulation_time', formatter: 'datetime', formatterParams: {inputFormat:'yyyy-MM-dd\'T\'HH:mm:ss.SSS\'Z\''}, width: 150},
       {title: 'GlobHor (W/m²)', field: 'glob_hor', width: 150},
       {title: 'DiffHor (W/m²)', field: 'diff_hor', width: 150},
       {title: 'BeamHor (W/m²)', field: 'beam_hor', width: 150},
@@ -44,3 +59,4 @@
     ],
   });
 </script>
+

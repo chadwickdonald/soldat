@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
   def index
+    @project = Project.last
   end
 
   def table_data
