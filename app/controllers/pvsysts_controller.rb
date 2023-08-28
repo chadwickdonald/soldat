@@ -9,7 +9,8 @@ class PvsystsController < ApplicationController
 	def import
 		begin
 			file = params[:file]
-			PvsystImportJob.new(file).perform
+			# PvsystImportJob.new(file).perform
+			Importer.new(file).import_pvsysts
 			# PvsystImportJob.perform_async(file)
 			flash[:success] = "<strong>Pvsyst imported</strong>"
 			redirect_to pvsyts_path
