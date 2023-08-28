@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :projects do
     get 'table_data', on: :collection
   end
-  resources :imports, only: [:index]
+  resources :imports, only: [:index, :destroy]
   resources :pvsyst_simulations do
     get 'table_data', on: :collection
   end
