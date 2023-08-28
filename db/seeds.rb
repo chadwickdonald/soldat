@@ -6,7 +6,8 @@ project1 = Project.create({
 	satelite_data: 'SUNY model;TMY',
 	simulation_date: '0004-06-20 16:21:00 UTC',
 	simulation_variant: 'IEA_GA_Perry.VC9',
-	simulation_hourly_values: 'from 01/01/90 to 31/12/90' 
+	simulation_hourly_values_from: "from 01/01/90",
+	simulation_hourly_values_to: "to 31/12/90"
 })
 
 project2 = Project.create({
@@ -17,7 +18,8 @@ project2 = Project.create({
 	satelite_data: 'SUNY model;TMY_2',
 	simulation_date: '0004-07-20 16:21:00 UTC',
 	simulation_variant: 'IEA_GA_Perry_2.VC9',
-	simulation_hourly_values: 'from 01/01/90 to 31/12/90' 
+	simulation_hourly_values_from: "from 01/01/90",
+	simulation_hourly_values_to: "to 31/12/90"
 })
 
 simulation1 = PvsystSimulation.create({
