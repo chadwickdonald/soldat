@@ -2,60 +2,36 @@
 <script type="text/javascript" src="https://unpkg.com/tabulator-tables@5.5.0/dist/js/tabulator.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/luxon/3.4.1/luxon.min.js" integrity="sha512-pLpg+nu4NcwVDWeET7iDkouvX+70FrqLGgd1QUZCMLgCTzQ6V0PAAG4c4uLi9xM5QRlhvVlCqLaNBbfshLkJKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<% project = @project %>
-<h4>Project Name: <%= project.project %></h4>
-<h4>Simulation Date: <%= project.simulation_date %></h4>
-
-<!-- <h4>Version: <%= project.pvsyst_version %></h4>
-<h4>Geographical Site: <%= project.geographical_site %></h4>
-<h4>Meteo Data: <%= project.meteo_data %></h4>
-<h4>Satelite Data: <%= project.satelite_data %></h4>
-<h4>Simulation Date: <%= project.simulation_date %></h4>
-<h4>Simulation Variant: <%= project.simulation_variant %></h4>
-<h4>Simulation Hourly Values To: <%= project.simulation_hourly_values_to %></h4>
-<h4>Simulation Hourly Values From: <%= project.simulation_hourly_values_from %></h4>
- -->
-
-<div id='simulations-table'></div>
+<div id='projects-table'></div>
 
 <script>
   var dataSource = '/projects/table_data';
 
-  var simulationsTable = new Tabulator("#simulations-table", {
-    height: 700,
+  var projectsTable = new Tabulator("#projects-table", {
+    height: 500,
     laytout: 'fitColumns',
     ajaxURL: dataSource,
     pagination: true,
-    paginationSize: 48,
-    paginationSizeSelector: [12, 24, 48, 96],
+    paginationSize: 20,
+    paginationSizeSelector: [10, 20, 40, 80],
     columns: [
-      {title: 'Simulation Time', field: 'simulation_time', formatter: 'datetime', formatterParams: {inputFormat:'yyyy-MM-dd\'T\'HH:mm:ss.SSS\'Z\''}, width: 150},
-      {title: 'GlobHor (W/m²)', field: 'glob_hor', width: 150},
-      {title: 'DiffHor (W/m²)', field: 'diff_hor', width: 150},
-      {title: 'BeamHor (W/m²)', field: 'beam_hor', width: 150},
-      {title: 'TAmb (°C)',    field: 't_amb', width: 150},
-      {title: 'WindVel (m/s)', field: 'wind_vel', width: 150},
-      {title: 'GlobInc (W/m²)', field: 'glob_inc', width: 150},
-      {title: 'ShdLoss (W/m²)', field: 'shd_loss', width: 150},
-      {title: 'IamLoss (W/m²)', field: 'iam_loss', width: 150},
-      {title: 'SlgLoss (W/m²)', field: 'slg_loss', width: 150},
-      {title: 'GlobEff (W/m²)', field: 'glob_eff', width: 150},
-      {title: 'EArrNom (kW)', field: 'e_arr_nom', width: 150},
-      {title: 'GIncLss (kW)', field: 'g_inc_lss', width: 150},
-      {title: 'TempLss (kW)', field: 'temp_lss', width: 150},
-      {title: 'ModQual (kW)', field: 'mod_qual', width: 150},
-      {title: 'MisLoss (kW)', field: 'mis_loss', width: 150},
-      {title: 'OhmLoss (kW)', field: 'ohm_loss', width: 150},
-      {title: 'EArrMpp (kW)', field: 'e_arr_mpp', width: 150},
-      {title: 'EArray (kW)',  field: 'e_array', width: 150},
-      {title: 'TArray (°C)',  field: 't_array', width: 150},
-      {title: 'IlOper (kW)',  field: 'il_oper', width: 150},
-      {title: 'IlPmin (kW)',  field: 'il_pmin', width: 150},
-      {title: 'IlPmax (kW)',  field: 'il_pmax', width: 150},
-      {title: 'IlVmin (kW)',  field: 'il_vmin', width: 150},
-      {title: 'EOutInv (kW)', field: 'e_out_inv', width: 150},
-      {title: 'EGrid (kW)',   field: 'e_grid', width: 150},
-      {title: 'UArray (V)',  field: 'u_array', width: 150},
+      {title: 'Name', field: 'project', width: 150},
+      {title: 'File Date', field: 'project_file_date', width: 150},
+      {title: 'Description', field: 'project_description', width: 150},
+      {title: 'Version', field: 'pvsyst_version', width: 150},
+      {title: 'Geographical Site', field: 'geographical_site', width: 150},
+      {title: 'Geographical Site File Date', field: 'geographical_site_file_date', width: 150},
+      {title: 'Geographical Site Description', field: 'geographical_site_description', width: 150},
+      {title: 'Meteo Data', field: 'meteo_data', width: 150},
+      {title: 'Meteo Data File Date',    field: 'meteo_data_file_date', width: 150},
+      {title: 'Meteo Data Description', field: 'meteo_data_description', width: 150},
+      {title: 'Satelite Data',    field: 'satelite_data', width: 150},
+      {title: 'Simulation Date', field: 'simulation_date', width: 150},
+      {title: 'Simulation Variant', field: 'simulation_variant', width: 150},
+      {title: 'Simulation Variant File Date', field: 'simulation_variant_file_date', width: 150},
+      {title: 'Simulation Variant Description', field: 'simulation_variant_description', width: 150},
+      {title: 'Simulation Hourly Values To', field: 'simulation_hourly_values_to', width: 150},
+      {title: 'Simulation Hourly Values From', field: 'simulation_hourly_values_from', width: 150},
     ],
   });
 </script>

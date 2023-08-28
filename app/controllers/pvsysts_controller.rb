@@ -1,6 +1,6 @@
 class PvsystsController < ApplicationController
 	def index
-		@pvsysts = Pvsyst.all
+		@projects = Project.all
 	end
 
 	def new_import

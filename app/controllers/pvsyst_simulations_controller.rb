@@ -1,10 +1,14 @@
 class PvsystSimulationsController < ApplicationController
   def index
-    @projects = Project.all
-    @pvsyst_simulations = @projects.first.pvsyst_simulations
+    @project = Project.last
   end
 
   def new_import
+  end
+
+  def table_data
+    simulations = Project.last.pvsyst_simulations
+    render json: simulations
   end
 
   def import

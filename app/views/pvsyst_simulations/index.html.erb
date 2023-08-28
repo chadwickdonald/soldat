@@ -1,209 +1,52 @@
-<h1>Projects and Pvsyst Simulations</h1>
+<link href="https://unpkg.com/tabulator-tables@5.5.0/dist/css/tabulator.min.css" rel="stylesheet">
+<script type="text/javascript" src="https://unpkg.com/tabulator-tables@5.5.0/dist/js/tabulator.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/luxon/3.4.1/luxon.min.js" integrity="sha512-pLpg+nu4NcwVDWeET7iDkouvX+70FrqLGgd1QUZCMLgCTzQ6V0PAAG4c4uLi9xM5QRlhvVlCqLaNBbfshLkJKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<table>
-	<tbody>
-		<% @projects.each do |project| %>
-			<tr>
-				<td><h3>---------------------------------------</h3></td>
-			</tr>
-			<tr>
-				<td>Project Name: </td>
-				<td><%= project.project %></td>
-			</tr>
-			<tr>
-				<td>Version: </td>
-				<td><%= project.pvsyst_version %></td>
-			</tr>
-			<tr>
-				<td>Geographical Site: </td>
-				<td><%= project.geographical_site %></td>
-			</tr>
-			<tr>
-				<td>Meteo Data: </td>
-				<td><%= project.meteo_data %></td>
-			</tr>
-			<tr>
-				<td>Satelite Data</td>
-				<td><%= project.satelite_data %></td>
-			</tr>
-			<tr>
-				<td>Simulation Date: </td>
-				<td><%= project.simulation_date %></td>
-			</tr>
-			<tr>
-				<td>Simulation Variant: </td>
-				<td><%= project.simulation_variant %></td>
-			</tr>
-			<tr>
-				<td>Simulation Hourly Values: </td>
-				<td><%= project.simulation_hourly_values %></td>
-			</tr>
-			<% project.pvsysts.each do |pvsyst| %>
-				<tr>
-					<td><h3>---------------------------------------</h3></td>
-				</tr>
-				<tr>
-					<td>Pvsyst Id: </td>
-					<td><%= pvsyst.id %></td>
-				</tr>
-				<tr>
-					<td>Situation Latitude: </td>
-					<td><%= pvsyst.situation_latitude %></td>
-				</tr>
-				<tr>
-					<td>Situation Longitude: </td>
-					<td><%= pvsyst.situation_longitude %></td>
-				</tr>
-				<tr>
-					<td>Time Defined as: </td>
-					<td><%= pvsyst.time_defined_as %></td>
-				</tr>
-				<tr>
-					<td>Altitude: </td>
-					<td><%= pvsyst.altitude %></td>
-				</tr>
-				<tr>
-					<td>Country: </td>
-					<td><%= pvsyst.country %></td>
-				</tr>
-				<tr>
-					<td>Axis Tilt: </td>
-					<td><%= pvsyst.axis_tilt %></td>
-				</tr>
-				<tr>
-					<td>Axis Azimuth: </td>
-					<td><%= pvsyst.axis_azimuth %></td>
-				</tr>
-				<tr>
-					<td>Minimum Phi: </td>
-					<td><%= pvsyst.minimum_phi %></td>
-				</tr>
-				<tr>
-					<td>Maximum Phi: </td>
-					<td><%= pvsyst.maximum_phi %></td>
-				</tr>
-				<tr>
-					<td>Tracking Algorithm: </td>
-					<td><%= pvsyst.tracking_algorithm %></td>
-				</tr>
-				<tr>
-					<td>Number of Trackers: </td>
-					<td><%= pvsyst.number_of_trackers %></td>
-				</tr>
-				<tr>
-					<td>Tracker Spacing: </td>
-					<td><%= pvsyst.tracker_spacing %></td>
-				</tr>
-				<tr>
-					<td>Collector Width: </td>
-					<td><%= pvsyst.collector_width %></td>
-				</tr>
-				<tr>
-					<td>Phi Limits: </td>
-					<td><%= pvsyst.phi_limits %></td>
-				</tr>
-				<tr>
-					<td>Ground Cover Ratio: </td>
-					<td><%= pvsyst.ground_cover_ratio %></td>
-				</tr>
-				<tr>
-					<td>Models Used: </td>
-					<td><%= pvsyst.models_used %></td>
-				</tr>
-								<tr>
-					<td>Horizon: </td>
-					<td><%= pvsyst.horizon %></td>
-				</tr>
-				<tr>
-					<td>Near Shadings: </td>
-					<td><%= pvsyst.near_shadings %></td>
-				</tr>
-				<tr>
-					<td>Users Needs: </td>
-					<td><%= pvsyst.users_needs %></td>
-				</tr>
-				<tr>
-					<td>Grid Power Limitation Active Power: </td>
-					<td><%= pvsyst.grid_power_limitation_active_power %></td>
-				</tr>
-				<tr>
-					<td>Grid Power Limitation Pnom Ratio: </td>
-					<td><%= pvsyst.grid_power_limitation_pnom_ratio %></td>
-				</tr>
-				<tr>
-					<td>Power Factor Cos: </td>
-					<td><%= pvsyst.power_factor_cos %></td>
-				</tr>
-				<tr>
-					<td>Power Factor Phi: </td>
-					<td><%= pvsyst.power_factor_phi %></td>
-				</tr>
-				<tr>
-					<td>PV Module: </td>
-					<td><%= pvsyst.pv_module %></td>
-				</tr>
-				<tr>
-					<td>Original Pysyst DB Manufacturer: </td>
-					<td><%= pvsyst.original_pysyst_db_manufacturer %></td>
-				</tr>				
-				<tr>
-					<td>PV Modules in Series: </td>
-					<td><%= pvsyst.pv_modules_in_series %></td>
-				</tr>
-				<tr>
-					<td>PV Modules in Parallel: </td>
-					<td><%= pvsyst.pv_modules_in_parallel %></td>
-				</tr>				
-				<tr>
-					<td>Total PV Modules: </td>
-					<td><%= pvsyst.total_pv_modules %></td>
-				</tr>
-				<tr>
-					<td>Module Unit Nom Power: </td>
-					<td><%= pvsyst.module_unit_nom_power %></td>
-				</tr>				
-				<tr>
-					<td>Global Power Nominal: </td>
-					<td><%= pvsyst.global_power_nominal %></td>
-				</tr>
-				<tr>
-					<td>Global Power Operating Cond: </td>
-					<td><%= pvsyst.global_power_operating_cond %></td>
-				</tr>				
-				<tr>
-					<td>U Mpp: </td>
-					<td><%= pvsyst.u_mpp %></td>
-				</tr>
-				<tr>
-					<td>I Mpp: </td>
-					<td><%= pvsyst.i_mpp %></td>
-				</tr>				
-				<tr>
-					<td>Module Area: </td>
-					<td><%= pvsyst.module_area %></td>
-				</tr>
-				<tr>
-					<td>Cell Area: </td>
-					<td><%= pvsyst.cell_area %></td>
-				</tr>				
-				<tr>
-					<td>Inverter Model: </td>
-					<td><%= pvsyst.inverter_model %></td>
-				</tr>
-				<tr>
-					<td>Custom Params Def Manufacturer: </td>
-					<td><%= pvsyst.custom_params_def_manufacturer %></td>
-				</tr>				
-				<tr>
-					<td>Operating Voltage: </td>
-					<td><%= pvsyst.operating_voltage %></td>
-				</tr>
-				<tr>
-					<td>Inverter Unit Nom Power: </td>
-					<td><%= pvsyst.inverter_unit_nom_power %></td>
-				</tr>				
-			<% end %>
-		<% end %>
-	</tbody>
-</table>
+<% project = @project %>
+<h4>Project Name: <%= project.project %></h4>
+<h4>Simulation Date: <%= project.simulation_date %></h4>
+
+<div id='simulations-table'></div>
+
+<script>
+  var dataSource = '/pvsyst_simulations/table_data';
+
+  var simulationsTable = new Tabulator("#simulations-table", {
+    height: 700,
+    laytout: 'fitColumns',
+    ajaxURL: dataSource,
+    pagination: true,
+    paginationSize: 48,
+    paginationSizeSelector: [12, 24, 48, 96],
+    columns: [
+      {title: 'Simulation Time', field: 'simulation_time', formatter: 'datetime', formatterParams: {inputFormat:'yyyy-MM-dd\'T\'HH:mm:ss.SSS\'Z\''}, width: 150},
+      {title: 'GlobHor (W/m²)', field: 'glob_hor', width: 150},
+      {title: 'DiffHor (W/m²)', field: 'diff_hor', width: 150},
+      {title: 'BeamHor (W/m²)', field: 'beam_hor', width: 150},
+      {title: 'TAmb (°C)',    field: 't_amb', width: 150},
+      {title: 'WindVel (m/s)', field: 'wind_vel', width: 150},
+      {title: 'GlobInc (W/m²)', field: 'glob_inc', width: 150},
+      {title: 'ShdLoss (W/m²)', field: 'shd_loss', width: 150},
+      {title: 'IamLoss (W/m²)', field: 'iam_loss', width: 150},
+      {title: 'SlgLoss (W/m²)', field: 'slg_loss', width: 150},
+      {title: 'GlobEff (W/m²)', field: 'glob_eff', width: 150},
+      {title: 'EArrNom (kW)', field: 'e_arr_nom', width: 150},
+      {title: 'GIncLss (kW)', field: 'g_inc_lss', width: 150},
+      {title: 'TempLss (kW)', field: 'temp_lss', width: 150},
+      {title: 'ModQual (kW)', field: 'mod_qual', width: 150},
+      {title: 'MisLoss (kW)', field: 'mis_loss', width: 150},
+      {title: 'OhmLoss (kW)', field: 'ohm_loss', width: 150},
+      {title: 'EArrMpp (kW)', field: 'e_arr_mpp', width: 150},
+      {title: 'EArray (kW)',  field: 'e_array', width: 150},
+      {title: 'TArray (°C)',  field: 't_array', width: 150},
+      {title: 'IlOper (kW)',  field: 'il_oper', width: 150},
+      {title: 'IlPmin (kW)',  field: 'il_pmin', width: 150},
+      {title: 'IlPmax (kW)',  field: 'il_pmax', width: 150},
+      {title: 'IlVmin (kW)',  field: 'il_vmin', width: 150},
+      {title: 'EOutInv (kW)', field: 'e_out_inv', width: 150},
+      {title: 'EGrid (kW)',   field: 'e_grid', width: 150},
+      {title: 'UArray (V)',  field: 'u_array', width: 150},
+    ],
+  });
+</script>
 
