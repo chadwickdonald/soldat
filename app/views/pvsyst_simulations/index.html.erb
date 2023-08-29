@@ -3,8 +3,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/luxon/3.4.1/luxon.min.js" integrity="sha512-pLpg+nu4NcwVDWeET7iDkouvX+70FrqLGgd1QUZCMLgCTzQ6V0PAAG4c4uLi9xM5QRlhvVlCqLaNBbfshLkJKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <% project = @project %>
-<h4>Project Name: <%= project.project %></h4>
-<h4>Simulation Date: <%= project.simulation_date %></h4>
+<h6>Project Name: <%= project.project %></h6>
+<h6>Simulation Date: <%= project.simulation_date.strftime("%m/%d/%Y at %I:%M%p") %></h6>
 
 <div id='simulations-table'></div>
 
