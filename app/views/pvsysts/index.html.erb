@@ -7,32 +7,10 @@
 				<td><h3>---------------------------------------</h3></td>
 			</tr>
 			<tr>
-				<td>Project Name: </td>
-				<td><%= project.project %></td>
+				<td>Project Name: <%= project.project %></td>
 			</tr>
 			<tr>
-				<td>Version: </td>
-				<td><%= project.pvsyst_version %></td>
-			</tr>
-			<tr>
-				<td>Geographical Site: </td>
-				<td><%= project.geographical_site %></td>
-			</tr>
-			<tr>
-				<td>Meteo Data: </td>
-				<td><%= project.meteo_data %></td>
-			</tr>
-			<tr>
-				<td>Satelite Data</td>
-				<td><%= project.satelite_data %></td>
-			</tr>
-			<tr>
-				<td>Simulation Date: </td>
-				<td><%= project.simulation_date %></td>
-			</tr>
-			<tr>
-				<td>Simulation Variant: </td>
-				<td><%= project.simulation_variant %></td>
+				<td>Simulation Date: <%= project.simulation_date %></td>
 			</tr>
 			<% project.pvsysts.each do |pvsyst| %>
 				<tr>
