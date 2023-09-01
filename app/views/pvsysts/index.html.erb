@@ -1,5 +1,3 @@
-<h6>PvSyst Data</h6>
-
 <table>
 	<tbody>
 		<% @projects.each do |project| %>
@@ -10,7 +8,7 @@
 				<td>Project Name: <%= project.project %></td>
 			</tr>
 			<tr>
-				<td>Simulation Date: <%= project.simulation_date %></td>
+				<td>Simulation Date: <%= project.simulation_date.strftime("%m/%d/%Y at %I:%M%p") %></td>
 			</tr>
 			<% project.pvsysts.each do |pvsyst| %>
 				<tr>
