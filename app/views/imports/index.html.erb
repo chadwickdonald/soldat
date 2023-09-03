@@ -1,6 +1,6 @@
 <h4>Import Files</h4>
 
-<br><br>
+<div class="border-top my-3"></div>
 <h6>Pvsyst Simulation Import (.csv)</h6>
 
 <%= form_tag '/pvsyst_simulations/import', :multipart => true do %>
@@ -8,17 +8,14 @@
    <%= submit_tag %>
 <% end %>
 
-<br><br>
+<div class="border-top my-3"></div>
 <h6>Pvsyst Import (.pdf)</h6>
 
 <%= form_tag '/pvsysts/import', :multipart => true do %>
    <label class='form-label' for="file">Upload text File</label> <%= file_field_tag "file" %>
    <%= submit_tag %>
 <% end %>
-
-
-<br><br>
-
+<div class="border-top my-3"></div>
 <form class='button-to' method='post' action='/imports/1'>
   <input type='hidden' name='_method' value='delete'>
   <input type='submit' value='Delete Everything!'>
