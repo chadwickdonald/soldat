@@ -1,10 +1,10 @@
-<h4>Import Files</h4>
+<h6>Import Files</h6>
 
 <div class="border-top my-3"></div>
 <h6>Pvsyst Simulation Import (.csv)</h6>
 
 <%= form_tag '/pvsyst_simulations/import', :multipart => true do %>
-   <label for="file" class="form-label">Upload text File</label> <%= file_field_tag "file" %>
+   <label for="file" class="form-label"></label> <%= file_field_tag "file" %>
    <%= submit_tag %>
 <% end %>
 
@@ -12,7 +12,7 @@
 <h6>Pvsyst Import (.pdf)</h6>
 
 <%= form_tag '/pvsysts/import', :multipart => true do %>
-   <label class='form-label' for="file">Upload text File</label> <%= file_field_tag "file" %>
+   <label class='form-label' for="file"></label> <%= file_field_tag "file" %>
    <%= submit_tag %>
 <% end %>
 <div class="border-top my-3"></div>
