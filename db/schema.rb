@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_15_050942) do
+ActiveRecord::Schema[7.0].define(version: 2024_08_17_192910) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -324,10 +324,165 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_15_050942) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "units", force: :cascade do |t|
-    t.string "description"
+  create_table "scada_events", force: :cascade do |t|
+    t.string "site_id"
+    t.datetime "date"
+    t.string "measurement_source_id"
+    t.float "val"
+    t.string "cp_name"
+    t.string "measurement_apcode"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "scada_measurement_sources", force: :cascade do |t|
+    t.integer "scada_measurement_id"
+    t.string "uuid"
+    t.string "calc_period"
+    t.integer "calc_time_span_count"
+    t.string "calc_time_span_mode"
+    t.boolean "manual_ingest"
+    t.string "eng_unit"
+    t.string "quality"
+    t.string "range"
+    t.string "uri"
+    t.string "calc_type_apcode"
+    t.datetime "date"
+    t.decimal "val"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["scada_measurement_id"], name: "index_scada_measurement_sources_on_scada_measurement_id"
+    t.index ["uuid"], name: "index_scada_measurement_sources_on_uuid", unique: true
+  end
+
+  create_table "scada_measurements", force: :cascade do |t|
+    t.string "mloc_id"
+    t.string "apcode"
+    t.string "uuid"
+    t.string "name"
+    t.boolean "rcv"
+    t.string "measure_type_id"
+    t.string "measure_type_apcode"
+    t.string "measure_type_data_type"
+    t.string "measure_type_name"
+    t.string "measure_type_uri"
+    t.string "segment_id"
+    t.string "segment_apcode"
+    t.integer "segment_apcode_idx"
+    t.string "segment_name"
+    t.string "segment_uri"
+    t.string "monitor_eng_unit"
+    t.boolean "monitor"
+    t.string "monitor_status"
+    t.string "monitor_uri"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["measure_type_id"], name: "index_scada_measurements_on_measure_type_id"
+    t.index ["segment_id"], name: "index_scada_measurements_on_segment_id"
+    t.index ["uuid"], name: "index_scada_measurements_on_uuid", unique: true
+  end
+
+  create_table "scada_mlocs", force: :cascade do |t|
+    t.string "segment_id"
+    t.string "apcode"
+    t.string "uuid"
+    t.string "name"
+    t.string "sscode"
+    t.string "uri"
+    t.string "measurementTypeId"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "scada_organizations", force: :cascade do |t|
+    t.string "uuid"
+    t.string "name"
+    t.string "address"
+    t.string "city"
+    t.string "state"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "scada_segments", force: :cascade do |t|
+    t.string "site_id"
+    t.string "uuid"
+    t.string "apcode"
+    t.string "uri"
+    t.string "name"
+    t.integer "apcode_idx"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["id"], name: "index_scada_segments_on_id"
+  end
+
+  create_table "scada_sites", force: :cascade do |t|
+    t.string "uuid"
+    t.string "site_id"
+    t.integer "organization_id"
+    t.string "name"
+    t.string "site_type_apcode"
+    t.string "enterprise_name"
+    t.string "enterprise_id"
+    t.string "state"
+    t.string "timezone"
+    t.string "address"
+    t.string "longitude"
+    t.string "latitude"
+    t.string "test_results"
+    t.string "crmid"
+    t.string "type_of_project"
+    t.string "number_of_controllers"
+    t.string "ac_load"
+    t.string "cabins_designs"
+    t.string "rnoc_tests_end_date"
+    t.string "address_zip_code"
+    t.string "activation_date"
+    t.string "power_source_provision"
+    t.string "grid_connected"
+    t.string "plant_designer"
+    t.string "type_of_plant"
+    t.string "city"
+    t.string "cabin_group"
+    t.string "plant_operator"
+    t.string "installation_implementor"
+    t.string "maintenance_contractor"
+    t.string "country"
+    t.string "district"
+    t.string "maintenance_date"
+    t.string "contract"
+    t.string "telco_area"
+    t.string "odss_presence"
+    t.string "dslam_code"
+    t.string "odss_active"
+    t.string "related_market_site"
+    t.string "information"
+    t.string "recording_period"
+    t.string "number_of_active_equipment"
+    t.string "market_timezone"
+    t.string "admin_region"
+    t.string "tech_department"
+    t.string "cabin_vendor"
+    t.string "activation_date_nms"
+    t.string "plant_installer"
+    t.string "cabin_type"
+    t.string "cabin_kv_number"
+    t.string "portfolio"
+    t.string "warranty_expiration_date"
+    t.string "severity"
+    t.string "typical_use"
+    t.string "rnoc_notification_date"
+    t.string "num_of_tcps"
+    t.string "serial"
+    t.string "sub_types"
+    t.string "dslam_network_ip_address"
+    t.string "address_street"
+    t.string "eett_code"
+    t.string "available_calculation_periods"
+    t.string "altitude"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["id"], name: "index_scada_sites_on_id"
   end
 
 end
