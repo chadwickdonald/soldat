@@ -43,5 +43,5 @@ app/.DS_Store
 app/assets/.DS_Store
 
 # temp script files
-scripts/ignored_files
+scripts/ignored_files/
 
