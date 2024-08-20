@@ -1,0 +1,1 @@
+SCADA_API_KEY = '4babde93-07c2-428c-9bd4-6f04b038afe1.01'
