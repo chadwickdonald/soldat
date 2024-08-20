@@ -3,6 +3,7 @@ require 'uri'
 require 'json'
 require_relative '../config/environment'
 
+# url depends on agent uuid
 url = 'https://portal.solarpark-online.com/ifms/agents/4b5dc3b7-4ea5-4ed4-a32b-a78645085104/sites'
 api_key = SCADA_API_KEY
 
@@ -15,7 +16,13 @@ request['API-Key'] = api_key
 response = http.request(request)
 data = JSON.parse(response.body)
 
-org = ScadaOrganization.find(1)
+# depends on Organization existing
+org = ScadaOrganization.find_or_create_by(name: "First Organization") do |organization|
+  organization.uuid = nil
+  organization.address = "123 Fake St."
+  organization.city = "El Campo"
+  organization.state = "CA"
+end
 
 data.each do |row|
 	properties = row['properties']
