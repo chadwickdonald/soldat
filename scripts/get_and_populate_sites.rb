@@ -16,13 +16,7 @@ request['API-Key'] = api_key
 response = http.request(request)
 data = JSON.parse(response.body)
 
-# depends on Organization existing
-org = ScadaOrganization.find_or_create_by(name: "First Organization") do |organization|
-  organization.uuid = nil
-  organization.address = "123 Fake St."
-  organization.city = "El Campo"
-  organization.state = "CA"
-end
+org = ScadaOrganization.find_by(name: 'First Organization')
 
 data.each do |row|
 	properties = row['properties']
