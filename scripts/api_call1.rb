@@ -6,7 +6,7 @@ def get_api_response(source_id)
   api_url = URI("https://portal.solarpark-online.com/ifms/sources/#{source_id}/events")
 
   # Add your API key to the headers
-  api_key = '4babde93-07c2-428c-9bd4-6f04b038afe1.01'
+  api_key = SCADA_API_KEY
   headers = { 'API-Key' => api_key }
 
   # Make a GET request to the API endpoint
