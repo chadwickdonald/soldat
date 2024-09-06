@@ -40,20 +40,19 @@ def get_all_apcode_data(measurement_apcodes)
   end
 end
 
-def get_first_apcode_data(measurement_apcodes)
-  puts "---measurement_apcodes: #{measurement_apcodes}"
+def get_first_apcode_data(measurement_apcodes, calc_period)
+  # puts "---measurement_apcodes: #{measurement_apcodes}"
   data = {}
   measurement_apcodes.each do |measurement_apcode|
     mlocs = [ScadaMloc.where(apcode: measurement_apcode).first]
     mlocs.each do |mloc|
-      puts "-"*50
+      # puts "-"*50
       segment_name = mloc.scada_measurements.first.segment_name
-      # data[:apcode_segment_name] = "#{measurement_apcode}-#{segment_name}"
-      puts "---apcode/segment_name: #{measurement_apcode}-#{segment_name}"
-      source = mloc.scada_measurements.first.scada_measurement_sources.where(calc_period: "1m").first
+      # puts "---apcode/segment_name: #{measurement_apcode}-#{segment_name}"
+      source = mloc.scada_measurements.first.scada_measurement_sources.where(calc_period: calc_period).first
       if source.present? && source.scada_events.count > 0
-        puts "---source: #{source.inspect}"
-        puts "---events: #{source.scada_events.count}"
+        # puts "---source: #{source.inspect}"
+        # puts "---events: #{source.scada_events.count}"
         data[measurement_apcode] = {
           mloc_uuid: mloc.uuid,
           apcode: measurement_apcode,
@@ -79,31 +78,31 @@ def write_to_csv(filename, headers, data_rows)
 end
 
 
-def get_events_data()
+def get_events_data(calc_period)
   measurement_apcodes = ScadaEvent.pluck(:measurement_apcode).uniq
-  apcode_data = get_first_apcode_data(measurement_apcodes)
+  apcode_data = get_first_apcode_data(measurement_apcodes, calc_period)
 
   headers = ['Field Name']
   data_rows = []
 
   apcode_data.each_with_index do |apcode_datum, i|
     i = i+1
-    puts "apcode: #{apcode_datum.inspect}, i: #{i}"
+    # puts "apcode: #{apcode_datum.inspect}, i: #{i}"
 
-    puts "---apcode_datum[:mloc_uuid]: #{apcode_datum[1][:mloc_uuid]}"
+    # puts "---apcode_datum[:mloc_uuid]: #{apcode_datum[1][:mloc_uuid]}"
 
     mloc = ScadaMloc.find_by_uuid(apcode_datum[1][:mloc_uuid])
     segment = mloc.scada_segment
     measurement = mloc.scada_measurements.first
     source = measurement.scada_measurement_sources.where(uuid: apcode_datum[1][:source_uuid]).first
-    puts "---source: #{source.inspect}"
+    # puts "---source: #{source.inspect}"
     events = source.scada_events
-    puts "---events.count: #{events.count}"
+    # puts "---events.count: #{events.count}"
     event_vals = events.map(&:val)
 
     statistics = calculate_statistics(event_vals)
-    puts "---------statistics: #{statistics}"
-    puts "---statistics == [nil, nil, nil, nil, nil]: #{statistics == [nil, nil, nil, nil, nil]}"
+    # puts "---------statistics: #{statistics}"
+    # puts "---statistics == [nil, nil, nil, nil, nil]: #{statistics == [nil, nil, nil, nil, nil]}"
     if statistics == [nil, nil, nil, nil, nil]
       next
     end
@@ -133,7 +132,7 @@ def get_events_data()
       data_rows[index][i] = value
     end
 
-    puts "---statistics: #{statistics.inspect}"
+    # puts "---statistics: #{statistics.inspect}"
     stat_rows = [
       statistics[:min], statistics[:nonzero_min], 
       statistics[:max], statistics[:mean], statistics[:median]
@@ -152,17 +151,19 @@ def get_events_data()
   [headers, data_rows]
 end
 
+def execute(calc_period)
+  results = get_events_data(calc_period)
+  headers = results[0] 
+  data_rows = results[1]
+  filename = "output/combined_stats_#{calc_period}.csv"
+  write_to_csv(filename, headers, data_rows)
+end
+
+#########
 start_time = Time.now
-results = get_events_data()
-headers = results[0] 
-data_rows = results[1]
-# Write to a single CSV file
-filename = "output/combined_stats.csv"
-puts "headers: #{headers.inspect}"
-# puts "data_rows: #{data_rows.inspect}"
-write_to_csv(filename, headers, data_rows)
 
-end_time = Time.now
-total_time = end_time - start_time
-puts "runtime: #{total_time} seconds"
+# calc_periods = ['1s', '1m', '5m', '60m', '1d', '1mo', '1y']
+calc_periods = ['1m', '5m']
+calc_periods.each { |calc_period| execute(calc_period) }
 
+puts "runtime: #{Time.now - start_time} seconds"
