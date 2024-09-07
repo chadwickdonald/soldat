@@ -108,7 +108,7 @@ def get_events_data(calc_period)
     end
     sorted_events = events.sort_by { |event| event.date }
     apcode = apcode_datum[0]
-    headers << apcode
+    headers << measurement.name
 
     details = {
       eng_unit: source.eng_unit,
