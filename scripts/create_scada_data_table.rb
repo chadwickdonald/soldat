@@ -20,150 +20,162 @@ def calculate_statistics(data)
   {min: min, nonzero_min: nonzero_min, max: max, mean: mean, median: median}
 end
 
-def get_all_apcode_data(measurement_apcodes)
-  data = {}
-  measurement_apcodes.each do |measurement_apcode|
-    puts "*"*100
-    mlocs = ScadaMloc.where(apcode: measurement_apcode)
-    mlocs.each do |mloc|
-      puts "-"*50
-      segment_name = mloc.scada_measurements.first.segment_name
-      data[:apcode_segment_name] = "#{measurement_apcode}-#{segment_name}"
-      puts "---apcode/segment_name: #{measurement_apcode}-#{segment_name}"
-      sources = mloc.scada_measurements.first.scada_measurement_sources.where(calc_period: "1m")
-      unless sources.empty?
-        sources.each do |source|
-          puts "---source: #{source.inspect}"
+def get_details(mloc, measurement_source)
+  segment = mloc.scada_segment
+  measurement = mloc.scada_measurements.first
+  source = measurement_source
+  details = {
+    "Engineering Unit": source.eng_unit,
+    "Calc Period": source.calc_period,
+    "Segment Name": segment ? segment.name : 'Unknown Segment',
+    "Segment Apcode": segment ? segment.apcode : 'Unknown ApCode',
+    "Mloc Name": mloc ? mloc.name : 'Unknown MlocName',
+    "Mloc apcode": mloc ? mloc.apcode : 'Unknown MlocApCode',
+    "Measurement name": measurement.name,
+    "Measurement apcode": measurement.apcode,
+    "Source uuid": source.uuid,
+    "Site id": segment.site_id
+  }
+  details
+end
+
+
+def get_mloc_data_from_apcode(apcode, calc_period, headers)
+  mlocs = ScadaMloc.where(apcode: apcode)
+
+  data = []
+
+  mlocs.each do |mloc|
+    measurement = mloc.scada_measurements.first
+    sources = measurement.scada_measurement_sources
+    segment = mloc.scada_segment
+    param_name = "#{mloc.name}-#{measurement.segment_name}-#{calc_period}"
+
+    # headers << "#{mloc.name}-#{mloc.scada_measurements.first.segment_name}"
+
+    sources.each do |source|
+      puts "---source.id: #{source.id}"
+      if source.calc_period == calc_period
+        if source.scada_events.count == 0
+          puts "---#{source.scada_measurement.name} has no events"
+          next
+        end
+        headers << "#{mloc.name}-#{mloc.scada_measurements.first.segment_name}"
+        events = source.scada_events
+        event_vals = events.map(&:val)
+        sorted_events = events.sort_by { |event| event.date }
+
+        puts "---sorted_events.count: #{sorted_events.count}"
+
+        statistics = calculate_statistics(event_vals)
+        details = get_details(mloc, source)
+
+        param_data = {}
+        param_data[:param_name] = param_name
+        param_data[:details] = details
+        param_data[:stats] = statistics
+        param_data[:events] = sorted_events
+        data << param_data
+      else
+        puts "---#{source.scada_measurement.name} has no 1m events, probably has 5m events"
+      end
+    end
+  end
+  {:data => data, :headers => headers}
+end
+
+# Prepare to write this data into a CSV
+def build_csv(data, file_name)
+  puts "---build_csv"
+  # puts "----data: #{data}"
+
+  # Prepare to write this data into a CSV
+  CSV.open(file_name, "wb") do |csv|
+    # Collect headers (flatten across multiple data sections)
+    headers = ['Field Name'] + data.flat_map { |section| section[:data].map { |d| d[:param_name] } }.uniq
+    csv << headers  # Write the headers as the first row
+
+    # Write details rows
+    details_keys = data.first[:data].first[:details].keys
+    details_keys.each do |key|
+      row = [key]  # Start with the key as the first column
+      data.each do |section|
+        section[:data].each do |d|
+          row << d[:details][key] # Add the corresponding details value
+        end
+      end
+      csv << row  # Write the row for this detail key
+    end
+
+    # Write stats rows
+    stats_keys = data.first[:data].first[:stats].keys
+    stats_keys.each do |key|
+      row = [key]  # Start with the key as the first column
+      data.each do |section|
+        section[:data].each do |d|
+          row << d[:stats][key] # Add the corresponding stats value
+        end
+      end
+      csv << row  # Write the row for this stat key
+    end
+
+    # Now, handle the events
+    events_by_date = {}
+
+    # Collect events by date
+    data.each do |section|
+      section[:data].each do |d|
+        next if d[:events].nil? || d[:events].empty?
+
+        d[:events].each do |event|
+          date = event[:date]
+          events_by_date[date] ||= Array.new(headers.size - 1, '') # Initialize with empty cells for each column
+          param_index = headers.index(d[:param_name])
+          events_by_date[date][param_index - 1] = event[:val] if param_index # Add event value to the correct column
         end
       end
     end
-  end
-end
 
-def get_first_apcode_data(measurement_apcodes, calc_period)
-  # puts "---measurement_apcodes: #{measurement_apcodes}"
-  data = {}
-  measurement_apcodes.each do |measurement_apcode|
-    mlocs = [ScadaMloc.where(apcode: measurement_apcode).first]
-    mlocs.each do |mloc|
-      # puts "-"*50
-      segment_name = mloc.scada_measurements.first.segment_name
-      # puts "---apcode/segment_name: #{measurement_apcode}-#{segment_name}"
-      source = mloc.scada_measurements.first.scada_measurement_sources.where(calc_period: calc_period).first
-      if source.present? && source.scada_events.count > 0
-        # puts "---source: #{source.inspect}"
-        # puts "---events: #{source.scada_events.count}"
-        data[measurement_apcode] = {
-          mloc_uuid: mloc.uuid,
-          apcode: measurement_apcode,
-          segment_name: segment_name,
-          source_uuid: source.uuid,
-          events: source.scada_events.count
-        }
-      end
+    # Write the event rows
+    events_by_date.each do |date, values|
+      csv << [date] + values.map { |v| v.nil? ? '' : v } # Ensure proper alignment
     end
   end
-  # puts "---data: #{data.inspect}"
-  data
 end
-
-def write_to_csv(filename, headers, data_rows)
-  CSV.open(filename, 'wb') do |csv|
-    # Write headers
-    csv << headers
-
-    # Write data rows
-    data_rows.each { |row| csv << row }
-  end
-end
-
 
 def get_events_data(calc_period)
+  puts "---get_events_data"
   measurement_apcodes = ScadaEvent.pluck(:measurement_apcode).uniq
-  apcode_data = get_first_apcode_data(measurement_apcodes, calc_period)
+  # measurement_apcodes = ["PPCLineVoltageTr2", "PPCReactivePowerTr2", "PPCFrequencyFTr2"]
 
+  data = []
   headers = ['Field Name']
-  data_rows = []
 
-  apcode_data.each_with_index do |apcode_datum, i|
+  measurement_apcodes.each_with_index do |apcode, i|
     i = i+1
-    # puts "apcode: #{apcode_datum.inspect}, i: #{i}"
-
-    # puts "---apcode_datum[:mloc_uuid]: #{apcode_datum[1][:mloc_uuid]}"
-
-    mloc = ScadaMloc.find_by_uuid(apcode_datum[1][:mloc_uuid])
-    segment = mloc.scada_segment
-    measurement = mloc.scada_measurements.first
-    source = measurement.scada_measurement_sources.where(uuid: apcode_datum[1][:source_uuid]).first
-    # puts "---source: #{source.inspect}"
-    events = source.scada_events
-    # puts "---events.count: #{events.count}"
-    event_vals = events.map(&:val)
-
-    statistics = calculate_statistics(event_vals)
-    # puts "---------statistics: #{statistics}"
-    # puts "---statistics == [nil, nil, nil, nil, nil]: #{statistics == [nil, nil, nil, nil, nil]}"
-    if statistics == [nil, nil, nil, nil, nil]
-      next
-    end
-    sorted_events = events.sort_by { |event| event.date }
-    apcode = apcode_datum[0]
-    headers << measurement.name
-
-    details = {
-      eng_unit: source.eng_unit,
-      calc_period: source.calc_period, 
-      segment_name: segment ? segment.name : 'Unknown Segment', 
-      segment_apcode: segment ? segment.apcode : 'Unknown ApCode', 
-      mloc_name: mloc ? mloc.name : 'Unknown MlocName', 
-      mloc_apcode: mloc ? mloc.apcode : 'Unknown MlocApCode', 
-      measurement_name: measurement.name, 
-      measurement_apcode: measurement.apcode, 
-      source_uuid: source.uuid, 
-      site_id: segment.site_id
-    }
-
-    if data_rows.empty?
-      details.each { |key, value| data_rows << [key.to_s] }
-      statistics.each { |key, value| data_rows << [key.to_s] }
-    end
-
-    details.values.each_with_index do |value, index|
-      data_rows[index][i] = value
-    end
-
-    # puts "---statistics: #{statistics.inspect}"
-    stat_rows = [
-      statistics[:min], statistics[:nonzero_min], 
-      statistics[:max], statistics[:mean], statistics[:median]
-    ]
-    stat_rows.each_with_index do |value, index|
-      data_rows[index + details.size][i] = value
-    end
-
-    sorted_events.each_with_index do |event, index|
-      row = data_rows[details.size + 5 + index] || ['', '']
-      row[0] = event.date
-      row[i] = event.val
-      data_rows[details.size + 5 + index] = row
-    end
+    puts "APCODE and INDEX: #{apcode.inspect}, i: #{i}"
+    data << get_mloc_data_from_apcode(apcode, calc_period, headers)
   end
-  [headers, data_rows]
+  data.flatten
 end
 
 def execute(calc_period)
+  puts "---execute, calc_period: #{calc_period}"
   results = get_events_data(calc_period)
-  headers = results[0] 
-  data_rows = results[1]
-  filename = "output/combined_stats_#{calc_period}.csv"
-  write_to_csv(filename, headers, data_rows)
+  # puts "---results: #{results}"
+  headers = results.first[:headers]
+  # puts "---headers: #{headers}"
+  data = results
+
+  file_name = "output/combined_stats5_#{calc_period}.csv"
+  build_csv(data, file_name)
 end
 
 #########
 start_time = Time.now
 
-# calc_periods = ['1s', '1m', '5m', '60m', '1d', '1mo', '1y']
-calc_periods = ['1m', '5m']
+# calc_periods = ['1m', '5m']
+calc_periods = ['1m']
+# calc_periods = ['5m']
 calc_periods.each { |calc_period| execute(calc_period) }
-
 puts "runtime: #{Time.now - start_time} seconds"
