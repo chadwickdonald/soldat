@@ -96,6 +96,11 @@ def build_csv(data, file_name)
     csv << headers  # Write the headers as the first row
 
     # Write details rows
+    # puts "---data: #{data.inspect}"
+    if data.first[:data].empty?
+      puts "---NO DATA"
+      return
+    end
     details_keys = data.first[:data].first[:details].keys
     details_keys.each do |key|
       row = [key]  # Start with the key as the first column
@@ -146,7 +151,8 @@ end
 def get_events_data(calc_period)
   puts "---get_events_data"
   measurement_apcodes = ScadaEvent.pluck(:measurement_apcode).uniq
-  # measurement_apcodes = ["PPCLineVoltageTr2", "PPCReactivePowerTr2", "PPCFrequencyFTr2"]
+  # measurement_apcodes = ["PPCLineVoltageTr2", "PPCReactivePowerTr2", "PPCFrequencyFTr2"] # 1m
+  # measurement_apcodes = ['ModuleTemperature2', 'InclIrradiance'] # 5m
 
   data = []
   headers = ['Field Name']
@@ -174,8 +180,8 @@ end
 #########
 start_time = Time.now
 
-# calc_periods = ['1m', '5m']
-calc_periods = ['1m']
+calc_periods = ['1m', '5m']
+# calc_periods = ['1m']
 # calc_periods = ['5m']
 calc_periods.each { |calc_period| execute(calc_period) }
 puts "runtime: #{Time.now - start_time} seconds"
