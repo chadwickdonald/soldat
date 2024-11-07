@@ -10,9 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_08_21_205238) do
+ActiveRecord::Schema[7.0].define(version: 2024_11_06_215500) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "field_aliases", force: :cascade do |t|
+    t.string "enthasys_id"
+    t.integer "scada_measurement_id"
+    t.string "measurement_type"
+    t.string "engineering_unit"
+    t.string "station_type"
+    t.string "station_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "projects", force: :cascade do |t|
     t.string "project", null: false
