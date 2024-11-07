@@ -1,18 +1,4 @@
-# Sample input data
-data = {
-  'Field Name' => 'Ambient Temperature (1m)-MET.028-1m',
-  'Engineering Unit' => 'C',
-  'Calc Period' => '1m',
-  'Segment Name' => 'MET.028',
-  'Segment Apcode' => 'WeatherStation',
-  'Mloc Name' => 'Ambient Temperature (1m)',
-  'Mloc apcode' => 'AmbientAirTemperatureTr2',
-  'Measurement name' => 'Ambient Temperature (1m)',
-  'Measurement apcode' => 'AmbientAirTemperatureTr2',
-  'Source uuid' => 'b68cb0a8-8854-11ee-a4ff-42010afa015a',
-  'Site id' => '5658d43-0ffd-42b4-a4e4-d3b808e85087'
-}
-
+require_relative '../../config/environment'
 
 def extract_number(string)
   match = string.match(/(\d+)(?!m)/)
@@ -96,15 +82,42 @@ def categorize_data(data, rules)
   categorized_data
 end
 
+def create_field_alias(measurement, categorized_data)
+  field_alias = FieldAlias.create(
+    scada_measurement: measurement,
+    enthasys_id: nil,
+    measurement_type: categorized_data['Measurement Type'],
+    engineering_unit: categorized_data['Engineering Unit'],
+    station_type: categorized_data['Station Type'],
+    station_id: categorized_data['Station Id']
+  )
+end
 
-# Apply categorization
+
+########################
+
+# Sample input data
+data = {
+  'Field Name' => 'Ambient Temperature (1m)-MET.028-1m',
+  'Engineering Unit' => 'C',
+  'Calc Period' => '1m',
+  'Segment Name' => 'MET.028',
+  'Segment Apcode' => 'WeatherStation',
+  'Mloc Name' => 'Ambient Temperature (1m)',
+  'Mloc apcode' => 'AmbientAirTemperatureTr2',
+  'Measurement name' => 'Ambient Temperature (1m)',
+  'Measurement apcode' => 'AmbientAirTemperatureTr2',
+  'Source uuid' => 'b68cb0a8-8854-11ee-a4ff-42010afa015a',
+  'Site id' => '5658d43-0ffd-42b4-a4e4-d3b808e85087'
+}
+
+measurement = ScadaMeasurement.find(172)
 categorized_data = categorize_data(data, MEASUREMENT_TYPE_FILTER_RULES)
+field_alias = create_field_alias(measurement, categorized_data)
 
+puts "---field_alias: #{field_alias.inspect}"
 # # Output the result
 # puts "Categorized Data:"
 # categorized_data.each do |key, value|
 #   puts "#{key}: #{value}"
 # end
-
-
-
