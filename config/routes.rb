@@ -24,4 +24,17 @@ Rails.application.routes.draw do
       post :import
     end
   end
+
+  namespace :api do
+    namespace :v1 do
+      resources :scada_organizations do
+        resources :scada_sites, only: [:index, :show]
+      end
+      # resources :scada_events
+      # resources :scada_measurements
+      # resources :scada_measurement_sources
+      # ... other resources
+    end
+  end
+
 end
