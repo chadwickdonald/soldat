@@ -1,6 +1,7 @@
 module Api
   module V1
     class ScadaEventsController < ApplicationController
+    	include ExceptionHandler
       before_action :set_scada_measurement_source
 
       def index

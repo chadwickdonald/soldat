@@ -1,6 +1,7 @@
 module Api
   module V1
     class ScadaMlocsController < ApplicationController
+      include ExceptionHandler
       before_action :set_scada_segment
 
       def index
