@@ -1,0 +1,13 @@
+one:
+  id: 1
+  name: "Test Organization One"
+  city: "Test City"
+  state: "Test State"
+  uuid: "123e4567-e89b-12d3-a456-426614174000"
+
+two:
+  id: 2
+  name: "Test Organization Two"
+  city: "Another City"
+  state: "Another State"
+  uuid: "123e4567-e89b-12d3-a456-426614174001"
