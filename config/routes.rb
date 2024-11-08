@@ -28,12 +28,18 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :scada_organizations do
-        resources :scada_sites, only: [:index, :show]
+        resources :scada_sites, only: [:index, :show] do
+          resources :scada_segments, only: [:index, :show] do
+            resources :scada_mlocs, only: [:index, :show] do
+              resources :scada_measurements, only: [:index, :show] do
+                resources :scada_measurement_sources, only: [:index, :show] do
+                  resources :scada_events, only: [:index, :show]
+                end
+              end
+            end
+          end
+        end
       end
-      # resources :scada_events
-      # resources :scada_measurements
-      # resources :scada_measurement_sources
-      # ... other resources
     end
   end
 
