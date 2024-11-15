@@ -20,10 +20,10 @@ class FieldRenamer
 	}
 
 	STATION_TYPE = {
-	  meter: 'Main Meter',
+	  meter: 'Main Meter', # Revenue Meter?
 	  pv: 'PV Inverter station / PV Array',
 	  met: 'Met Station',
-	  ppc: 'Power Plant Controller',
+	  ppc: 'Power Plant Controller', # PPC?
 	  na: nil
 	}
 
@@ -34,7 +34,7 @@ class FieldRenamer
 
 	MEASUREMENT_TYPE_FILTER_RULES = {
 	  ['W', 'KW', 'kW', 'MW', 'kilowatt', 'Watt', 'Megawatt'] =>                 [MEASUREMENT_TYPE[:pmp], ENG_UNIT[:watt], STATION_TYPE[:na], STATION_NUMBER[:no]],
-	  ['meter', 'main power', 'revenue'] =>                                      [MEASUREMENT_TYPE[:pmp], ENG_UNIT[:na], STATION_TYPE[:meter], STATION_NUMBER[:no]],
+	  ['meter', 'main power', 'revenue', ' P '] =>                               [MEASUREMENT_TYPE[:pmp], ENG_UNIT[:na], STATION_TYPE[:meter], STATION_NUMBER[:no]],
 	  ['AC kW','MW', 'Watts'] =>                                                 [MEASUREMENT_TYPE[:pmp], ENG_UNIT[:watt], STATION_TYPE[:na], STATION_NUMBER[:yes]],
 	  ['DC kW', 'DC MW', 'DC Watts'] =>                                          [MEASUREMENT_TYPE[:pmp], ENG_UNIT[:watt], STATION_TYPE[:na], STATION_NUMBER[:no]],
 	  ['inverter', 'inv', 'PV', 'solar', 'station', 'pad'] =>                    [MEASUREMENT_TYPE[:pva], ENG_UNIT[:na], STATION_TYPE[:pv], STATION_NUMBER[:yes]],
@@ -45,7 +45,7 @@ class FieldRenamer
 	  ['V', 'Volts', 'kV', 'MV'] =>                                              [MEASUREMENT_TYPE[:pmp], ENG_UNIT[:volt], STATION_TYPE[:na], STATION_NUMBER[:no]],
 	  ['A', 'amps', 'amperage'] =>                                               [MEASUREMENT_TYPE[:pmp], ENG_UNIT[:amp], STATION_TYPE[:na], STATION_NUMBER[:no]],
 	  ['VA', 'kVA', 'MVA', 'apparent', 'app'] =>                                 [MEASUREMENT_TYPE[:ppc], ENG_UNIT[:kva], STATION_TYPE[:na], STATION_NUMBER[:no]],
-	  ['VAR', 'kVAR', 'MVAR', 'reactive', 'react power'] =>                      [MEASUREMENT_TYPE[:ppc], ENG_UNIT[:var], STATION_TYPE[:na], STATION_NUMBER[:no]]
+	  ['VAR', 'kVAR', 'MVAR', 'reactive', 'react power', ' Q '] =>               [MEASUREMENT_TYPE[:ppc], ENG_UNIT[:var], STATION_TYPE[:na], STATION_NUMBER[:no]]
 	}
 
 	def initialize(data)
