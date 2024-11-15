@@ -27,13 +27,15 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
+      post 'scada_events', to: 'scada_events#index'
       resources :scada_organizations do
         resources :scada_sites, only: [:index, :show] do
           resources :scada_segments, only: [:index, :show] do
             resources :scada_mlocs, only: [:index, :show] do
               resources :scada_measurements, only: [:index, :show] do
                 resources :scada_measurement_sources, only: [:index, :show] do
-                  resources :scada_events, only: [:index, :show]
+                  resources :scada_events, only: [:index, :show] do
+                  end
                 end
               end
             end
