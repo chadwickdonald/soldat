@@ -22,3 +22,8 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+* api key generation
+# require 'securerandom'
+# api_key = SecureRandom.hex(20) # Generates a 40-character hexadecimal key
+# puts api_key
