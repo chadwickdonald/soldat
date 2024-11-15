@@ -1,0 +1,15 @@
+one:
+  id: 1
+  scada_organization: 1
+  name: "Site T3"
+  longitude: "-96.2358202"
+  latitude: "29.0194005"
+  uuid: "123e4567-e89b-12d3-a456-426614174002"
+
+two:
+  id: 2
+  scada_organization: 2
+  name: "Site T4"
+  longitude: "29.0194005"
+  latitude: "-96.2358202"
+  uuid: "123e4567-e89b-12d3-a456-426614174003"
