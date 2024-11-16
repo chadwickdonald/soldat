@@ -1,7 +1,7 @@
 class CreateScadaMeasurements < ActiveRecord::Migration[7.0]
   def change
     create_table :scada_measurements do |t|
-    	t.string :mloc_id
+      t.string :mloc_id
       t.string :apcode
       t.string :uuid
       t.string :name
