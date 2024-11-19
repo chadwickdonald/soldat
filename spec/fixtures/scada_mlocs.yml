@@ -1,0 +1,9 @@
+one:  
+  id: 1
+  segment_id: "9b182fdc-8854-11ee-a4ff-42010afa015a"
+  apcode: "AmbientAirTemperatureTr2"
+  uuid: "b68cadd8-8854-11ee-a4ff-42010afa015a"
+  name: "Ambient Temperature (1m)"
+  sscode: nil
+  uri: "http://portal.solarpark-online.com/ifms/mlocs/b68cadd8-8854-11ee-a4ff-42010afa015a"
+  measurementTypeId: "3074ed1f-8264-11de-ad55-0090f586a869"

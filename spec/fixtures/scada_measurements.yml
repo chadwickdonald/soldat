@@ -1,0 +1,21 @@
+one:
+   id: 1,
+   mloc_id: "b68cadd8-8854-11ee-a4ff-42010afa015a"
+   apcode: "AmbientAirTemperatureTr2"
+   uuid: "b68cadd8-8854-11ee-a4ff-42010afa015a"
+   name: "Ambient Temperature (1m)"
+   rcv: false
+   measure_type_id: "3074ed1f-8264-11de-ad55-0090f586a869"
+   measure_type_apcode: "Temp"
+   measure_type_data_type: "Float"
+   measure_type_name: "Temperature"
+   measure_type_uri: "http://portal.solarpark-online.com/ifms/measureTypes/3074ed1f-8264-11de-ad55-0090f586a869"
+   segment_id: "9b182fdc-8854-11ee-a4ff-42010afa015a"
+   segment_apcode: "WeatherStation"
+   segment_apcode_idx: 2
+   segment_name: "MET.028"
+   segment_uri: "http://portal.solarpark-online.com/ifms/segments/9b182fdc-8854-11ee-a4ff-42010afa015a"
+   monitor_eng_unit: nil
+   monitor: nil
+   monitor_status: nil
+   monitor_uri: nil

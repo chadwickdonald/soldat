@@ -1,0 +1,15 @@
+one:
+   id: 1,
+   scada_measurement_id: 172
+   uuid: "b68cb0a8-8854-11ee-a4ff-42010afa015a"
+   calc_period: "1m"
+   calc_time_span_count: 1
+   calc_time_span_mode: "fixed-time-span"
+   manual_ingest: false
+   eng_unit: "C"
+   quality: nil
+   range: nil
+   uri: "http://portal.solarpark-online.com/ifms/sources/b68cb0a8-8854-11ee-a4ff-42010afa015a"
+   calc_type_apcode: "TimeSeriesAverage"
+   date: Thu, 13 Jun 2024 06:15:01.000000000 UTC +00:00
+   val: 0.24799999237060547e2
