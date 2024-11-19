@@ -46,8 +46,8 @@ module Api
         segment = site.scada_segments.find_by_uuid(scada_segment_uuid)
         mloc = segment.scada_mlocs.find_by_uuid(scada_mloc_uuid)
         measurement = mloc.scada_measurements.find_by_uuid(scada_measurement_uuid)
-        source = measurement.scada_measurement_sources.find_by_uuid(scada_measurement_source_uuid)
-        events = source.scada_events.where('date >= ?', start_time)
+        measurement_source = measurement.scada_measurement_sources.find_by_uuid(scada_measurement_source_uuid)
+        events = measurement_source.scada_events.where('date >= ?', start_time)
                                     .where('date <= ?', end_time)
 
         render json: events

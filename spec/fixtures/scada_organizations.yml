@@ -3,11 +3,13 @@ one:
   name: "Test Organization One"
   city: "Test City"
   state: "Test State"
-  uuid: "123e4567-e89b-12d3-a456-426614174000"
+  address: "123 Fake St."
+  uuid: "57208d3d-4c02-4aeb-91ab-7f9f064196fb"
 
 two:
   id: 2
   name: "Test Organization Two"
   city: "Another City"
   state: "Another State"
+  address: "456 Dumb St."
   uuid: "123e4567-e89b-12d3-a456-426614174001"

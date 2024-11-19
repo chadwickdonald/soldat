@@ -1,6 +1,6 @@
 one:
    id: 1,
-   scada_measurement_id: 172
+   scada_measurement_id: 1
    uuid: "b68cb0a8-8854-11ee-a4ff-42010afa015a"
    calc_period: "1m"
    calc_time_span_count: 1
