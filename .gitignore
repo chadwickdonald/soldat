@@ -48,3 +48,5 @@ scripts/ignored_files/
 # output files
 scripts/output/
 
+# env file
+.env

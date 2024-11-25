@@ -62,6 +62,7 @@ group :development, :test do
   gem "byebug"
   gem "sqlite3", "<= 1.4"
   gem 'rails-erd'
+  gem 'dotenv-rails'
 end
 
 group :development do
