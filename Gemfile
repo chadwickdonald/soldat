@@ -48,8 +48,8 @@ gem "jquery-rails"
 gem "bootstrap"
 gem 'caxlsx'
 gem 'rubyzip', '~> 2.0'
-
-gem "sidekiq", "~> 7.1"
+gem 'sidekiq', "~> 7.1"
+gem 'sidekiq-cron'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"

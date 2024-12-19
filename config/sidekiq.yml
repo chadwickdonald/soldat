@@ -1,0 +1,8 @@
+:concurrency: 5
+:queues:
+  - default
+
+:schedule:
+  midnight_task:
+    cron: "0 0 * * *" # Midnight every day
+    class: "GetPowerfactorsDataJob"
