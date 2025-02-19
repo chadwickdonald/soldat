@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://portal.solarpark-online.com/ifms/agents/4b5dc3b7-4ea5-4ed4-a32b-a78645085104/sites
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/json
+      User-Agent:
+      - Ruby
+      Host:
+      - portal.solarpark-online.com
+      Api-Key:
+      - "<SCADA_API_KEY>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.27.3
+      Date:
+      - Thu, 06 Feb 2025 19:48:12 GMT
+      Content-Type:
+      - application/json
+      Vary:
+      - Accept-Encoding
+      Cache-Control:
+      - no-cache
+      - private
+      Expires:
+      - Thu, 06 Feb 2025 19:48:11 GMT
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"id":"25658d43-0ffd-42b4-a4e4-d3b808e85087","name":"Danish Fields
+        - T3","properties":{"Timezone":"US/Central","Address":null,"Latitude":"29.0194005","TestResults":null,"CRMID":"","TypeOfProject":"Production","NumberOfControllers":null,"ACLoad":"Yes","CabinsDesigns":null,"RNOCTestsEndDate":null,"AddressZIPCode":"77437","ActivationDate":null,"PowerSourceProvision":null,"GridConnected":"Yes","PlantDesigner":"Rosendin","TypeOfPlant":"Grid-connected","City":"El
+        Campo","Longitude":"-96.2358202","CabinGroup":null,"PlantOperator":"TOTAL
+        ","InstallationImplementor":null,"MaintenanceContractor":null,"Country":"United
+        States","District":null,"MaintenanceDate":null,"Contract":null,"TelcoArea":null,"ODSSPresence":null,"DSLAMCode":null,"ODSSActive":null,"RelatedMarketSite":null,"Information":null,"RecordingPeriod":"5m","NumberOfActiveEquipment":null,"MarketTimezone":null,"AdminRegion":null,"TechDepartment":null,"CabinVendor":null,"ActivationDateNMS":null,"PlantInstaller":"Rosendin","CabinType":null,"CabinKVNumber":null,"Portfolio":"TOTAL","WarrantyExpirationDate":null,"Severity":null,"TypicalUse":"Power
+        station","RNOCNotificationDate":null,"NumOfTCPs":"74","Serial":null,"SubTypes":"PV,BESS,Hybrid","DSLAMNetworkIPAddress":null,"AddressStreet":"11000
+        Country Rd. 403","EETTCode":null,"AvailableCalculationPeriods":"1s,1m,60m,1mo,Variant,1d,1y,5m","Altitude":"1003"},"state":"online","uri":"http://portal.solarpark-online.com/ifms/sites/25658d43-0ffd-42b4-a4e4-d3b808e85087","siteTypeApcode":"Hybrid","enterprise":{"uri":"http://portal.solarpark-online.com/ifms/enterprises/fd054d7d-86c2-4c92-828f-747a68e68e0c","name":"TotalEnergies
+        Renewables USA, LLC","id":"fd054d7d-86c2-4c92-828f-747a68e68e0c"}},{"id":"01b66255-c94a-44b3-a5ba-540850108e26","name":"Danish
+        Fields - T1","properties":{"Timezone":"US/Central","Address":null,"Latitude":"29.013637","TestResults":null,"CRMID":"","TypeOfProject":"Production","NumberOfControllers":null,"ACLoad":"Yes","CabinsDesigns":null,"RNOCTestsEndDate":null,"AddressZIPCode":"77437","ActivationDate":null,"PowerSourceProvision":null,"GridConnected":"Yes","PlantDesigner":"Rosendin","TypeOfPlant":"Grid-connected","City":"El
+        Campo","Longitude":"-96.220536","CabinGroup":null,"PlantOperator":"TOTAL ","InstallationImplementor":null,"MaintenanceContractor":null,"Country":"United
+        States","District":null,"MaintenanceDate":null,"Contract":null,"TelcoArea":null,"ODSSPresence":null,"DSLAMCode":null,"ODSSActive":null,"RelatedMarketSite":null,"Information":null,"RecordingPeriod":"5m","NumberOfActiveEquipment":null,"MarketTimezone":null,"AdminRegion":null,"TechDepartment":null,"CabinVendor":null,"ActivationDateNMS":null,"PlantInstaller":"Rosendin","CabinType":null,"CabinKVNumber":null,"Portfolio":"TOTAL","WarrantyExpirationDate":null,"Severity":null,"TypicalUse":"Power
+        station","RNOCNotificationDate":null,"NumOfTCPs":"92","Serial":null,"SubTypes":"PV","DSLAMNetworkIPAddress":null,"AddressStreet":"11000
+        Country Rd. 403","EETTCode":null,"AvailableCalculationPeriods":"1s,1m,60m,1mo,Variant,1d,1y,5m","Altitude":"1003"},"state":"online","uri":"http://portal.solarpark-online.com/ifms/sites/01b66255-c94a-44b3-a5ba-540850108e26","siteTypeApcode":"PVPlant","enterprise":{"uri":"http://portal.solarpark-online.com/ifms/enterprises/fd054d7d-86c2-4c92-828f-747a68e68e0c","name":"TotalEnergies
+        Renewables USA, LLC"}}]'
+  recorded_at: Thu, 06 Feb 2025 19:48:12 GMT
+recorded_with: VCR 6.3.1
