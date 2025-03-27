@@ -1,0 +1,43 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://portal.solarpark-online.com/ifms/agents/4b5dc3b7-4ea5-4ed4-a32b-a78645085104/sites
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - portal.solarpark-online.com
+      Api-Key:
+      - invalid_key
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Server:
+      - nginx/1.27.3
+      Date:
+      - Thu, 27 Mar 2025 04:41:18 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '50'
+      Cache-Control:
+      - private, no-cache, no-store, no-transform, max-age=0
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"Message":"Agent is Unauthorized","Status":"401"}'
+  recorded_at: Thu, 27 Mar 2025 04:41:18 GMT
+recorded_with: VCR 6.3.1

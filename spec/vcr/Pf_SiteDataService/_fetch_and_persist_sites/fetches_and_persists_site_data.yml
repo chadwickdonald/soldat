@@ -1,0 +1,114 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://portal.solarpark-online.com/ifms/agents/4b5dc3b7-4ea5-4ed4-a32b-a78645085104/sites
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - portal.solarpark-online.com
+      Api-Key:
+      - "<SCADA_API_KEY>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.27.3
+      Date:
+      - Thu, 27 Mar 2025 04:41:18 GMT
+      Content-Type:
+      - application/json
+      Vary:
+      - Accept-Encoding
+      Cache-Control:
+      - no-cache
+      - private
+      Expires:
+      - Thu, 27 Mar 2025 04:41:17 GMT
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"id":"01b66255-c94a-44b3-a5ba-540850108e26","name":"Danish Fields
+        - T1","properties":{"Timezone":"US/Central","Address":null,"Latitude":"29.013637","TestResults":null,"CRMID":"","TypeOfProject":"Production","NumberOfControllers":null,"ACLoad":"Yes","CabinsDesigns":null,"RNOCTestsEndDate":null,"AddressZIPCode":"77437","ActivationDate":null,"PowerSourceProvision":null,"GridConnected":"Yes","PlantDesigner":"Rosendin","TypeOfPlant":"Grid-connected","City":"El
+        Campo","Longitude":"-96.220536","CabinGroup":null,"PlantOperator":"TOTAL ","InstallationImplementor":null,"MaintenanceContractor":null,"Country":"United
+        States","District":null,"MaintenanceDate":null,"Contract":null,"TelcoArea":null,"ODSSPresence":null,"DSLAMCode":null,"ODSSActive":null,"RelatedMarketSite":null,"Information":null,"RecordingPeriod":"5m","NumberOfActiveEquipment":null,"MarketTimezone":null,"AdminRegion":null,"TechDepartment":null,"CabinVendor":null,"ActivationDateNMS":null,"PlantInstaller":"Rosendin","CabinType":null,"CabinKVNumber":null,"Portfolio":"TOTAL","WarrantyExpirationDate":null,"Severity":null,"TypicalUse":"Power
+        station","RNOCNotificationDate":null,"NumOfTCPs":"92","Serial":null,"SubTypes":"PV","DSLAMNetworkIPAddress":null,"AddressStreet":"11000
+        Country Rd. 403","EETTCode":null,"AvailableCalculationPeriods":"1s,1m,60m,1mo,Variant,1d,1y,5m","Altitude":"1003"},"state":"online","uri":"http://portal.solarpark-online.com/ifms/sites/01b66255-c94a-44b3-a5ba-540850108e26","siteTypeApcode":"PVPlant","enterprise":{"uri":"http://portal.solarpark-online.com/ifms/enterprises/fd054d7d-86c2-4c92-828f-747a68e68e0c","name":"TotalEnergies
+        Renewables USA, LLC","id":"fd054d7d-86c2-4c92-828f-747a68e68e0c"}},{"id":"34b22637-7bb4-4082-97c4-270794ee2fb2","name":"Kings
+        CSG 3 LLC","properties":{"Timezone":"America/Los_Angeles","Address":null,"Latitude":"35.2498","TestResults":null,"TypeOfProject":"Production","NumberOfControllers":null,"ACLoad":"No","CabinsDesigns":null,"RNOCTestsEndDate":null,"AddressZIPCode":"93245","ActivationDate":null,"SunTracker":"No","PowerSourceProvision":null,"GridConnected":"No","PlantDesigner":"Baker
+        Electric","TypeOfPlant":"Grid-connected","City":"Lemoore","Longitude":"-119.8851","CabinGroup":null,"PlantOperator":"Dimension
+        Energy","InstallationImplementor":null,"MaintenanceContractor":null,"Country":"United
+        States","District":null,"MaintenanceDate":null,"Contract":null,"TelcoArea":null,"ODSSPresence":null,"DSLAMCode":null,"ODSSActive":null,"RelatedMarketSite":null,"Information":null,"RecordingPeriod":"5m","NumberOfActiveEquipment":null,"MarketTimezone":null,"AdminRegion":null,"TechDepartment":null,"CabinVendor":null,"ActivationDateNMS":null,"PlantInstaller":"Baker
+        Electric","CabinType":null,"VPPMember":"No","CabinKVNumber":null,"Portfolio":null,"WarrantyExpirationDate":null,"Severity":null,"TypicalUse":"Power
+        station","RNOCNotificationDate":null,"NumOfTCPs":"2","Serial":null,"SubTypes":null,"DSLAMNetworkIPAddress":null,"EETTCode":null,"AvailableCalculationPeriods":null},"state":"online","uri":"http://portal.solarpark-online.com/ifms/sites/34b22637-7bb4-4082-97c4-270794ee2fb2","siteTypeApcode":"PVPlant","enterprise":{"uri":"http://portal.solarpark-online.com/ifms/enterprises/47d8442e-9349-11ee-b639-42010afa015a","name":"Dimension
+        Energy","id":"47d8442e-9349-11ee-b639-42010afa015a"}},{"id":"25c970e2-773a-4b7c-8e69-2481b47bc75a","name":"Tulare
+        CSG LLC","properties":{"Timezone":"America/Los_Angeles","Address":null,"Latitude":"35.9874","TestResults":null,"CRMID":"","TypeOfProject":"Production","NumberOfControllers":null,"ACLoad":"No","CabinsDesigns":null,"RNOCTestsEndDate":null,"AddressZIPCode":"93212","ActivationDate":null,"SunTracker":"No","PowerSourceProvision":null,"GridConnected":"No","PlantDesigner":"Baker
+        Electric","TypeOfPlant":"Grid-connected","City":"Corcoran","Longitude":"-119.4808","CabinGroup":null,"PlantOperator":"Dimension
+        Energy","InstallationImplementor":null,"MaintenanceContractor":null,"Country":"United
+        States","District":null,"MaintenanceDate":null,"Contract":null,"TelcoArea":null,"ODSSPresence":null,"DSLAMCode":null,"ODSSActive":null,"RelatedMarketSite":null,"Information":null,"RecordingPeriod":"5m","NumberOfActiveEquipment":null,"MarketTimezone":null,"AdminRegion":null,"TechDepartment":null,"CabinVendor":null,"ActivationDateNMS":null,"PlantInstaller":"Baker
+        Electric","CabinType":null,"CabinKVNumber":null,"Portfolio":"Dimension_Energy","WarrantyExpirationDate":null,"Severity":null,"TypicalUse":"Power
+        station","RNOCNotificationDate":null,"NumOfTCPs":"2","Serial":null,"SubTypes":null,"DSLAMNetworkIPAddress":null,"EETTCode":null,"AvailableCalculationPeriods":"1s,1m,60m,1mo,Variant,1d,1y,5m"},"state":"online","uri":"http://portal.solarpark-online.com/ifms/sites/25c970e2-773a-4b7c-8e69-2481b47bc75a","siteTypeApcode":"PVPlant","enterprise":{"uri":"http://portal.solarpark-online.com/ifms/enterprises/47d8442e-9349-11ee-b639-42010afa015a","name":"Dimension
+        Energy","id":"47d8442e-9349-11ee-b639-42010afa015a"}},{"id":"25658d43-0ffd-42b4-a4e4-d3b808e85087","name":"Danish
+        Fields - T3","properties":{"Timezone":"US/Central","Address":null,"Latitude":"29.0194005","TestResults":null,"CRMID":"","TypeOfProject":"Production","NumberOfControllers":null,"ACLoad":"Yes","CabinsDesigns":null,"RNOCTestsEndDate":null,"AddressZIPCode":"77437","ActivationDate":null,"PowerSourceProvision":null,"GridConnected":"Yes","PlantDesigner":"Rosendin","TypeOfPlant":"Grid-connected","City":"El
+        Campo","Longitude":"-96.2358202","CabinGroup":null,"PlantOperator":"TOTAL
+        ","InstallationImplementor":null,"MaintenanceContractor":null,"Country":"United
+        States","District":null,"MaintenanceDate":null,"Contract":null,"TelcoArea":null,"ODSSPresence":null,"DSLAMCode":null,"ODSSActive":null,"RelatedMarketSite":null,"Information":null,"RecordingPeriod":"5m","NumberOfActiveEquipment":null,"MarketTimezone":null,"AdminRegion":null,"TechDepartment":null,"CabinVendor":null,"ActivationDateNMS":null,"PlantInstaller":"Rosendin","CabinType":null,"CabinKVNumber":null,"Portfolio":"TOTAL","WarrantyExpirationDate":null,"Severity":null,"TypicalUse":"Power
+        station","RNOCNotificationDate":null,"NumOfTCPs":"74","Serial":null,"SubTypes":"PV,BESS,Hybrid","DSLAMNetworkIPAddress":null,"AddressStreet":"11000
+        Country Rd. 403","EETTCode":null,"AvailableCalculationPeriods":"1s,1m,60m,1mo,Variant,1d,1y,5m","Altitude":"1003"},"state":"online","uri":"http://portal.solarpark-online.com/ifms/sites/25658d43-0ffd-42b4-a4e4-d3b808e85087","siteTypeApcode":"Hybrid","enterprise":{"uri":"http://portal.solarpark-online.com/ifms/enterprises/fd054d7d-86c2-4c92-828f-747a68e68e0c","name":"TotalEnergies
+        Renewables USA, LLC","id":"fd054d7d-86c2-4c92-828f-747a68e68e0c"}},{"id":"5cffd698-cf7d-48eb-a134-061e5b869abb","name":"Danish
+        Fields - HV","properties":{"Timezone":"US/Central","Address":null,"Latitude":"29.0194005","TestResults":null,"TypeOfProject":"Production","NumberOfControllers":null,"ACLoad":"Yes","CabinsDesigns":null,"RNOCTestsEndDate":null,"AddressZIPCode":"77437","ActivationDate":null,"PowerSourceProvision":null,"GridConnected":"Yes","PlantDesigner":"Rosendin","TypeOfPlant":"Grid-connected","City":"El
+        Campo","Longitude":"-96.2358202","CabinGroup":null,"PlantOperator":"TOTAL
+        ","InstallationImplementor":null,"MaintenanceContractor":null,"Country":"United
+        States","District":null,"MaintenanceDate":null,"Contract":null,"TelcoArea":null,"ODSSPresence":null,"DSLAMCode":null,"ODSSActive":null,"RelatedMarketSite":null,"Information":null,"RecordingPeriod":"5m","NumberOfActiveEquipment":null,"MarketTimezone":null,"AdminRegion":null,"TechDepartment":null,"CabinVendor":null,"ActivationDateNMS":null,"PlantInstaller":"Rosendin","CabinType":null,"CabinKVNumber":null,"Portfolio":"TOTAL","WarrantyExpirationDate":null,"Severity":null,"TypicalUse":"Power
+        station","RNOCNotificationDate":null,"Serial":null,"SubTypes":null,"DSLAMNetworkIPAddress":null,"AddressStreet":"11000
+        Country Rd. 403","EETTCode":null,"AvailableCalculationPeriods":"1s,1m,60m,1mo,Variant,1d,1y,5m","Altitude":"1003"},"state":"online","uri":"http://portal.solarpark-online.com/ifms/sites/5cffd698-cf7d-48eb-a134-061e5b869abb","siteTypeApcode":"PVPlant","enterprise":{"uri":"http://portal.solarpark-online.com/ifms/enterprises/fd054d7d-86c2-4c92-828f-747a68e68e0c","name":"TotalEnergies
+        Renewables USA, LLC","id":"fd054d7d-86c2-4c92-828f-747a68e68e0c"}},{"id":"4bc92d73-439f-43c1-8dcc-510746981b2d","name":"RB
+        Inyokern WDAT 1281 LLC","properties":{"Timezone":"America/Los_Angeles","Address":null,"Latitude":"35.6543","TestResults":null,"CRMID":"","TypeOfProject":"Production","NumberOfControllers":null,"ACLoad":"No","CabinsDesigns":null,"RNOCTestsEndDate":null,"AddressZIPCode":"93527","ActivationDate":null,"PowerSourceProvision":null,"GridConnected":"No","PlantDesigner":"Baker
+        Electric","TypeOfPlant":"Grid-connected","City":"Inyokern","Longitude":"-117.8043","CabinGroup":null,"PlantOperator":"Dimension
+        Energy","InstallationImplementor":null,"MaintenanceContractor":null,"Country":"United
+        States","District":null,"MaintenanceDate":null,"Contract":null,"TelcoArea":null,"ODSSPresence":null,"DSLAMCode":null,"ODSSActive":null,"RelatedMarketSite":null,"Information":null,"RecordingPeriod":"5m","NumberOfActiveEquipment":null,"MarketTimezone":null,"AdminRegion":null,"TechDepartment":null,"CabinVendor":null,"ActivationDateNMS":null,"PlantInstaller":"Baker
+        Electric","CabinType":null,"VPPMember":"No","CabinKVNumber":null,"Portfolio":null,"WarrantyExpirationDate":null,"Severity":null,"TypicalUse":"Power
+        station","RNOCNotificationDate":null,"NumOfTCPs":"3","Serial":null,"SubTypes":null,"DSLAMNetworkIPAddress":null,"EETTCode":null,"AvailableCalculationPeriods":"1s,1m,60m,1mo,Variant,1d,1y,5m"},"state":"online","uri":"http://portal.solarpark-online.com/ifms/sites/4bc92d73-439f-43c1-8dcc-510746981b2d","siteTypeApcode":"PVPlant","enterprise":{"uri":"http://portal.solarpark-online.com/ifms/enterprises/47d8442e-9349-11ee-b639-42010afa015a","name":"Dimension
+        Energy","id":"47d8442e-9349-11ee-b639-42010afa015a"}},{"id":"71518e2f-0de2-4830-b2e2-c5291a20bed8","name":"LSBP
+        - Happy Solar","properties":{"Timezone":"America/Chicago","Address":null,"Latitude":"35.16695","TestResults":null,"CRMID":"","TypeOfProject":"Production","NumberOfControllers":null,"ACLoad":"Yes","CabinsDesigns":null,"RNOCTestsEndDate":null,"ActivationDate":null,"PowerSourceProvision":null,"GridConnected":"Yes","PlantDesigner":"Orbital","TypeOfPlant":"Grid-connected","City":"WHITE
+        COUNTY","Longitude":"-91.6906","CabinGroup":null,"PlantOperator":"Orbital","InstallationImplementor":null,"MaintenanceContractor":null,"Country":"United
+        States","District":null,"MaintenanceDate":null,"Contract":null,"TelcoArea":null,"ODSSPresence":null,"DSLAMCode":null,"ODSSActive":null,"RelatedMarketSite":null,"Information":null,"RecordingPeriod":"15m","NumberOfActiveEquipment":null,"MarketTimezone":null,"AdminRegion":null,"TechDepartment":null,"CabinVendor":null,"ActivationDateNMS":null,"PlantInstaller":"Orbital","CabinType":null,"CabinKVNumber":null,"Portfolio":"LSBP-USA","WarrantyExpirationDate":null,"Severity":null,"TypicalUse":"Power
+        station","RNOCNotificationDate":null,"NumOfTCPs":"26","Serial":null,"SubTypes":null,"DSLAMNetworkIPAddress":null,"EETTCode":null,"AvailableCalculationPeriods":"1s,1m,60m,15m,1mo,Variant,1d,1y","Altitude":"100"},"state":"online","uri":"http://portal.solarpark-online.com/ifms/sites/71518e2f-0de2-4830-b2e2-c5291a20bed8","siteTypeApcode":"PVPlant","enterprise":{"uri":"http://portal.solarpark-online.com/ifms/enterprises/decd8d56-d794-11e3-869c-06876c02c9d4","name":"LightSource","id":"decd8d56-d794-11e3-869c-06876c02c9d4"}},{"id":"a538ed2b-bff6-4135-bd6a-3e062563f081","name":"RB
+        Inyokern WDAT 1203 LLC","properties":{"Timezone":"America/Los_Angeles","Address":null,"Latitude":"35.6543","TestResults":null,"CRMID":"","TypeOfProject":"Production","NumberOfControllers":null,"ACLoad":"No","CabinsDesigns":null,"RNOCTestsEndDate":null,"AddressZIPCode":"93527","ActivationDate":null,"PowerSourceProvision":null,"GridConnected":"No","PlantDesigner":"Baker
+        Electric","TypeOfPlant":"Grid-connected","City":"Inyokern","Longitude":"-117.8043","CabinGroup":null,"PlantOperator":"Dimension
+        Energy","InstallationImplementor":null,"MaintenanceContractor":null,"Country":"United
+        States","District":null,"MaintenanceDate":null,"Contract":null,"TelcoArea":null,"ODSSPresence":null,"DSLAMCode":null,"ODSSActive":null,"RelatedMarketSite":null,"Information":null,"RecordingPeriod":"5m","NumberOfActiveEquipment":null,"MarketTimezone":null,"AdminRegion":null,"TechDepartment":null,"CabinVendor":null,"ActivationDateNMS":null,"PlantInstaller":"Baker
+        Electric","CabinType":null,"VPPMember":"No","CabinKVNumber":null,"Portfolio":null,"WarrantyExpirationDate":null,"Severity":null,"TypicalUse":"Power
+        station","RNOCNotificationDate":null,"NumOfTCPs":"5","Serial":null,"SubTypes":null,"DSLAMNetworkIPAddress":null,"EETTCode":null,"AvailableCalculationPeriods":"1s,1m,60m,1mo,Variant,1d,1y,5m"},"state":"online","uri":"http://portal.solarpark-online.com/ifms/sites/a538ed2b-bff6-4135-bd6a-3e062563f081","siteTypeApcode":"PVPlant","enterprise":{"uri":"http://portal.solarpark-online.com/ifms/enterprises/47d8442e-9349-11ee-b639-42010afa015a","name":"Dimension
+        Energy","id":"47d8442e-9349-11ee-b639-42010afa015a"}},{"id":"e5e4a056-0b99-4f43-a265-7fc429b6e959","name":"Visalia
+        CSG LLC","properties":{"Timezone":"America/Los_Angeles","Address":null,"Latitude":"36.31","TestResults":null,"CRMID":"","TypeOfProject":"Production","NumberOfControllers":null,"ACLoad":"No","CabinsDesigns":null,"RNOCTestsEndDate":null,"AddressZIPCode":"93292","ActivationDate":null,"SunTracker":"No","PowerSourceProvision":null,"GridConnected":"No","PlantDesigner":"Baker
+        Electric","TypeOfPlant":"Grid-connected","City":"Visalia","Longitude":"-119.24","CabinGroup":null,"PlantOperator":"Dimension
+        Energy","InstallationImplementor":null,"MaintenanceContractor":null,"Country":"United
+        States","District":null,"MaintenanceDate":null,"Contract":null,"TelcoArea":null,"ODSSPresence":null,"DSLAMCode":null,"ODSSActive":null,"RelatedMarketSite":null,"Information":null,"RecordingPeriod":"5m","NumberOfActiveEquipment":null,"MarketTimezone":null,"AdminRegion":null,"TechDepartment":null,"CabinVendor":null,"ActivationDateNMS":null,"PlantInstaller":"Baker
+        Electric","CabinType":null,"CabinKVNumber":null,"Portfolio":"Dimension_Energy","WarrantyExpirationDate":null,"Severity":null,"TypicalUse":"Power
+        station","RNOCNotificationDate":null,"NumOfTCPs":"2","Serial":null,"SubTypes":null,"DSLAMNetworkIPAddress":null,"EETTCode":null,"AvailableCalculationPeriods":"1s,1m,60m,1mo,Variant,1d,1y,5m"},"state":"online","uri":"http://portal.solarpark-online.com/ifms/sites/e5e4a056-0b99-4f43-a265-7fc429b6e959","siteTypeApcode":"PVPlant","enterprise":{"uri":"http://portal.solarpark-online.com/ifms/enterprises/47d8442e-9349-11ee-b639-42010afa015a","name":"Dimension
+        Energy","id":"47d8442e-9349-11ee-b639-42010afa015a"}},{"id":"e6863d92-cb37-4256-a604-3323d03b8e72","name":"Danish
+        Fields - T2","properties":{"Timezone":"US/Central","Address":null,"Latitude":"29.0194005","TestResults":null,"CRMID":"","TypeOfProject":"Production","NumberOfControllers":null,"ACLoad":"Yes","CabinsDesigns":null,"RNOCTestsEndDate":null,"AddressZIPCode":"77437","ActivationDate":null,"PowerSourceProvision":null,"GridConnected":"Yes","PlantDesigner":"Rosendin","TypeOfPlant":"Grid-connected","City":"El
+        Campo","Longitude":"-96.2358202","CabinGroup":null,"PlantOperator":"TOTAL
+        ","InstallationImplementor":null,"MaintenanceContractor":null,"Country":"United
+        States","District":null,"MaintenanceDate":null,"Contract":null,"TelcoArea":null,"ODSSPresence":null,"DSLAMCode":null,"ODSSActive":null,"RelatedMarketSite":null,"Information":null,"RecordingPeriod":"5m","NumberOfActiveEquipment":null,"MarketTimezone":null,"AdminRegion":null,"TechDepartment":null,"CabinVendor":null,"ActivationDateNMS":null,"PlantInstaller":"Rosendin","CabinType":null,"CabinKVNumber":null,"Portfolio":"TOTAL","WarrantyExpirationDate":null,"Severity":null,"TypicalUse":"Power
+        station","RNOCNotificationDate":null,"NumOfTCPs":"74","Serial":null,"SubTypes":"PV,BESS,Hybrid","DSLAMNetworkIPAddress":null,"AddressStreet":"11000
+        Country Rd. 403","EETTCode":null,"AvailableCalculationPeriods":"1s,1m,60m,1mo,Variant,1d,1y,5m","Altitude":"1003"},"state":"online","uri":"http://portal.solarpark-online.com/ifms/sites/e6863d92-cb37-4256-a604-3323d03b8e72","siteTypeApcode":"Hybrid","enterprise":{"uri":"http://portal.solarpark-online.com/ifms/enterprises/fd054d7d-86c2-4c92-828f-747a68e68e0c","name":"TotalEnergies
+        Renewables USA, LLC","id":"fd054d7d-86c2-4c92-828f-747a68e68e0c"}}]'
+  recorded_at: Thu, 27 Mar 2025 04:41:18 GMT
+recorded_with: VCR 6.3.1
