@@ -1,0 +1,128 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://portal.solarpark-online.com/ifms/sites/25658d43-0ffd-42b4-a4e4-d3b808e85087/segments?recursive=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - portal.solarpark-online.com
+      Api-Key:
+      - "<SCADA_API_KEY>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.27.3
+      Date:
+      - Thu, 03 Apr 2025 05:45:01 GMT
+      Content-Type:
+      - application/json
+      Vary:
+      - Accept-Encoding
+      Cache-Control:
+      - no-cache
+      - private
+      Expires:
+      - Thu, 03 Apr 2025 05:45:00 GMT
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"apcode":"Equipment","apcode_idx":156,"id":"3f0dd604-1820-11ef-a962-42010afa015a","name":"Equipment","uri":"http://portal.solarpark-online.com/ifms/segments/3f0dd604-1820-11ef-a962-42010afa015a"},
+        {"apcode":"TrackerUnderGateway","apcode_idx":2251,"id":"1bef8d6e-efe1-11ee-a127-42010afa015a","name":"Tracker TCU-067-047","uri":"http://portal.solarpark-online.com/ifms/segments/1bef8d6e-efe1-11ee-a127-42010afa015a"},
+        {"apcode":"TrackerUnderGateway","apcode_idx":2028,"id":"1b5dcdde-efe1-11ee-a127-42010afa015a","name":"TrackerTCU-021-007","uri":"http://portal.solarpark-online.com/ifms/segments/1b5dcdde-efe1-11ee-a127-42010afa015a"}]'
+  recorded_at: Thu, 03 Apr 2025 05:45:01 GMT
+- request:
+    method: get
+    uri: https://portal.solarpark-online.com/ifms/sites/123e4567-e89b-12d3-a456-426614174003/segments?recursive=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - portal.solarpark-online.com
+      Api-Key:
+      - "<SCADA_API_KEY>"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx/1.27.3
+      Date:
+      - Thu, 03 Apr 2025 05:45:03 GMT
+      Content-Type:
+      - text/html;charset=iso-8859-1
+      Content-Length:
+      - '38'
+      Cache-Control:
+      - must-revalidate,no-cache,no-store
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"Message":"Not Found","Status":"404"}'
+  recorded_at: Thu, 03 Apr 2025 05:45:03 GMT
+- request:
+    method: get
+    uri: https://portal.solarpark-online.com/ifms/sites/site-uuid-123/segments?recursive=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - portal.solarpark-online.com
+      Api-Key:
+      - "<SCADA_API_KEY>"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx/1.27.3
+      Date:
+      - Thu, 03 Apr 2025 05:45:03 GMT
+      Content-Length:
+      - '16'
+      Cache-Control:
+      - private, no-cache, no-store, no-transform, max-age=0
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"Status":"404"}'
+  recorded_at: Thu, 03 Apr 2025 05:45:03 GMT
+recorded_with: VCR 6.3.1

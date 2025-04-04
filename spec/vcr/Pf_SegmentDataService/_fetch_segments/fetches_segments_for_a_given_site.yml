@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://portal.solarpark-online.com/ifms/sites/01b66255-c94a-44b3-a5ba-540850108e26/segments?recursive=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - portal.solarpark-online.com
+      Api-Key:
+      - "<SCADA_API_KEY>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.27.3
+      Date:
+      - Thu, 03 Apr 2025 18:50:11 GMT
+      Content-Type:
+      - application/json
+      Vary:
+      - Accept-Encoding
+      Cache-Control:
+      - no-cache
+      - private
+      Expires:
+      - Thu, 03 Apr 2025 18:50:10 GMT
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"apcode":"PanelGroup","apcode_idx":1088,"id":"2f729116-9833-11ee-be18-42010afa015a","name":"String
+        DS-156.08","uri":"http://portal.solarpark-online.com/ifms/segments/2f729116-9833-11ee-be18-42010afa015a"},{"apcode":"TrackerUnderGateway","apcode_idx":2872,"id":"0bff359a-9833-11ee-be18-42010afa015a","name":"Tracker
+        TCU-138-088","uri":"http://portal.solarpark-online.com/ifms/segments/0bff359a-9833-11ee-be18-42010afa015a"},{"apcode":"TrackerUnderGateway","apcode_idx":5619,"id":"5bd71036-ecdb-11ee-bf77-42010afa015a","name":"Tracker
+        TCU-111-074","uri":"http://portal.solarpark-online.com/ifms/segments/5bd71036-ecdb-11ee-bf77-42010afa015a"}]'
+  recorded_at: Thu, 03 Apr 2025 18:50:11 GMT
+recorded_with: VCR 6.3.1
