@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://portal.solarpark-online.com/ifms/mlocs/4e6418a8-8855-11ee-a4ff-42010afa015a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - portal.solarpark-online.com
+      Api-Key:
+      - "<SCADA_API_KEY>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.27.4
+      Date:
+      - Fri, 18 Apr 2025 21:53:36 GMT
+      Content-Type:
+      - application/json
+      Vary:
+      - Accept-Encoding
+      Cache-Control:
+      - no-cache
+      - private
+      Expires:
+      - Fri, 18 Apr 2025 21:53:35 GMT
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"name":"Power Inverter Module AC (1m)","nameL1":null,"nameL2":null,"nameL3":null,"nameL4":null,"apcode":"ArrayOutputPowerTr2","id":"4e6418a8-8855-11ee-a4ff-42010afa015a","measureType":{"apcode":"Power","dataType":"Float","id":"3074ed0e-8264-11de-ad55-0090f586a869","name":"Power","uri":"http://portal.solarpark-online.com/ifms/measureTypes/3074ed0e-8264-11de-ad55-0090f586a869"},"monitor":null,"rcv":false,"segment":{"apcode":"InverterModule","apcode_idx":31,"id":"2d095260-efe1-11ee-a127-42010afa015a","name":"Inverter
+        module 071-2","uri":"http://portal.solarpark-online.com/ifms/segments/2d095260-efe1-11ee-a127-42010afa015a"},"sources":[{"calcPeriod":"1m","calcTimeSpanCount":1,"calcTimeSpanMode":"fixed-time-span","check":null,"date":"20250418T215300Z","engUnit":"kW","id":"4e641b5a-8855-11ee-a4ff-42010afa015a","manualIngest":false,"quality":null,"range":null,"uri":"http://portal.solarpark-online.com/ifms/sources/4e641b5a-8855-11ee-a4ff-42010afa015a","val":"590.6793823242188","calcTypeApcode":"TimeSeriesAverage"}],"siteId":"25658d43-0ffd-42b4-a4e4-d3b808e85087","description":null,"descriptionL1":null,"descriptionL2":null,"descriptionL3":null,"descriptionL4":null}'
+  recorded_at: Fri, 18 Apr 2025 21:53:36 GMT
+recorded_with: VCR 6.3.1
