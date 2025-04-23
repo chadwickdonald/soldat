@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://portal.solarpark-online.com/ifms/segments/1c0bc33a-efe1-11ee-a127-42010afa015a/mlocs
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - portal.solarpark-online.com
+      Api-Key:
+      - "<SCADA_API_KEY>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.27.4
+      Date:
+      - Wed, 23 Apr 2025 19:10:53 GMT
+      Content-Type:
+      - application/json
+      Vary:
+      - Accept-Encoding
+      Cache-Control:
+      - no-cache
+      - private
+      Expires:
+      - Wed, 23 Apr 2025 19:10:52 GMT
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"nameL1":null,"nameL2":null,"nameL3":null,"nameL4":null,"apcode":"TrackerIDNumber","id":"5705e860-8855-11ee-a4ff-42010afa015a","name":"ID
+        number","sscode":null,"uri":"http://portal.solarpark-online.com/ifms/mlocs/5705e860-8855-11ee-a4ff-42010afa015a","measurementTypeId":"3074ed08-8264-11de-ad55-0090f586a869"},{"nameL1":null,"nameL2":null,"nameL3":null,"nameL4":null,"apcode":"TrackerCurrentRoll","id":"5703af00-8855-11ee-a4ff-42010afa015a","name":"Current
+        roll","sscode":null,"uri":"http://portal.solarpark-online.com/ifms/mlocs/5703af00-8855-11ee-a4ff-42010afa015a","measurementTypeId":"3074ed1c-8264-11de-ad55-0090f586a869"},{"nameL1":null,"nameL2":null,"nameL3":null,"nameL4":null,"apcode":"TrackerTargetRoll","id":"5703c5f8-8855-11ee-a4ff-42010afa015a","name":"Target
+        roll","sscode":null,"uri":"http://portal.solarpark-online.com/ifms/mlocs/5703c5f8-8855-11ee-a4ff-42010afa015a","measurementTypeId":"3074ed1c-8264-11de-ad55-0090f586a869"},{"nameL1":null,"nameL2":null,"nameL3":null,"nameL4":null,"apcode":"TrackerBatteryVoltage","id":"57052092-8855-11ee-a4ff-42010afa015a","name":"Battery
+        voltage","sscode":null,"uri":"http://portal.solarpark-online.com/ifms/mlocs/57052092-8855-11ee-a4ff-42010afa015a","measurementTypeId":"3074ed0f-8264-11de-ad55-0090f586a869"}]'
+  recorded_at: Wed, 23 Apr 2025 19:10:53 GMT
+recorded_with: VCR 6.3.1

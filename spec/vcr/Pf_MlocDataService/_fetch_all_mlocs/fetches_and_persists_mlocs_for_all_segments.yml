@@ -1,0 +1,133 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://portal.solarpark-online.com/ifms/segments/9b182fdc-8854-11ee-a4ff-42010afa015a/mlocs
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - portal.solarpark-online.com
+      Api-Key:
+      - "<SCADA_API_KEY>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.27.4
+      Date:
+      - Wed, 23 Apr 2025 19:18:16 GMT
+      Content-Type:
+      - application/json
+      Vary:
+      - Accept-Encoding
+      Cache-Control:
+      - no-cache
+      - private
+      Expires:
+      - Wed, 23 Apr 2025 19:18:15 GMT
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"nameL1":null,"nameL2":null,"nameL3":null,"nameL4":null,"apcode":"ModuleTemperature1","id":"b64bc412-8854-11ee-a4ff-42010afa015a","name":"Module
+        Temperature 1","sscode":null,"uri":"http://portal.solarpark-online.com/ifms/mlocs/b64bc412-8854-11ee-a4ff-42010afa015a","measurementTypeId":"3074ed1f-8264-11de-ad55-0090f586a869"},{"nameL1":null,"nameL2":null,"nameL3":null,"nameL4":null,"apcode":"ModuleTemperature2","id":"b64be73a-8854-11ee-a4ff-42010afa015a","name":"Module
+        Temperature 2","sscode":null,"uri":"http://portal.solarpark-online.com/ifms/mlocs/b64be73a-8854-11ee-a4ff-42010afa015a","measurementTypeId":"3074ed1f-8264-11de-ad55-0090f586a869"},{"nameL1":null,"nameL2":null,"nameL3":null,"nameL4":null,"apcode":"ModuleTemperature3","id":"b64c081e-8854-11ee-a4ff-42010afa015a","name":"Module
+        Temperature 3","sscode":null,"uri":"http://portal.solarpark-online.com/ifms/mlocs/b64c081e-8854-11ee-a4ff-42010afa015a","measurementTypeId":"3074ed1f-8264-11de-ad55-0090f586a869"},{"nameL1":null,"nameL2":null,"nameL3":null,"nameL4":null,"apcode":"ModuleTemperature1Tr2","id":"b6659608-8854-11ee-a4ff-42010afa015a","name":"Module
+        Temperature 1 (1m)","sscode":null,"uri":"http://portal.solarpark-online.com/ifms/mlocs/b6659608-8854-11ee-a4ff-42010afa015a","measurementTypeId":"3074ed1f-8264-11de-ad55-0090f586a869"},{"nameL1":null,"nameL2":null,"nameL3":null,"nameL4":null,"apcode":"ModuleTemperature2Tr2","id":"b665b2b4-8854-11ee-a4ff-42010afa015a","name":"Module
+        Temperature 2 (1m)","sscode":null,"uri":"http://portal.solarpark-online.com/ifms/mlocs/b665b2b4-8854-11ee-a4ff-42010afa015a","measurementTypeId":"3074ed1f-8264-11de-ad55-0090f586a869"},{"nameL1":null,"nameL2":null,"nameL3":null,"nameL4":null,"apcode":"ModuleTemperature3Tr2","id":"b665cc40-8854-11ee-a4ff-42010afa015a","name":"Module
+        Temperature 3 (1m)","sscode":null,"uri":"http://portal.solarpark-online.com/ifms/mlocs/b665cc40-8854-11ee-a4ff-42010afa015a","measurementTypeId":"3074ed1f-8264-11de-ad55-0090f586a869"},{"nameL1":null,"nameL2":null,"nameL3":null,"nameL4":null,"apcode":"AmbientAirTemperature","id":"b67edb5e-8854-11ee-a4ff-42010afa015a","name":"Ambient
+        Temperature","sscode":null,"uri":"http://portal.solarpark-online.com/ifms/mlocs/b67edb5e-8854-11ee-a4ff-42010afa015a","measurementTypeId":"3074ed1f-8264-11de-ad55-0090f586a869"},{"nameL1":null,"nameL2":null,"nameL3":null,"nameL4":null,"apcode":"AmbientAirTemperatureTr2","id":"b68cadd8-8854-11ee-a4ff-42010afa015a","name":"Ambient
+        Temperature (1m)","sscode":null,"uri":"http://portal.solarpark-online.com/ifms/mlocs/b68cadd8-8854-11ee-a4ff-42010afa015a","measurementTypeId":"3074ed1f-8264-11de-ad55-0090f586a869"},{"nameL1":null,"nameL2":null,"nameL3":null,"nameL4":null,"apcode":"InclIrradiance","id":"b663ec18-8854-11ee-a4ff-42010afa015a","name":"Inclined
+        Irradiance","sscode":null,"uri":"http://portal.solarpark-online.com/ifms/mlocs/b663ec18-8854-11ee-a4ff-42010afa015a","measurementTypeId":"3074ed21-8264-11de-ad55-0090f586a869"},{"nameL1":null,"nameL2":null,"nameL3":null,"nameL4":null,"apcode":"InclIrradianceTr2","id":"b665e3c4-8854-11ee-a4ff-42010afa015a","name":"Inclined
+        Irradiance (1m)","sscode":null,"uri":"http://portal.solarpark-online.com/ifms/mlocs/b665e3c4-8854-11ee-a4ff-42010afa015a","measurementTypeId":"3074ed21-8264-11de-ad55-0090f586a869"},{"nameL1":null,"nameL2":null,"nameL3":null,"nameL4":null,"apcode":"WindSpeed","id":"b67f1f10-8854-11ee-a4ff-42010afa015a","name":"Wind
+        Speed","sscode":null,"uri":"http://portal.solarpark-online.com/ifms/mlocs/b67f1f10-8854-11ee-a4ff-42010afa015a","measurementTypeId":"3074ed20-8264-11de-ad55-0090f586a869"},{"nameL1":null,"nameL2":null,"nameL3":null,"nameL4":null,"apcode":"WindSpeedMax","id":"b67f2ff0-8854-11ee-a4ff-42010afa015a","name":"Wind
+        Speed max","sscode":null,"uri":"http://portal.solarpark-online.com/ifms/mlocs/b67f2ff0-8854-11ee-a4ff-42010afa015a","measurementTypeId":"3074ed20-8264-11de-ad55-0090f586a869"},{"nameL1":null,"nameL2":null,"nameL3":null,"nameL4":null,"apcode":"WindSpeedMin","id":"b67f4332-8854-11ee-a4ff-42010afa015a","name":"Wind
+        Speed min","sscode":null,"uri":"http://portal.solarpark-online.com/ifms/mlocs/b67f4332-8854-11ee-a4ff-42010afa015a","measurementTypeId":"3074ed20-8264-11de-ad55-0090f586a869"},{"nameL1":null,"nameL2":null,"nameL3":null,"nameL4":null,"apcode":"HorizIrradiance","id":"b67faa48-8854-11ee-a4ff-42010afa015a","name":"Horizontal
+        Irradiance","sscode":null,"uri":"http://portal.solarpark-online.com/ifms/mlocs/b67faa48-8854-11ee-a4ff-42010afa015a","measurementTypeId":"3074ed21-8264-11de-ad55-0090f586a869"},{"nameL1":null,"nameL2":null,"nameL3":null,"nameL4":null,"apcode":"WindDirection","id":"b680dcc4-8854-11ee-a4ff-42010afa015a","name":"Wind
+        Direction","sscode":null,"uri":"http://portal.solarpark-online.com/ifms/mlocs/b680dcc4-8854-11ee-a4ff-42010afa015a","measurementTypeId":"66e2ee92-fb81-11de-94e6-0019bbc9165c"},{"nameL1":null,"nameL2":null,"nameL3":null,"nameL4":null,"apcode":"Precipitation","id":"b6819498-8854-11ee-a4ff-42010afa015a","name":"Precipitation","sscode":null,"uri":"http://portal.solarpark-online.com/ifms/mlocs/b6819498-8854-11ee-a4ff-42010afa015a","measurementTypeId":"a0b2b184-fb81-11de-94e6-0019bbc9165c"},{"nameL1":null,"nameL2":null,"nameL3":null,"nameL4":null,"apcode":"BarometricPressure","id":"b682430c-8854-11ee-a4ff-42010afa015a","name":"Barometric
+        Pressure","sscode":null,"uri":"http://portal.solarpark-online.com/ifms/mlocs/b682430c-8854-11ee-a4ff-42010afa015a","measurementTypeId":"af0bd288-fb81-11de-94e6-0019bbc9165c"},{"nameL1":null,"nameL2":null,"nameL3":null,"nameL4":null,"apcode":"RelativeHumidity","id":"b6828420-8854-11ee-a4ff-42010afa015a","name":"Relative
+        Humidity","sscode":null,"uri":"http://portal.solarpark-online.com/ifms/mlocs/b6828420-8854-11ee-a4ff-42010afa015a","measurementTypeId":"3074ed23-8264-11de-ad55-0090f586a869"},{"nameL1":null,"nameL2":null,"nameL3":null,"nameL4":null,"apcode":"WindSpeedTr2","id":"b68cc516-8854-11ee-a4ff-42010afa015a","name":"Wind
+        Speed (1m)","sscode":null,"uri":"http://portal.solarpark-online.com/ifms/mlocs/b68cc516-8854-11ee-a4ff-42010afa015a","measurementTypeId":"3074ed20-8264-11de-ad55-0090f586a869"},{"nameL1":null,"nameL2":null,"nameL3":null,"nameL4":null,"apcode":"HorizIrradianceTr2","id":"b68cdad8-8854-11ee-a4ff-42010afa015a","name":"Horizontal
+        Irradiance (1m)","sscode":null,"uri":"http://portal.solarpark-online.com/ifms/mlocs/b68cdad8-8854-11ee-a4ff-42010afa015a","measurementTypeId":"3074ed21-8264-11de-ad55-0090f586a869"},{"nameL1":null,"nameL2":null,"nameL3":null,"nameL4":null,"apcode":"WindDirectionTr2","id":"b68d0684-8854-11ee-a4ff-42010afa015a","name":"Wind
+        Direction (1m)","sscode":null,"uri":"http://portal.solarpark-online.com/ifms/mlocs/b68d0684-8854-11ee-a4ff-42010afa015a","measurementTypeId":"66e2ee92-fb81-11de-94e6-0019bbc9165c"},{"nameL1":null,"nameL2":null,"nameL3":null,"nameL4":null,"apcode":"PrecipitationTr2","id":"b68d1b9c-8854-11ee-a4ff-42010afa015a","name":"Precipitation
+        (1m)","sscode":null,"uri":"http://portal.solarpark-online.com/ifms/mlocs/b68d1b9c-8854-11ee-a4ff-42010afa015a","measurementTypeId":"a0b2b184-fb81-11de-94e6-0019bbc9165c"},{"nameL1":null,"nameL2":null,"nameL3":null,"nameL4":null,"apcode":"BarometricPressureTr2","id":"b68d312c-8854-11ee-a4ff-42010afa015a","name":"Barometric
+        Pressure (1m)","sscode":null,"uri":"http://portal.solarpark-online.com/ifms/mlocs/b68d312c-8854-11ee-a4ff-42010afa015a","measurementTypeId":"af0bd288-fb81-11de-94e6-0019bbc9165c"},{"nameL1":null,"nameL2":null,"nameL3":null,"nameL4":null,"apcode":"RelativeHumidityTr2","id":"b68d481a-8854-11ee-a4ff-42010afa015a","name":"Relative
+        Humidity (1m)","sscode":null,"uri":"http://portal.solarpark-online.com/ifms/mlocs/b68d481a-8854-11ee-a4ff-42010afa015a","measurementTypeId":"3074ed23-8264-11de-ad55-0090f586a869"},{"nameL1":null,"nameL2":null,"nameL3":null,"nameL4":null,"apcode":"Sensor1SoilingRatio","id":"b682a270-8854-11ee-a4ff-42010afa015a","name":"Soiling
+        ratio 1 (%)","sscode":null,"uri":"http://portal.solarpark-online.com/ifms/mlocs/b682a270-8854-11ee-a4ff-42010afa015a","measurementTypeId":"78f8b776-9879-11de-94e6-0019bbc9165c"},{"nameL1":null,"nameL2":null,"nameL3":null,"nameL4":null,"apcode":"Sensor1TransmissionLoss","id":"13107ed0-ed05-11ee-9de9-42010afa015a","name":"Transmission
+        loss 1 (%)","sscode":null,"uri":"http://portal.solarpark-online.com/ifms/mlocs/13107ed0-ed05-11ee-9de9-42010afa015a","measurementTypeId":"78f8b776-9879-11de-94e6-0019bbc9165c"},{"nameL1":null,"nameL2":null,"nameL3":null,"nameL4":null,"apcode":"SoilingSensorStatusFlag","id":"1315753e-ed05-11ee-9de9-42010afa015a","name":"Soiling
+        sensor Status Flag","sscode":null,"uri":"http://portal.solarpark-online.com/ifms/mlocs/1315753e-ed05-11ee-9de9-42010afa015a","measurementTypeId":"78f8b776-9879-11de-94e6-0019bbc9165c"},{"nameL1":null,"nameL2":null,"nameL3":null,"nameL4":null,"apcode":"InclinedPyranometerSerial","id":"12e73084-ed05-11ee-9de9-42010afa015a","name":"Inclined
+        pyranometer serial","sscode":null,"uri":"http://portal.solarpark-online.com/ifms/mlocs/12e73084-ed05-11ee-9de9-42010afa015a","measurementTypeId":"3074ed09-8264-11de-ad55-0090f586a869"},{"nameL1":null,"nameL2":null,"nameL3":null,"nameL4":null,"apcode":"SoilingSensorTiltYaxis","id":"13141bd0-ed05-11ee-9de9-42010afa015a","name":"Soiling
+        Sensor Tilt Y Axis","sscode":null,"uri":"http://portal.solarpark-online.com/ifms/mlocs/13141bd0-ed05-11ee-9de9-42010afa015a","measurementTypeId":"78f8b776-9879-11de-94e6-0019bbc9165c"},{"nameL1":null,"nameL2":null,"nameL3":null,"nameL4":null,"apcode":"SoilingSensorTiltXAxis","id":"13140686-ed05-11ee-9de9-42010afa015a","name":"Soiling
+        Sensor Tilt X Axis","sscode":null,"uri":"http://portal.solarpark-online.com/ifms/mlocs/13140686-ed05-11ee-9de9-42010afa015a","measurementTypeId":"78f8b776-9879-11de-94e6-0019bbc9165c"},{"nameL1":null,"nameL2":null,"nameL3":null,"nameL4":null,"apcode":"DustBatteryVoltage","id":"1310304c-ed05-11ee-9de9-42010afa015a","name":"Soiling
+        sensor battery voltage","sscode":null,"uri":"http://portal.solarpark-online.com/ifms/mlocs/1310304c-ed05-11ee-9de9-42010afa015a","measurementTypeId":"3074ed0f-8264-11de-ad55-0090f586a869"},{"nameL1":null,"nameL2":null,"nameL3":null,"nameL4":null,"apcode":"Sensor2SoilingRatio","id":"131000d6-ed05-11ee-9de9-42010afa015a","name":"Soiling
+        ratio 2 (%)","sscode":null,"uri":"http://portal.solarpark-online.com/ifms/mlocs/131000d6-ed05-11ee-9de9-42010afa015a","measurementTypeId":"78f8b776-9879-11de-94e6-0019bbc9165c"},{"nameL1":null,"nameL2":null,"nameL3":null,"nameL4":null,"apcode":"Sensor2TransmissionLoss","id":"13109686-ed05-11ee-9de9-42010afa015a","name":"Transmission
+        loss 2 (%)","sscode":null,"uri":"http://portal.solarpark-online.com/ifms/mlocs/13109686-ed05-11ee-9de9-42010afa015a","measurementTypeId":"78f8b776-9879-11de-94e6-0019bbc9165c"},{"nameL1":null,"nameL2":null,"nameL3":null,"nameL4":null,"apcode":"SecInclIrradiance","id":"b67dec62-8854-11ee-a4ff-42010afa015a","name":"Inclined
+        Irradiance 2","sscode":null,"uri":"http://portal.solarpark-online.com/ifms/mlocs/b67dec62-8854-11ee-a4ff-42010afa015a","measurementTypeId":"3074ed21-8264-11de-ad55-0090f586a869"},{"nameL1":null,"nameL2":null,"nameL3":null,"nameL4":null,"apcode":"ReflIrradianceTr2","id":"b68c75de-8854-11ee-a4ff-42010afa015a","name":"Reflected
+        Irradiance  (1m)","sscode":null,"uri":"http://portal.solarpark-online.com/ifms/mlocs/b68c75de-8854-11ee-a4ff-42010afa015a","measurementTypeId":"3074ed21-8264-11de-ad55-0090f586a869"},{"nameL1":null,"nameL2":null,"nameL3":null,"nameL4":null,"apcode":"SecInclIrradianceTr2","id":"b68c5d2e-8854-11ee-a4ff-42010afa015a","name":"Inclined
+        Irradiance 2 (1m)","sscode":null,"uri":"http://portal.solarpark-online.com/ifms/mlocs/b68c5d2e-8854-11ee-a4ff-42010afa015a","measurementTypeId":"3074ed21-8264-11de-ad55-0090f586a869"},{"nameL1":null,"nameL2":null,"nameL3":null,"nameL4":null,"apcode":"ReflIrradiance","id":"b67e01e8-8854-11ee-a4ff-42010afa015a","name":"Reflected
+        Irradiance ","sscode":null,"uri":"http://portal.solarpark-online.com/ifms/mlocs/b67e01e8-8854-11ee-a4ff-42010afa015a","measurementTypeId":"3074ed21-8264-11de-ad55-0090f586a869"}]'
+  recorded_at: Wed, 23 Apr 2025 19:18:16 GMT
+- request:
+    method: get
+    uri: https://portal.solarpark-online.com/ifms/segments/1c0bc33a-efe1-11ee-a127-42010afa015a/mlocs
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - portal.solarpark-online.com
+      Api-Key:
+      - "<SCADA_API_KEY>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.27.4
+      Date:
+      - Wed, 23 Apr 2025 19:18:16 GMT
+      Content-Type:
+      - application/json
+      Vary:
+      - Accept-Encoding
+      Cache-Control:
+      - no-cache
+      - private
+      Expires:
+      - Wed, 23 Apr 2025 19:18:15 GMT
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"nameL1":null,"nameL2":null,"nameL3":null,"nameL4":null,"apcode":"TrackerIDNumber","id":"5705e860-8855-11ee-a4ff-42010afa015a","name":"ID
+        number","sscode":null,"uri":"http://portal.solarpark-online.com/ifms/mlocs/5705e860-8855-11ee-a4ff-42010afa015a","measurementTypeId":"3074ed08-8264-11de-ad55-0090f586a869"},{"nameL1":null,"nameL2":null,"nameL3":null,"nameL4":null,"apcode":"TrackerCurrentRoll","id":"5703af00-8855-11ee-a4ff-42010afa015a","name":"Current
+        roll","sscode":null,"uri":"http://portal.solarpark-online.com/ifms/mlocs/5703af00-8855-11ee-a4ff-42010afa015a","measurementTypeId":"3074ed1c-8264-11de-ad55-0090f586a869"},{"nameL1":null,"nameL2":null,"nameL3":null,"nameL4":null,"apcode":"TrackerTargetRoll","id":"5703c5f8-8855-11ee-a4ff-42010afa015a","name":"Target
+        roll","sscode":null,"uri":"http://portal.solarpark-online.com/ifms/mlocs/5703c5f8-8855-11ee-a4ff-42010afa015a","measurementTypeId":"3074ed1c-8264-11de-ad55-0090f586a869"},{"nameL1":null,"nameL2":null,"nameL3":null,"nameL4":null,"apcode":"TrackerBatteryVoltage","id":"57052092-8855-11ee-a4ff-42010afa015a","name":"Battery
+        voltage","sscode":null,"uri":"http://portal.solarpark-online.com/ifms/mlocs/57052092-8855-11ee-a4ff-42010afa015a","measurementTypeId":"3074ed0f-8264-11de-ad55-0090f586a869"}]'
+  recorded_at: Wed, 23 Apr 2025 19:18:16 GMT
+recorded_with: VCR 6.3.1
