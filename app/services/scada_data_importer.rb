@@ -30,8 +30,8 @@ class ScadaDataImporter
 
     ENDPOINTS.each do |key, config|
       puts "Fetching data for #{key}..."
-      data = fetch_data(config[:url])
-      data.each { |row| config[:processor].call(row, org.id) }
+      data = fetch_data(config[:url]) # add date window here? only fetch if data is missing?
+      data.each { |row| config[:processor].call(row, org.id) } # do each row or pass data into the import method?
       puts "#{key.to_s.humanize} data import complete."
     end
   end
