@@ -23,6 +23,20 @@ module Pf
       handle_response(response)
     end
 
+    def post(endpoint, payload)
+      uri = URI("#{BASE_URL}#{endpoint}")
+      request = Net::HTTP::Post.new(uri)
+      request['API-Key'] = @api_key
+      request['Content-Type'] = 'application/json'
+      request.body = payload.to_json
+
+      response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
+        http.request(request)
+      end
+
+      handle_response(response)
+    end
+
     private
 
     def handle_response(response)

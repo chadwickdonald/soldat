@@ -3,15 +3,15 @@ class ScadaEvent < ActiveRecord::Base
 
   def self.persist_from_pf(data, measurement_source_id)
     event = ScadaEvent.find_or_initialize_by(
-      site_id: data["site_id"],
+      site_id: data["site_id"] || data["siteId"],
       date: Time.zone.parse(data["date"]),
       measurement_source_id: measurement_source_id
     )
 
     event.assign_attributes(
       val: data["val"],
-      cp_name: data["cp_name"],
-      measurement_apcode: data["measurement_apcode"]
+      cp_name: data["cp_name"] || data["cpName"],
+      measurement_apcode: data["measurement_apcode"] || data["measurementApcode"]
     )
 
     event.save!
