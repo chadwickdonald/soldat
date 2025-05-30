@@ -8,6 +8,7 @@ module Pf
 
     def fetch_all_measurements
       mloc_ids = ScadaMloc.pluck(:uuid)
+      # mloc_ids = ["4fe3ad0a-1820-11ef-a962-42010afa015a", "4fe3b8f4-1820-11ef-a962-42010afa015a"]
 
       mloc_ids.each do |mloc_id|
         begin
