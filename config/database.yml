@@ -81,6 +81,11 @@ test:
 #
 production:
   <<: *default
-  database: soldat_production
-  username: soldat
-  password: <%= ENV["SOLDAT_DATABASE_PASSWORD"] %>
+  # database: soldat_production
+  # username: soldat
+  # password: <%= ENV["SOLDAT_DATABASE_PASSWORD"] %>
+  database: soldat_db
+  username: postgres
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  host: soldat-db.cc9wiskoew5r.us-east-1.rds.amazonaws.com
+  port: 5432
