@@ -89,3 +89,4 @@ production:
   password: <%= ENV['DATABASE_PASSWORD'] %>
   host: soldat-db.cc9wiskoew5r.us-east-1.rds.amazonaws.com
   port: 5432
+  sslmode: required
