@@ -38,7 +38,7 @@ class ScadaMeasurement < ApplicationRecord
     begin
       measurement.save!
     rescue => e
-      Rails.logger.error "Failed to create Measurement #{data['id']}: #{e.message} – Source data: #{src.inspect}"
+      Rails.logger.error "Failed to create Measurement #{data['id']}: #{e.message} – Source data: #{data.inspect}"
     end
 
     begin
@@ -59,7 +59,7 @@ class ScadaMeasurement < ApplicationRecord
         )
       end
     rescue => e
-      Rails.logger.error "Failed to create MeasurementSource #{data['id']}: #{e.message} – Source data: #{src.inspect}"
+      Rails.logger.error "Failed to create MeasurementSource #{data['id']}: #{e.message} – Source data: #{data.inspect}"
     end
 
     measurement
