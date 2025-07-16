@@ -35,24 +35,33 @@ class ScadaMeasurement < ApplicationRecord
       monitor_uri: data.dig("monitor", "uri")
     )
 
-    measurement.save!
-
-    data["sources"]&.each do |src|
-      measurement.scada_measurement_sources.create!(
-        uuid: src["id"],
-        date: Time.zone.parse(src["date"]),
-        val: src["val"].to_f,
-        eng_unit: src["engUnit"],
-        quality: src["quality"],
-        range: src["range"],
-        uri: src["uri"],
-        calc_period: src["calcPeriod"],
-        calc_time_span_mode: src["calcTimeSpanMode"],
-        calc_time_span_count: src["calcTimeSpanCount"],
-        calc_type_apcode: src["calcTypeApcode"],
-        manual_ingest: src["manualIngest"]
-      )
+    begin
+      measurement.save!
+    rescue => e
+      Rails.logger.error "Failed to create Measurement #{data['id']}: #{e.message} – Source data: #{src.inspect}"
     end
+
+    begin
+      data["sources"]&.each do |src|
+        measurement.scada_measurement_sources.create!(
+          uuid: src["id"],
+          date: Time.zone.parse(src["date"]),
+          val: src["val"].to_f,
+          eng_unit: src["engUnit"],
+          quality: src["quality"],
+          range: src["range"],
+          uri: src["uri"],
+          calc_period: src["calcPeriod"],
+          calc_time_span_mode: src["calcTimeSpanMode"],
+          calc_time_span_count: src["calcTimeSpanCount"],
+          calc_type_apcode: src["calcTypeApcode"],
+          manual_ingest: src["manualIngest"]
+        )
+      end
+    rescue => e
+      Rails.logger.error "Failed to create MeasurementSource #{data['id']}: #{e.message} – Source data: #{src.inspect}"
+    end
+
     measurement
   end
 end
