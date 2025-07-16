@@ -45,7 +45,7 @@ class ScadaMeasurement < ApplicationRecord
       data["sources"]&.each do |src|
         measurement.scada_measurement_sources.create!(
           uuid: src["id"],
-          date: Time.zone.parse(src["date"]),
+          date: src["date"].present? ? Time.zone.parse(src["date"]) : nil,
           val: src["val"].to_f,
           eng_unit: src["engUnit"],
           quality: src["quality"],
