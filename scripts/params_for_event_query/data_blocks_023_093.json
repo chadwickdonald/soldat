@@ -1,0 +1,4405 @@
+{
+
+  "023": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 023",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "23",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 023",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "23",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 023-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "23",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 023-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "23",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 023-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "23",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 023-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "23",
+      "relevance": 1
+    }
+  ],
+  "024": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 024",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "24",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 024",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "24",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 024-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "24",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 024-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "24",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 024-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "24",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 024-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "24",
+      "relevance": 1
+    }
+  ],
+  "025": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 025",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "25",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 025",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "25",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 025-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "25",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 025-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "25",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 025-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "25",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 025-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "25",
+      "relevance": 1
+    }
+  ],
+  "026": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 026",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "26",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 026",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "26",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 026-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "26",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 026-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "26",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 026-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "26",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 026-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "26",
+      "relevance": 1
+    }
+  ],
+  "027": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 027",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "27",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 027",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "27",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 027-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "27",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 027-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "27",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 027-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "27",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 027-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "27",
+      "relevance": 1
+    }
+  ],
+  "028": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 028",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "28",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 028",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "28",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 028-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "28",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 028-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "28",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 028-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "28",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 028-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "28",
+      "relevance": 1
+    }
+  ],
+  "029": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 029",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "29",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 029",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "29",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 029-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "29",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 029-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "29",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 029-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "29",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 029-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "29",
+      "relevance": 1
+    }
+  ],
+  "030": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 030",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "30",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 030",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "30",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 030-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "30",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 030-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "30",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 030-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "30",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 030-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "30",
+      "relevance": 1
+    }
+  ],
+  "031": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 031",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "31",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 031",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "31",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 031-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "31",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 031-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "31",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 031-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "31",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 031-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "31",
+      "relevance": 1
+    }
+  ],
+  "032": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 032",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "32",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 032",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "32",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 032-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "32",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 032-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "32",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 032-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "32",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 032-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "32",
+      "relevance": 1
+    }
+  ],
+  "033": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 033",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "33",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 033",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "33",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 033-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "33",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 033-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "33",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 033-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "33",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 033-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "33",
+      "relevance": 1
+    }
+  ],
+  "034": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 034",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "34",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 034",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "34",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 034-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "34",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 034-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "34",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 034-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "34",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 034-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "34",
+      "relevance": 1
+    }
+  ],
+  "035": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 035",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "35",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 035",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "35",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 035-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "35",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 035-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "35",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 035-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "35",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 035-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "35",
+      "relevance": 1
+    }
+  ],
+  "036": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 036",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "36",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 036",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "36",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 036-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "36",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 036-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "36",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 036-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "36",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 036-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "36",
+      "relevance": 1
+    }
+  ],
+  "037": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 037",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "37",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 037",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "37",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 037-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "37",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 037-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "37",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 037-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "37",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 037-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "37",
+      "relevance": 1
+    }
+  ],
+  "038": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 038",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "38",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 038",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "38",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 038-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "38",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 038-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "38",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 038-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "38",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 038-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "38",
+      "relevance": 1
+    }
+  ],
+  "039": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 039",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "39",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 039",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "39",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 039-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "39",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 039-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "39",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 039-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "39",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 039-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "39",
+      "relevance": 1
+    }
+  ],
+  "040": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 040",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "40",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 040",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "40",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 040-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "40",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 040-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "40",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 040-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "40",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 040-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "40",
+      "relevance": 1
+    }
+  ],
+  "041": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 041",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "41",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 041",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "41",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 041-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "41",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 041-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "41",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 041-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "41",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 041-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "41",
+      "relevance": 1
+    }
+  ],
+  "042": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 042",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "42",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 042",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "42",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 042-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "42",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 042-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "42",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 042-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "42",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 042-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "42",
+      "relevance": 1
+    }
+  ],
+  "043": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 043",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "43",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 043",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "43",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 043-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "43",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 043-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "43",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 043-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "43",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 043-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "43",
+      "relevance": 1
+    }
+  ],
+  "044": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 044",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "44",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 044",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "44",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 044-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "44",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 044-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "44",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 044-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "44",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 044-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "44",
+      "relevance": 1
+    }
+  ],
+  "045": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 045",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "45",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 045",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "45",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 045-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "45",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 045-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "45",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 045-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "45",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 045-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "45",
+      "relevance": 1
+    }
+  ],
+  "046": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 046",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "46",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 046",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "46",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 046-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "46",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 046-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "46",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 046-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "46",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 046-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "46",
+      "relevance": 1
+    }
+  ],
+  "047": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 047",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "47",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 047",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "47",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 047-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "47",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 047-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "47",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 047-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "47",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 047-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "47",
+      "relevance": 1
+    }
+  ],
+  "048": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 048",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "48",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 048",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "48",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 048-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "48",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 048-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "48",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 048-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "48",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 048-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "48",
+      "relevance": 1
+    }
+  ],
+  "049": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 049",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "49",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 049",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "49",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 049-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "49",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 049-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "49",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 049-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "49",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 049-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "49",
+      "relevance": 1
+    }
+  ],
+  "050": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 050",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "50",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 050",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "50",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 050-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "50",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 050-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "50",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 050-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "50",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 050-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "50",
+      "relevance": 1
+    }
+  ],
+  "051": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 051",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "51",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 051",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "51",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 051-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "51",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 051-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "51",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 051-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "51",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 051-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "51",
+      "relevance": 1
+    }
+  ],
+  "052": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 052",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "52",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 052",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "52",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 052-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "52",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 052-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "52",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 052-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "52",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 052-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "52",
+      "relevance": 1
+    }
+  ],
+  "053": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 053",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "53",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 053",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "53",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 053-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "53",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 053-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "53",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 053-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "53",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 053-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "53",
+      "relevance": 1
+    }
+  ],
+  "054": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 054",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "54",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 054",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "54",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 054-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "54",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 054-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "54",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 054-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "54",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 054-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "54",
+      "relevance": 1
+    }
+  ],
+  "055": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 055",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "55",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 055",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "55",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 055-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "55",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 055-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "55",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 055-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "55",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 055-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "55",
+      "relevance": 1
+    }
+  ],
+  "056": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 056",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "56",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 056",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "56",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 056-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "56",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 056-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "56",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 056-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "56",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 056-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "56",
+      "relevance": 1
+    }
+  ],
+  "057": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 057",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "57",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 057",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "57",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 057-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "57",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 057-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "57",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 057-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "57",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 057-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "57",
+      "relevance": 1
+    }
+  ],
+  "058": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 058",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "58",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 058",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "58",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 058-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "58",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 058-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "58",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 058-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "58",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 058-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "58",
+      "relevance": 1
+    }
+  ],
+  "059": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 059",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "59",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 059",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "59",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 059-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "59",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 059-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "59",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 059-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "59",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 059-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "59",
+      "relevance": 1
+    }
+  ],
+  "060": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 060",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "60",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 060",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "60",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 060-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "60",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 060-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "60",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 060-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "60",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 060-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "60",
+      "relevance": 1
+    }
+  ],
+  "061": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 061",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "61",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 061",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "61",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 061-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "61",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 061-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "61",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 061-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "61",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 061-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "61",
+      "relevance": 1
+    }
+  ],
+  "062": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 062",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "62",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 062",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "62",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 062-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "62",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 062-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "62",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 062-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "62",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 062-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "62",
+      "relevance": 1
+    }
+  ],
+  "063": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 063",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "63",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 063",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "63",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 063-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "63",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 063-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "63",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 063-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "63",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 063-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "63",
+      "relevance": 1
+    }
+  ],
+  "064": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 064",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "64",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 064",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "64",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 064-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "64",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 064-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "64",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 064-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "64",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 064-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "64",
+      "relevance": 1
+    }
+  ],
+  "065": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 065",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "65",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 065",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "65",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 065-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "65",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 065-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "65",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 065-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "65",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 065-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "65",
+      "relevance": 1
+    }
+  ],
+  "066": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 066",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "66",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 066",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "66",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 066-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "66",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 066-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "66",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 066-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "66",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 066-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "66",
+      "relevance": 1
+    }
+  ],
+  "067": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 067",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "67",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 067",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "67",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 067-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "67",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 067-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "67",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 067-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "67",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 067-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "67",
+      "relevance": 1
+    }
+  ],
+  "068": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 068",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "68",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 068",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "68",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 068-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "68",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 068-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "68",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 068-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "68",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 068-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "68",
+      "relevance": 1
+    }
+  ],
+  "069": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 069",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "69",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 069",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "69",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 069-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "69",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 069-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "69",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 069-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "69",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 069-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "69",
+      "relevance": 1
+    }
+  ],
+  "070": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 070",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "70",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 070",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "70",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 070-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "70",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 070-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "70",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 070-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "70",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 070-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "70",
+      "relevance": 1
+    }
+  ],
+  "071": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 071",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "71",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 071",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "71",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 071-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "71",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 071-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "71",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 071-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "71",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 071-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "71",
+      "relevance": 1
+    }
+  ],
+  "072": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 072",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "72",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 072",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "72",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 072-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "72",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 072-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "72",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 072-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "72",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 072-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "72",
+      "relevance": 1
+    }
+  ],
+  "073": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 073",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "73",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 073",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "73",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 073-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "73",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 073-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "73",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 073-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "73",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 073-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "73",
+      "relevance": 1
+    }
+  ],
+  "074": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 074",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "74",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 074",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "74",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 074-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "74",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 074-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "74",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 074-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "74",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 074-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "74",
+      "relevance": 1
+    }
+  ],
+  "075": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 075",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "75",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 075",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "75",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 075-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "75",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 075-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "75",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 075-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "75",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 075-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "75",
+      "relevance": 1
+    }
+  ],
+  "076": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 076",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "76",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 076",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "76",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 076-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "76",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 076-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "76",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 076-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "76",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 076-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "76",
+      "relevance": 1
+    }
+  ],
+  "077": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 077",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "77",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 077",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "77",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 077-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "77",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 077-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "77",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 077-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "77",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 077-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "77",
+      "relevance": 1
+    }
+  ],
+  "078": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 078",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "78",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 078",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "78",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 078-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "78",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 078-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "78",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 078-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "78",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 078-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "78",
+      "relevance": 1
+    }
+  ],
+  "079": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 079",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "79",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 079",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "79",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 079-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "79",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 079-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "79",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 079-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "79",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 079-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "79",
+      "relevance": 1
+    }
+  ],
+  "080": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 080",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "80",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 080",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "80",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 080-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "80",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 080-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "80",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 080-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "80",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 080-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "80",
+      "relevance": 1
+    }
+  ],
+  "081": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 081",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "81",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 081",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "81",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 081-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "81",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 081-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "81",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 081-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "81",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 081-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "81",
+      "relevance": 1
+    }
+  ],
+  "082": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 082",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "82",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 082",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "82",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 082-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "82",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 082-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "82",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 082-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "82",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 082-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "82",
+      "relevance": 1
+    }
+  ],
+  "083": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 083",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "83",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 083",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "83",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 083-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "83",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 083-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "83",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 083-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "83",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 083-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "83",
+      "relevance": 1
+    }
+  ],
+  "084": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 084",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "84",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 084",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "84",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 084-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "84",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 084-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "84",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 084-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "84",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 084-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "84",
+      "relevance": 1
+    }
+  ],
+  "085": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 085",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "85",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 085",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "85",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 085-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "85",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 085-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "85",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 085-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "85",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 085-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "85",
+      "relevance": 1
+    }
+  ],
+  "086": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 086",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "86",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 086",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "86",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 086-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "86",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 086-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "86",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 086-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "86",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 086-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "86",
+      "relevance": 1
+    }
+  ],
+  "087": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 087",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "87",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 087",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "87",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 087-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "87",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 087-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "87",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 087-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "87",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 087-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "87",
+      "relevance": 1
+    }
+  ],
+  "088": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 088",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "88",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 088",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "88",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 088-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "88",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 088-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "88",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 088-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "88",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 088-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "88",
+      "relevance": 1
+    }
+  ],
+  "089": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 089",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "89",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 089",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "89",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 089-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "89",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 089-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "89",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 089-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "89",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 089-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "89",
+      "relevance": 1
+    }
+  ],
+  "090": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 090",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "90",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 090",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "90",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 090-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "90",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 090-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "90",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 090-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "90",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 090-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "90",
+      "relevance": 1
+    }
+  ],
+  "091": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 091",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "91",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 091",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "91",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 091-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "91",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 091-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "91",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 091-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "91",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 091-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "91",
+      "relevance": 1
+    }
+  ],
+  "092": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 092",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "92",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 092",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "92",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 092-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "92",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 092-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "92",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 092-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "92",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 092-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "92",
+      "relevance": 1
+    }
+  ],
+  "093": [
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 093",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACPWR",
+      "station_id": "93",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "ArrayGroup",
+      "segment_name": "Solar Inverter Block 093",
+      "mloc_apcode": "CumulativeArrayOutputEnergy",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "ACENRGTOT",
+      "station_id": "93",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 093-1",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-ACPWR",
+      "station_id": "93",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 093-1",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD1-DCVOLT",
+      "station_id": "93",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 093-2",
+      "mloc_apcode": "ArrayOutputPower",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-ACPWR",
+      "station_id": "93",
+      "relevance": 1
+    },
+    {
+      "segment_apcode": "InverterModule",
+      "segment_name": "Inverter module 093-2",
+      "mloc_apcode": "PanelGroupOutputVoltage",
+      "source_calc_period": "5m",
+      "station_type": "PVGEN",
+      "station_element": "MOD2-DCVOLT",
+      "station_id": "93",
+      "relevance": 1
+    }
+  ]
+}
