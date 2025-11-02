@@ -47,6 +47,7 @@ scripts/ignored_files/
 
 # output files
 scripts/output/
+scripts/params_for_event_query/output
 
 # env file
 .env
