@@ -29,8 +29,8 @@ OTHERS_PATH = begin
 end
 
 @api_key    = ENV['SCADA_API_KEY']
-@start_date = '20250901T010000Z'
-@end_date   = '20250907T010000Z'
+@start_date = '20250901T000000Z'
+@end_date   = '20250908T000000Z'
 @site_uuid  = ScadaSite.find_by_name("Danish Fields - T3").uuid
 
 # -----------------------
