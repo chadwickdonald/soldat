@@ -1,6 +1,10 @@
 class ScadaEvent < ActiveRecord::Base
   belongs_to :scada_measurement_source, primary_key: 'uuid', foreign_key: 'measurement_source_id'
 
+  scope :between, ->(start_at, end_at) { where(date: start_at...end_at) }
+  scope :ordered, ->{ order(:date) }
+
+
   def self.persist_from_pf(data, measurement_source_id)
     event = ScadaEvent.find_or_initialize_by(
       site_id: data["site_id"] || data["siteId"],

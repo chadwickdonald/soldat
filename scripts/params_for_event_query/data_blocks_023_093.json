@@ -395,7 +395,8 @@
     },
     {
       "segment_apcode": "InverterModule",
-      "segment_name": "Inverter module 029-1",
+      // "segment_name": "Inverter module 029-1",
+      "segment_name": "Inverter module INV-029.MOD-1",
       "mloc_apcode": "ArrayOutputPower",
       "source_calc_period": "5m",
       "station_type": "PVGEN",
@@ -405,7 +406,8 @@
     },
     {
       "segment_apcode": "InverterModule",
-      "segment_name": "Inverter module 029-1",
+      // "segment_name": "Inverter module 029-1",
+      "segment_name": "Inverter module INV-029.MOD-1",
       "mloc_apcode": "PanelGroupOutputVoltage",
       "source_calc_period": "5m",
       "station_type": "PVGEN",
@@ -415,7 +417,8 @@
     },
     {
       "segment_apcode": "InverterModule",
-      "segment_name": "Inverter module 029-2",
+      // "segment_name": "Inverter module 029-2",
+      "segment_name": "Inverter module INV-029.MOD-2",
       "mloc_apcode": "ArrayOutputPower",
       "source_calc_period": "5m",
       "station_type": "PVGEN",
@@ -425,7 +428,8 @@
     },
     {
       "segment_apcode": "InverterModule",
-      "segment_name": "Inverter module 029-2",
+      // "segment_name": "Inverter module 029-2",
+      "segment_name": "Inverter module INV-029.MOD-2",
       "mloc_apcode": "PanelGroupOutputVoltage",
       "source_calc_period": "5m",
       "station_type": "PVGEN",
@@ -457,7 +461,8 @@
     },
     {
       "segment_apcode": "InverterModule",
-      "segment_name": "Inverter module 030-1",
+      // "segment_name": "Inverter module 030-1",
+      "segment_name": "Inverter module INV-030.MOD-1",
       "mloc_apcode": "ArrayOutputPower",
       "source_calc_period": "5m",
       "station_type": "PVGEN",
@@ -467,7 +472,8 @@
     },
     {
       "segment_apcode": "InverterModule",
-      "segment_name": "Inverter module 030-1",
+      // "segment_name": "Inverter module 030-1",
+      "segment_name": "Inverter module INV-030.MOD-1",
       "mloc_apcode": "PanelGroupOutputVoltage",
       "source_calc_period": "5m",
       "station_type": "PVGEN",
@@ -477,7 +483,8 @@
     },
     {
       "segment_apcode": "InverterModule",
-      "segment_name": "Inverter module 030-2",
+      // "segment_name": "Inverter module 030-2",
+      "segment_name": "Inverter module INV-030.MOD-2",
       "mloc_apcode": "ArrayOutputPower",
       "source_calc_period": "5m",
       "station_type": "PVGEN",
@@ -487,7 +494,8 @@
     },
     {
       "segment_apcode": "InverterModule",
-      "segment_name": "Inverter module 030-2",
+      // "segment_name": "Inverter module 030-2",
+      "segment_name": "Inverter module INV-030.MOD-2",
       "mloc_apcode": "PanelGroupOutputVoltage",
       "source_calc_period": "5m",
       "station_type": "PVGEN",
@@ -519,7 +527,8 @@
     },
     {
       "segment_apcode": "InverterModule",
-      "segment_name": "Inverter module 031-1",
+      // "segment_name": "Inverter module 031-1",
+      "segment_name": "Inverter module INV-031.MOD-1",
       "mloc_apcode": "ArrayOutputPower",
       "source_calc_period": "5m",
       "station_type": "PVGEN",
@@ -530,6 +539,7 @@
     {
       "segment_apcode": "InverterModule",
       "segment_name": "Inverter module 031-1",
+      // "segment_name": "Inverter module INV-031.MOD-1",
       "mloc_apcode": "PanelGroupOutputVoltage",
       "source_calc_period": "5m",
       "station_type": "PVGEN",
@@ -539,7 +549,8 @@
     },
     {
       "segment_apcode": "InverterModule",
-      "segment_name": "Inverter module 031-2",
+      // "segment_name": "Inverter module 031-2",
+      "segment_name": "Inverter module INV-031.MOD-2",
       "mloc_apcode": "ArrayOutputPower",
       "source_calc_period": "5m",
       "station_type": "PVGEN",
@@ -549,7 +560,8 @@
     },
     {
       "segment_apcode": "InverterModule",
-      "segment_name": "Inverter module 031-2",
+      // "segment_name": "Inverter module 031-2",
+      "segment_name": "Inverter module INV-031.MOD-2",
       "mloc_apcode": "PanelGroupOutputVoltage",
       "source_calc_period": "5m",
       "station_type": "PVGEN",
@@ -581,7 +593,8 @@
     },
     {
       "segment_apcode": "InverterModule",
-      "segment_name": "Inverter module 032-1",
+      // "segment_name": "Inverter module 032-1",
+      "segment_name": "Inverter module INV-032.MOD-1",
       "mloc_apcode": "ArrayOutputPower",
       "source_calc_period": "5m",
       "station_type": "PVGEN",
@@ -591,7 +604,8 @@
     },
     {
       "segment_apcode": "InverterModule",
-      "segment_name": "Inverter module 032-1",
+      // "segment_name": "Inverter module 032-1",
+      "segment_name": "Inverter module INV-032.MOD-1",
       "mloc_apcode": "PanelGroupOutputVoltage",
       "source_calc_period": "5m",
       "station_type": "PVGEN",
@@ -601,7 +615,8 @@
     },
     {
       "segment_apcode": "InverterModule",
-      "segment_name": "Inverter module 032-2",
+      // "segment_name": "Inverter module 032-2",
+      "segment_name": "Inverter module INV-032.MOD-2",
       "mloc_apcode": "ArrayOutputPower",
       "source_calc_period": "5m",
       "station_type": "PVGEN",
@@ -611,7 +626,8 @@
     },
     {
       "segment_apcode": "InverterModule",
-      "segment_name": "Inverter module 032-2",
+      // "segment_name": "Inverter module 032-2",
+      "segment_name": "Inverter module INV-032.MOD-2",
       "mloc_apcode": "PanelGroupOutputVoltage",
       "source_calc_period": "5m",
       "station_type": "PVGEN",
@@ -643,7 +659,8 @@
     },
     {
       "segment_apcode": "InverterModule",
-      "segment_name": "Inverter module 033-1",
+      // "segment_name": "Inverter module 033-1",
+      "segment_name": "Inverter module INV-033.MOD-1",
       "mloc_apcode": "ArrayOutputPower",
       "source_calc_period": "5m",
       "station_type": "PVGEN",
@@ -653,7 +670,8 @@
     },
     {
       "segment_apcode": "InverterModule",
-      "segment_name": "Inverter module 033-1",
+      // "segment_name": "Inverter module 033-1",
+      "segment_name": "Inverter module INV-033.MOD-1",
       "mloc_apcode": "PanelGroupOutputVoltage",
       "source_calc_period": "5m",
       "station_type": "PVGEN",
@@ -663,7 +681,8 @@
     },
     {
       "segment_apcode": "InverterModule",
-      "segment_name": "Inverter module 033-2",
+      // "segment_name": "Inverter module 033-2",
+      "segment_name": "Inverter module INV-033.MOD-2",
       "mloc_apcode": "ArrayOutputPower",
       "source_calc_period": "5m",
       "station_type": "PVGEN",
@@ -673,7 +692,8 @@
     },
     {
       "segment_apcode": "InverterModule",
-      "segment_name": "Inverter module 033-2",
+      // "segment_name": "Inverter module 033-2",
+      "segment_name": "Inverter module INV-033.MOD-2",
       "mloc_apcode": "PanelGroupOutputVoltage",
       "source_calc_period": "5m",
       "station_type": "PVGEN",
@@ -705,7 +725,8 @@
     },
     {
       "segment_apcode": "InverterModule",
-      "segment_name": "Inverter module 034-1",
+      // "segment_name": "Inverter module 034-1",
+      "segment_name": "Inverter module INV-034.MOD-1",
       "mloc_apcode": "ArrayOutputPower",
       "source_calc_period": "5m",
       "station_type": "PVGEN",
@@ -715,7 +736,8 @@
     },
     {
       "segment_apcode": "InverterModule",
-      "segment_name": "Inverter module 034-1",
+      // "segment_name": "Inverter module 034-1",
+      "segment_name": "Inverter module INV-034.MOD-1",
       "mloc_apcode": "PanelGroupOutputVoltage",
       "source_calc_period": "5m",
       "station_type": "PVGEN",
@@ -725,7 +747,8 @@
     },
     {
       "segment_apcode": "InverterModule",
-      "segment_name": "Inverter module 034-2",
+      // "segment_name": "Inverter module 034-2",
+      "segment_name": "Inverter module INV-034.MOD-2",
       "mloc_apcode": "ArrayOutputPower",
       "source_calc_period": "5m",
       "station_type": "PVGEN",
@@ -735,7 +758,8 @@
     },
     {
       "segment_apcode": "InverterModule",
-      "segment_name": "Inverter module 034-2",
+      // "segment_name": "Inverter module 034-2",
+      "segment_name": "Inverter module INV-034.MOD-2",
       "mloc_apcode": "PanelGroupOutputVoltage",
       "source_calc_period": "5m",
       "station_type": "PVGEN",
@@ -767,7 +791,8 @@
     },
     {
       "segment_apcode": "InverterModule",
-      "segment_name": "Inverter module 035-1",
+      // "segment_name": "Inverter module 035-1",
+      "segment_name": "Inverter module INV-035.MOD-1",
       "mloc_apcode": "ArrayOutputPower",
       "source_calc_period": "5m",
       "station_type": "PVGEN",
@@ -777,7 +802,8 @@
     },
     {
       "segment_apcode": "InverterModule",
-      "segment_name": "Inverter module 035-1",
+      // "segment_name": "Inverter module 035-1",
+      "segment_name": "Inverter module INV-035.MOD-1",
       "mloc_apcode": "PanelGroupOutputVoltage",
       "source_calc_period": "5m",
       "station_type": "PVGEN",
@@ -787,7 +813,8 @@
     },
     {
       "segment_apcode": "InverterModule",
-      "segment_name": "Inverter module 035-2",
+      // "segment_name": "Inverter module 035-2",
+      "segment_name": "Inverter module INV-035.MOD-2",
       "mloc_apcode": "ArrayOutputPower",
       "source_calc_period": "5m",
       "station_type": "PVGEN",
@@ -797,7 +824,8 @@
     },
     {
       "segment_apcode": "InverterModule",
-      "segment_name": "Inverter module 035-2",
+      // "segment_name": "Inverter module 035-2",
+      "segment_name": "Inverter module INV-035.MOD-2",
       "mloc_apcode": "PanelGroupOutputVoltage",
       "source_calc_period": "5m",
       "station_type": "PVGEN",
@@ -829,7 +857,8 @@
     },
     {
       "segment_apcode": "InverterModule",
-      "segment_name": "Inverter module 036-1",
+      // "segment_name": "Inverter module 036-1",
+      "segment_name": "Inverter module INV-036.MOD-1",
       "mloc_apcode": "ArrayOutputPower",
       "source_calc_period": "5m",
       "station_type": "PVGEN",
@@ -839,7 +868,8 @@
     },
     {
       "segment_apcode": "InverterModule",
-      "segment_name": "Inverter module 036-1",
+      // "segment_name": "Inverter module 036-1",
+      "segment_name": "Inverter module INV-036.MOD-1",
       "mloc_apcode": "PanelGroupOutputVoltage",
       "source_calc_period": "5m",
       "station_type": "PVGEN",
@@ -849,7 +879,8 @@
     },
     {
       "segment_apcode": "InverterModule",
-      "segment_name": "Inverter module 036-2",
+      // "segment_name": "Inverter module 036-2",
+      "segment_name": "Inverter module INV-036.MOD-2",
       "mloc_apcode": "ArrayOutputPower",
       "source_calc_period": "5m",
       "station_type": "PVGEN",
@@ -859,7 +890,8 @@
     },
     {
       "segment_apcode": "InverterModule",
-      "segment_name": "Inverter module 036-2",
+      // "segment_name": "Inverter module 036-2",
+      "segment_name": "Inverter module INV-036.MOD-2",
       "mloc_apcode": "PanelGroupOutputVoltage",
       "source_calc_period": "5m",
       "station_type": "PVGEN",
@@ -891,7 +923,8 @@
     },
     {
       "segment_apcode": "InverterModule",
-      "segment_name": "Inverter module 037-1",
+      // "segment_name": "Inverter module 037-1",
+      "segment_name": "Inverter module INV-037.MOD-1",
       "mloc_apcode": "ArrayOutputPower",
       "source_calc_period": "5m",
       "station_type": "PVGEN",
@@ -901,7 +934,8 @@
     },
     {
       "segment_apcode": "InverterModule",
-      "segment_name": "Inverter module 037-1",
+      // "segment_name": "Inverter module 037-1",
+      "segment_name": "Inverter module INV-037.MOD-1",
       "mloc_apcode": "PanelGroupOutputVoltage",
       "source_calc_period": "5m",
       "station_type": "PVGEN",
@@ -911,7 +945,8 @@
     },
     {
       "segment_apcode": "InverterModule",
-      "segment_name": "Inverter module 037-2",
+      // "segment_name": "Inverter module 037-2",
+      "segment_name": "Inverter module INV-037.MOD-2",
       "mloc_apcode": "ArrayOutputPower",
       "source_calc_period": "5m",
       "station_type": "PVGEN",
@@ -921,7 +956,8 @@
     },
     {
       "segment_apcode": "InverterModule",
-      "segment_name": "Inverter module 037-2",
+      // "segment_name": "Inverter module 037-2",
+      "segment_name": "Inverter module INV-037.MOD-2",
       "mloc_apcode": "PanelGroupOutputVoltage",
       "source_calc_period": "5m",
       "station_type": "PVGEN",
@@ -953,7 +989,8 @@
     },
     {
       "segment_apcode": "InverterModule",
-      "segment_name": "Inverter module 038-1",
+      // "segment_name": "Inverter module 038-1",
+      "segment_name": "Inverter module INV-038.MOD-1",
       "mloc_apcode": "ArrayOutputPower",
       "source_calc_period": "5m",
       "station_type": "PVGEN",
@@ -963,7 +1000,8 @@
     },
     {
       "segment_apcode": "InverterModule",
-      "segment_name": "Inverter module 038-1",
+      // "segment_name": "Inverter module 038-1",
+      "segment_name": "Inverter module INV-038.MOD-1",
       "mloc_apcode": "PanelGroupOutputVoltage",
       "source_calc_period": "5m",
       "station_type": "PVGEN",
@@ -973,7 +1011,8 @@
     },
     {
       "segment_apcode": "InverterModule",
-      "segment_name": "Inverter module 038-2",
+      // "segment_name": "Inverter module 038-2",
+      "segment_name": "Inverter module INV-038.MOD-2",
       "mloc_apcode": "ArrayOutputPower",
       "source_calc_period": "5m",
       "station_type": "PVGEN",
@@ -983,7 +1022,8 @@
     },
     {
       "segment_apcode": "InverterModule",
-      "segment_name": "Inverter module 038-2",
+      // "segment_name": "Inverter module 038-2",
+      "segment_name": "Inverter module INV-038.MOD-2",
       "mloc_apcode": "PanelGroupOutputVoltage",
       "source_calc_period": "5m",
       "station_type": "PVGEN",
@@ -1015,7 +1055,8 @@
     },
     {
       "segment_apcode": "InverterModule",
-      "segment_name": "Inverter module 039-1",
+      // "segment_name": "Inverter module 039-1",
+      "segment_name": "Inverter module INV-039.MOD-1",
       "mloc_apcode": "ArrayOutputPower",
       "source_calc_period": "5m",
       "station_type": "PVGEN",
@@ -1025,7 +1066,8 @@
     },
     {
       "segment_apcode": "InverterModule",
-      "segment_name": "Inverter module 039-1",
+      // "segment_name": "Inverter module 039-1",
+      "segment_name": "Inverter module INV-039.MOD-1",
       "mloc_apcode": "PanelGroupOutputVoltage",
       "source_calc_period": "5m",
       "station_type": "PVGEN",
@@ -1035,7 +1077,8 @@
     },
     {
       "segment_apcode": "InverterModule",
-      "segment_name": "Inverter module 039-2",
+      // "segment_name": "Inverter module 039-2",
+      "segment_name": "Inverter module INV-039.MOD-2",
       "mloc_apcode": "ArrayOutputPower",
       "source_calc_period": "5m",
       "station_type": "PVGEN",
@@ -1045,7 +1088,8 @@
     },
     {
       "segment_apcode": "InverterModule",
-      "segment_name": "Inverter module 039-2",
+      // "segment_name": "Inverter module 039-2",
+      "segment_name": "Inverter module INV-039.MOD-2",
       "mloc_apcode": "PanelGroupOutputVoltage",
       "source_calc_period": "5m",
       "station_type": "PVGEN",
