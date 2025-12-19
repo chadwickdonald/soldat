@@ -11,10 +11,13 @@ module Pf
       @api_key = api_key.strip
     end
 
-    def get(endpoint)
+    def get(endpoint, payload = nil)
       uri = URI("#{BASE_URL}#{endpoint}")
       request = Net::HTTP::Get.new(uri)
       request['API-Key'] = @api_key
+      unless payload.nil?
+        request.body = payload.to_json
+      end
 
       response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
         http.request(request)
