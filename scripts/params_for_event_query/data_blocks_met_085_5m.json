@@ -1,0 +1,74 @@
+{
+	"085" : [
+	  {
+	    "segment_apcode": "WeatherStation",
+	    "segment_name": "MET.085",
+	    "mloc_apcode": "ModuleTemperature2",
+	    "source_calc_period": "5m",
+	    "station_type": "MET",
+	    "station_element": "PVTEMP2",
+	    "station_id": "85",
+	    "relevance": 1
+	  },
+	  {
+	    "segment_apcode": "WeatherStation",
+	    "segment_name": "MET.085",
+	    "mloc_apcode": "ModuleTemperature3",
+	    "source_calc_period": "5m",
+	    "station_type": "MET",
+	    "station_element": "PVTEMP3",
+	    "station_id": "85",
+	    "relevance": 1
+	  },
+	  {
+	    "segment_apcode": "WeatherStation",
+	    "segment_name": "MET.085",
+	    "mloc_apcode": "ReflIrradiance",
+	    "source_calc_period": "5m",
+	    "station_type": "MET",
+	    "station_element": "RPOA1",
+	    "station_id": "85",
+	    "relevance": 1
+	  },
+	  {
+	    "segment_apcode": "WeatherStation",
+	    "segment_name": "MET.085",
+	    "mloc_apcode": "SecInclIrradiance",
+	    "source_calc_period": "5m",
+	    "station_type": "MET",
+	    "station_element": "POA2",
+	    "station_id": "85",
+	    "relevance": 1
+	  },
+	  {
+	    "segment_apcode": "WeatherStation",
+	    "segment_name": "MET.085",
+	    "mloc_apcode": "Sensor1SoilingRatio",
+	    "source_calc_period": "5m",
+	    "station_type": "MET",
+	    "station_element": "SOILPCT1",
+	    "station_id": "85",
+	    "relevance": 1
+	  },
+	  {
+	    "segment_apcode": "WeatherStation",
+	    "segment_name": "MET.085",
+	    "mloc_apcode": "Sensor2SoilingRatio",
+	    "source_calc_period": "5m",
+	    "station_type": "MET",
+	    "station_element": "SOILPCT2",
+	    "station_id": "85",
+	    "relevance": 1
+	  },
+	  {
+	    "segment_apcode": "WeatherStation",
+	    "segment_name": "MET.085",
+	    "mloc_apcode": "WindSpeed",
+	    "source_calc_period": "5m",
+	    "station_type": "MET",
+	    "station_element": "WSP1",
+	    "station_id": "85",
+	    "relevance": 1
+	  }
+	]
+}
