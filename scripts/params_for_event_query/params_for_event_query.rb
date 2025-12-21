@@ -29,8 +29,8 @@ OTHERS_PATH = begin
 end
 
 @api_key    = ENV['SCADA_API_KEY']
-@start_date = '20250908T000000Z'
-@end_date   = '20251001T000000Z'
+@start_date = '20250901T000000Z'
+@end_date   = '20250908T000000Z'
 @site_uuid  = ScadaSite.find_by_name("Danish Fields - T3").uuid
 
 # -----------------------
@@ -465,6 +465,14 @@ stations.each do |station|
 end
 
 abort "No items collected." if items.empty?
+
+# -----------------------
+# DB-only mode: exit before CSV reshape/write
+# -----------------------
+if ARGV.include?("--db-only")
+  puts "DB-only mode enabled: events fetched/persisted as needed; skipping CSV generation."
+  exit 0
+end
 
 # -----------------------
 # Flatten to row-wise table (like events_merged.csv input)
