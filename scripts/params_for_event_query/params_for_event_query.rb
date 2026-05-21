@@ -7,7 +7,7 @@
 # otherwise the API is called and persisted events are used.
 #
 # Usage:
-#   ruby export_events_reshaped.rb stations.json out_1m.csv out_5m.csv [--others other_periods.csv]
+#   ruby params_for_event_query.rb stations.json out_1m.csv out_5m.csv [--others other_periods.csv]
 
 require_relative '../../config/environment'
 require 'csv'
@@ -114,12 +114,30 @@ def write_block(path, keys, series_label, series_meta, series_events)
   return if path.nil? || path.empty?
   return if keys.nil? || keys.empty?
 
-  keys = keys.sort_by { |k| series_label[k] }
+  # Sort columns by station_id (ascending), with stable tie-breakers.
+  keys = keys.sort_by do |k|
+    sid_raw = series_meta.dig(k, "station_id").to_s
+    sid_num =
+      begin
+        Integer(sid_raw, 10)
+      rescue ArgumentError, TypeError
+        nil
+      end
+
+    # Numeric station_ids first (ascending), then non-numeric, then label.
+    [
+      sid_num.nil? ? 1 : 0,
+      sid_num || sid_raw, # if non-numeric, sort by raw string
+      series_label[k].to_s
+    ]
+  end
 
   all_times = series_events.values_at(*keys).compact.flat_map(&:keys).uniq
   all_times.sort_by! { |s| Time.parse(s) rescue s }
 
+  # station_id first in the metadata rows
   meta_vars = %w[
+    station_id
     segment_apcode
     segment_name
     mloc_apcode
@@ -128,7 +146,6 @@ def write_block(path, keys, series_label, series_meta, series_events)
     eng_unit
     station_type
     station_element
-    station_id
     relevance
   ]
 
