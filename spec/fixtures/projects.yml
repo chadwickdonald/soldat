@@ -1,11 +1,12 @@
-# test/fixtures/projects.yml
+# spec/fixtures/projects.yml
 
 default:
-	project: Test_IEA_GA_Perry.PRJ 
-	pvsyst_version: v6.86
-	geographical_site: 32_36  -83_77_SA_Perry_GA_TMY.SIT
-	meteo_data: 32_36  -83_77_SA_Perry_GA_TMY.MET
-	satelite_data: SUNY model;TMY
-	simulation_variant: IEA_GA_Perry.VC9
-	simulation_date: 04/06/20 16h21
-	simulation_hourly_values: from 01/01/90 to 31/12/90
+  project: Test_IEA_GA_Perry.PRJ
+  pvsyst_version: v6.86
+  geographical_site: 32_36  -83_77_SA_Perry_GA_TMY.SIT
+  meteo_data: 32_36  -83_77_SA_Perry_GA_TMY.MET
+  satelite_data: SUNY model;TMY
+  simulation_variant: IEA_GA_Perry.VC9
+  simulation_date: 2020-04-06 16:21:00
+  simulation_hourly_values_from: "01/01/90"
+  simulation_hourly_values_to: "31/12/90"

@@ -3,6 +3,8 @@ require 'rails_helper'
 
 RSpec.describe ScadaSite, type: :model do
   describe '.persist_from_pf' do
+    let!(:org) { ScadaOrganization.create!(uuid: 'org-uuid', name: 'Test Org') }
+
     let(:site_data) do
       {
         'id' => 'test-uuid-123',
@@ -36,7 +38,7 @@ RSpec.describe ScadaSite, type: :model do
     end
 
     it 'does not create a duplicate ScadaSite' do
-      ScadaSite.create!(uuid: 'test-uuid-123', name: 'Existing', organization_id: 1)
+      ScadaSite.create!(uuid: 'test-uuid-123', name: 'Existing', organization_id: org.id)
       
       expect {
         ScadaSite.persist_from_pf(site_data)

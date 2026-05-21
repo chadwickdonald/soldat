@@ -3,7 +3,9 @@ require 'rails_helper'
 
 RSpec.describe ScadaMloc, type: :model do
   describe '.persist_from_pf' do
-    let!(:segment) { ScadaSegment.create!(uuid: "b20ab912-8854-11ee-a4ff-42010afa015a", site_id: "25658d43-0ffd-42b4-a4e4-d3b808e85087", name: "Tracker TCU-073-006") }
+    let!(:org) { ScadaOrganization.create!(uuid: 'org-uuid', name: 'Test Org') }
+    let!(:site) { ScadaSite.create!(uuid: '25658d43-0ffd-42b4-a4e4-d3b808e85087', name: 'Test Site', organization_id: org.id) }
+    let!(:segment) { ScadaSegment.create!(uuid: "b20ab912-8854-11ee-a4ff-42010afa015a", site_id: site.uuid, name: "Tracker TCU-073-006") }
 
     let(:mloc_data) do
       {

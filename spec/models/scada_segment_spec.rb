@@ -3,7 +3,8 @@ require 'rails_helper'
 
 RSpec.describe ScadaSegment, type: :model do
   describe '.persist_from_pf' do
-    let!(:site) { ScadaSite.create!(uuid: 'site-uuid-123', name: 'Test Site', organization_id: 1) }
+    let!(:org) { ScadaOrganization.create!(uuid: 'org-uuid', name: 'Test Org') }
+    let!(:site) { ScadaSite.create!(uuid: 'site-uuid-123', name: 'Test Site', organization_id: org.id) }
 
     let(:segment_data) do
       {

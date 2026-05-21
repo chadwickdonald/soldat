@@ -9,10 +9,12 @@ class ScadaSite < ApplicationRecord
     props = site_data['properties'] || {}
     enterprise = site_data['enterprise'] || {}
 
+    organization = ScadaOrganization.find_or_create_by!(name: enterprise['name']) { |o| o.uuid = SecureRandom.uuid }
+
     create!(
         uuid: uuid,
         site_id: uuid,
-        organization_id: 1,
+        organization_id: organization.id,
         name: site_data['name'],
         site_type_apcode: site_data['siteTypeApcode'],
         enterprise_name: enterprise['name'],

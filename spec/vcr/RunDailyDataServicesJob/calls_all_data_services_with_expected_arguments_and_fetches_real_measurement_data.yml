@@ -1,0 +1,86 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://portal.solarpark-online.com/ifms/mlocs/b68cadd8-8854-11ee-a4ff-42010afa015a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - portal.solarpark-online.com
+      Api-Key:
+      - "<SCADA_API_KEY>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.27.4
+      Date:
+      - Mon, 28 Apr 2025 21:59:01 GMT
+      Content-Type:
+      - application/json
+      Vary:
+      - Accept-Encoding
+      Cache-Control:
+      - no-cache
+      - private
+      Expires:
+      - Mon, 28 Apr 2025 21:59:00 GMT
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"name":"Ambient Temperature (1m)","nameL1":null,"nameL2":null,"nameL3":null,"nameL4":null,"apcode":"AmbientAirTemperatureTr2","id":"b68cadd8-8854-11ee-a4ff-42010afa015a","measureType":{"apcode":"Temp","dataType":"Float","id":"3074ed1f-8264-11de-ad55-0090f586a869","name":"Temperature","uri":"http://portal.solarpark-online.com/ifms/measureTypes/3074ed1f-8264-11de-ad55-0090f586a869"},"monitor":null,"rcv":false,"segment":{"apcode":"WeatherStation","apcode_idx":3,"id":"9b182fdc-8854-11ee-a4ff-42010afa015a","name":"MET.028","uri":"http://portal.solarpark-online.com/ifms/segments/9b182fdc-8854-11ee-a4ff-42010afa015a"},"sources":[{"calcPeriod":"1m","calcTimeSpanCount":1,"calcTimeSpanMode":"fixed-time-span","check":null,"date":"20250428T215800Z","engUnit":"C","id":"b68cb0a8-8854-11ee-a4ff-42010afa015a","manualIngest":false,"quality":null,"range":null,"uri":"http://portal.solarpark-online.com/ifms/sources/b68cb0a8-8854-11ee-a4ff-42010afa015a","val":"27.395000457763672","calcTypeApcode":"TimeSeriesAverage"}],"siteId":"25658d43-0ffd-42b4-a4e4-d3b808e85087","description":null,"descriptionL1":null,"descriptionL2":null,"descriptionL3":null,"descriptionL4":null}'
+  recorded_at: Mon, 28 Apr 2025 21:59:02 GMT
+- request:
+    method: get
+    uri: https://portal.solarpark-online.com/ifms/mlocs/mloc-uuid
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - portal.solarpark-online.com
+      Api-Key:
+      - "<SCADA_API_KEY>"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx/1.27.4
+      Date:
+      - Mon, 28 Apr 2025 21:59:02 GMT
+      Content-Length:
+      - '16'
+      Cache-Control:
+      - private, no-cache, no-store, no-transform, max-age=0
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"Status":"404"}'
+  recorded_at: Mon, 28 Apr 2025 21:59:02 GMT
+recorded_with: VCR 6.3.1

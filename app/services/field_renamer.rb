@@ -57,20 +57,21 @@ class FieldRenamer
 
 # -------- Instance --------
 
-  def initialize(data)
-    @data = data
-  end
-
-  def initialize(measurement)
-    puts "---initialize, measurement.id: #{measurement.id}"
-    @measurement = measurement
-    mloc = measurement.scada_mloc
-    @data = {"Field Name" => "#{mloc.name}-#{measurement.segment_name}-1m"}
+  def initialize(measurement_or_data)
+    if measurement_or_data.is_a?(Hash)
+      @data = measurement_or_data
+    else
+      @measurement = measurement_or_data
+      mloc = measurement_or_data.scada_mloc
+      @data = {"Field Name" => "#{mloc.name}-#{measurement_or_data.segment_name}-1m"}
+    end
   end
 
   def call
     puts "-----call"
     renamed_data = categorize_data(MEASUREMENT_TYPE_FILTER_RULES)
+    return renamed_data unless @measurement
+
     create_field_alias(@measurement, renamed_data)
   end
 
