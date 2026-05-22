@@ -1,0 +1,249 @@
+<link href="https://unpkg.com/tabulator-tables@5.5.0/dist/css/tabulator_bootstrap5.min.css" rel="stylesheet">
+<script type="text/javascript" src="https://unpkg.com/tabulator-tables@5.5.0/dist/js/tabulator.min.js"></script>
+
+<style>
+  .period-badge {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+  }
+  .relevance-pill {
+    font-size: 0.7rem;
+    padding: 0.15rem 0.45rem;
+    border-radius: 999px;
+  }
+  .events-panel {
+    border-left: 3px solid #007bff;
+    animation: slideDown 0.2s ease-out;
+  }
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .tab-pane { min-height: 300px; }
+  .stat-card { border-left: 4px solid; }
+  .stat-card.blue  { border-color: #007bff; }
+  .stat-card.green { border-color: #28a745; }
+  .stat-card.orange{ border-color: #fd7e14; }
+  #events-table .tabulator { font-size: 0.85rem; }
+  .series-label { font-family: monospace; font-size: 0.82rem; color: #495057; }
+</style>
+
+<div class="d-flex justify-content-between align-items-start mb-4">
+  <div>
+    <h2 class="mb-1">Event Data Explorer</h2>
+    <p class="text-muted mb-0">
+      SCADA measurement series &mdash;
+      <span class="badge badge-light border">
+        <%= Date.parse(@start_date).strftime("%b %-d, %Y") %> &rarr; <%= Date.parse(@end_date).strftime("%b %-d, %Y") %>
+      </span>
+    </p>
+  </div>
+  <div class="d-flex align-items-center">
+    <span class="text-muted small mr-3">Site: <strong>Danish Fields &ndash; T3</strong></span>
+    <%= link_to "← Back", root_path, class: "btn btn-outline-secondary btn-sm" %>
+  </div>
+</div>
+
+<!-- Period Tabs -->
+<ul class="nav nav-tabs" id="periodTabs" role="tablist">
+  <% @periods.each_with_index do |period, i| %>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link <%= i == 0 ? 'active' : '' %>"
+         id="tab-<%= period %>-link"
+         data-toggle="tab"
+         href="#tab-<%= period %>"
+         role="tab"
+         data-period="<%= period %>"
+         aria-selected="<%= i == 0 %>">
+        <% if period == '1m' %>
+          <span class="period-badge badge badge-primary">1m</span> 1-Minute
+        <% elsif period == '5m' %>
+          <span class="period-badge badge badge-success">5m</span> 5-Minute
+        <% else %>
+          <span class="period-badge badge badge-warning text-dark">~</span> Other
+        <% end %>
+      </a>
+    </li>
+  <% end %>
+</ul>
+
+<div class="tab-content border border-top-0 rounded-bottom bg-white px-3 pt-3 pb-2 mb-4 shadow-sm" id="periodTabContent">
+  <% @periods.each_with_index do |period, i| %>
+    <div class="tab-pane fade <%= i == 0 ? 'show active' : '' %>"
+         id="tab-<%= period %>"
+         role="tabpanel">
+      <div class="d-flex justify-content-between align-items-center mb-2 mt-1">
+        <span class="text-muted small">
+          Click a row to view its time-series events below.
+        </span>
+        <span class="text-muted small" id="count-<%= period %>"></span>
+      </div>
+      <div id="table-<%= period %>"></div>
+    </div>
+  <% end %>
+</div>
+
+<!-- Events Detail Panel -->
+<div id="events-panel" class="card events-panel shadow-sm d-none mb-4">
+  <div class="card-header d-flex justify-content-between align-items-center py-2">
+    <div>
+      <span class="font-weight-bold">Time-Series Events</span>
+      <span class="series-label ml-2" id="events-label"></span>
+    </div>
+    <div class="d-flex align-items-center">
+      <span class="text-muted small mr-3" id="events-count"></span>
+      <button class="btn btn-sm btn-outline-secondary" id="events-close">
+        &times; Close
+      </button>
+    </div>
+  </div>
+  <div class="card-body p-2">
+    <div class="row mb-2 px-2" id="events-stats" style="display:none!important"></div>
+    <div id="events-table"></div>
+  </div>
+</div>
+
+<script>
+(function() {
+  var startDate  = "<%= @start_date %>";
+  var endDate    = "<%= @end_date %>";
+  var periods    = <%= raw @periods.to_json %>;
+  var seriesTables = {};
+  var eventsTable  = null;
+  var selectedRow  = null;
+
+  var relevanceLabels = {
+    "high_priority":                    "High Priority",
+    "detailed_analysis":                "Detailed Analysis",
+    "alarms_notifications_diagnostics": "Alarms / Diagnostics",
+    "unknown":                          "Unknown"
+  };
+  var relevanceBadge = {
+    "high_priority":                    "badge-danger",
+    "detailed_analysis":                "badge-primary",
+    "alarms_notifications_diagnostics": "badge-secondary",
+    "unknown":                          "badge-light border"
+  };
+
+  function relevanceFormatter(cell) {
+    var val = cell.getValue();
+    var label = relevanceLabels[val] || val;
+    var cls   = relevanceBadge[val]  || "badge-light border";
+    return '<span class="badge relevance-pill ' + cls + '">' + label + '</span>';
+  }
+
+  function buildSeriesTable(period) {
+    var url = "/event_data/series_data?period=" + period +
+              "&start_date=" + encodeURIComponent(startDate) +
+              "&end_date="   + encodeURIComponent(endDate);
+
+    var table = new Tabulator("#table-" + period, {
+      ajaxURL: url,
+      layout: "fitColumns",
+      height: 420,
+      pagination: true,
+      paginationSize: 20,
+      paginationSizeSelector: [10, 20, 50, 100],
+      placeholder: "No series found for this period.",
+      initialSort: [{ column: "station_id", dir: "asc" }],
+      rowClick: function(e, row) {
+        if (selectedRow) {
+          try { selectedRow.deselect(); } catch(ex) {}
+        }
+        row.select();
+        selectedRow = row;
+        loadEvents(row.getData());
+      },
+      dataLoaded: function(data) {
+        var countEl = document.getElementById("count-" + period);
+        if (countEl) countEl.textContent = data.length + " series";
+      },
+      columns: [
+        { title: "Station ID",   field: "station_id",       width: 100, sorter: "number" },
+        { title: "Station Type", field: "station_type",      width: 130 },
+        { title: "Element",      field: "station_element",   width: 140 },
+        { title: "Segment",      field: "segment_name",      widthGrow: 2, tooltip: true },
+        { title: "Measurement",  field: "measurement_name",  widthGrow: 2, tooltip: true },
+        { title: "Unit",         field: "eng_unit",          width: 80  },
+        { title: "Relevance",    field: "relevance",         width: 160, formatter: relevanceFormatter },
+        { title: "Period",       field: "calc_period",       width: 80  }
+      ]
+    });
+
+    seriesTables[period] = table;
+  }
+
+  function loadEvents(series) {
+    var panel   = document.getElementById("events-panel");
+    var labelEl = document.getElementById("events-label");
+    var countEl = document.getElementById("events-count");
+    panel.classList.remove("d-none");
+    labelEl.textContent = series.label || "";
+    countEl.textContent = "Loading…";
+    panel.scrollIntoView({ behavior: "smooth", block: "start" });
+
+    var url = "/event_data/events_data?uuid=" + encodeURIComponent(series.uuid) +
+              "&start_date=" + encodeURIComponent(startDate) +
+              "&end_date="   + encodeURIComponent(endDate);
+
+    if (eventsTable) {
+      eventsTable.setData(url);
+    } else {
+      eventsTable = new Tabulator("#events-table", {
+        ajaxURL: url,
+        layout: "fitColumns",
+        height: 340,
+        pagination: true,
+        paginationSize: 25,
+        paginationSizeSelector: [25, 50, 100, 288],
+        placeholder: "No events in this date range.",
+        dataLoaded: function(data) {
+          countEl.textContent = data.length + " events";
+        },
+        columns: [
+          {
+            title: "Timestamp",
+            field: "date",
+            sorter: "datetime",
+            sorterParams: { format: "iso" },
+            formatter: "datetime",
+            formatterParams: {
+              inputFormat:  "iso",
+              outputFormat: "yyyy-MM-dd HH:mm:ss",
+              invalidPlaceholder: "(invalid)",
+              timezone: "UTC"
+            },
+            widthGrow: 2
+          },
+          {
+            title: "Value (" + (series.eng_unit || "—") + ")",
+            field: "val",
+            sorter: "number",
+            formatter: function(cell) {
+              var v = cell.getValue();
+              if (v === null || v === undefined) return "—";
+              return parseFloat(v).toLocaleString(undefined, { maximumFractionDigits: 4 });
+            },
+            widthGrow: 1,
+            hozAlign: "right"
+          }
+        ]
+      });
+    }
+  }
+
+  document.getElementById("events-close").addEventListener("click", function() {
+    document.getElementById("events-panel").classList.add("d-none");
+    if (selectedRow) {
+      try { selectedRow.deselect(); } catch(ex) {}
+      selectedRow = null;
+    }
+  });
+
+  // Build all period tables on load
+  periods.forEach(function(period) { buildSeriesTable(period); });
+})();
+</script>

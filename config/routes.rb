@@ -6,6 +6,9 @@ Rails.application.routes.draw do
     get 'table_data', on: :collection
   end
   resources :imports, only: [:index, :destroy]
+  get  'event_data',              to: 'event_data#index'
+  get  'event_data/series_data',  to: 'event_data#series_data'
+  get  'event_data/events_data',  to: 'event_data#events_data'
   resources :pvsyst_simulations do
     get 'table_data', on: :collection
   end
