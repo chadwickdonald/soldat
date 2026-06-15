@@ -1,41 +1,173 @@
-<div class='text-center mb-4'>
-  <img src="home_image.jpeg" class="img-fluid" alt="Responsive image">
-  <h1 class="mt-3">SOLDAT</h1>
-  <p class="text-muted">Since 2023</p>
+<style>
+  .e-hero {
+    background: linear-gradient(135deg, #0f172a 0%, #065f46 100%);
+    border-radius: 16px;
+    padding: 56px 40px;
+    color: #fff;
+    margin-bottom: 40px;
+  }
+  .e-hero .badge-pill {
+    background: rgba(255,255,255,0.15);
+    color: #d1fae5;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 999px;
+    display: inline-block;
+    margin-bottom: 18px;
+  }
+  .e-hero h1 {
+    font-size: 2.6rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    margin-bottom: 14px;
+  }
+  .e-hero p {
+    color: #94a3b8;
+    font-size: 1rem;
+    max-width: 480px;
+    line-height: 1.65;
+    margin-bottom: 28px;
+  }
+  .btn-hero-primary {
+    background: #059669;
+    color: #fff;
+    border: none;
+    padding: 11px 24px;
+    font-weight: 600;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    display: inline-block;
+    text-decoration: none;
+  }
+  .btn-hero-primary:hover {
+    background: #047857;
+    color: #fff;
+    text-decoration: none;
+  }
+  .btn-hero-outline {
+    background: transparent;
+    color: #e2e8f0;
+    border: 1.5px solid rgba(255,255,255,0.25);
+    padding: 10px 24px;
+    font-weight: 600;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    display: inline-block;
+    text-decoration: none;
+    margin-left: 10px;
+  }
+  .btn-hero-outline:hover {
+    border-color: rgba(255,255,255,0.5);
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .e-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 28px 24px;
+    height: 100%;
+    transition: box-shadow 0.18s, border-color 0.18s;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  .e-card:hover {
+    box-shadow: 0 8px 32px rgba(0,0,0,0.09);
+    border-color: #a7f3d0;
+    text-decoration: none;
+    color: inherit;
+  }
+  .e-card-icon {
+    width: 48px;
+    height: 48px;
+    background: #d1fae5;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
+    margin-bottom: 16px;
+  }
+  .e-card h5 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 6px;
+  }
+  .e-card p {
+    font-size: 0.85rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0;
+  }
+  .e-card .e-arrow {
+    font-size: 0.8rem;
+    color: #059669;
+    font-weight: 600;
+    margin-top: 14px;
+    display: block;
+  }
+
+  .e-section-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #059669;
+    margin-bottom: 6px;
+  }
+  .e-section-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 24px;
+  }
+</style>
+
+<!-- Hero -->
+<div class="e-hero">
+  <span class="badge-pill">Solar Data Platform</span>
+  <h1>Solar Facility Intelligence,<br>Simplified.</h1>
+  <p>Connect to your SCADA system, explore event measurements, and analyze PVsyst simulations — all in one place.</p>
+  <a href="/event_data" class="btn-hero-primary">Explore Event Data &rarr;</a>
+  <a href="/projects" class="btn-hero-outline">View Projects</a>
 </div>
 
-<div class="row justify-content-center">
-  <div class="col-md-4 mb-3">
-    <a href="/projects" class="text-decoration-none">
-      <div class="card h-100 shadow-sm border-0 text-center p-3">
-        <div class="card-body">
-          <div class="display-4 mb-2">&#128451;</div>
-          <h5 class="card-title">Projects</h5>
-          <p class="card-text text-muted small">Browse PVsyst project files and metadata.</p>
-        </div>
-      </div>
+<!-- Navigation Cards -->
+<div class="e-section-label">Quick Access</div>
+<div class="e-section-title">Where would you like to go?</div>
+
+<div class="row">
+  <div class="col-md-4 mb-4">
+    <a href="/projects" class="e-card">
+      <div class="e-card-icon">&#128451;</div>
+      <h5>Projects</h5>
+      <p>Browse PVsyst project files, metadata, and associated simulation data.</p>
+      <span class="e-arrow">View projects &rarr;</span>
     </a>
   </div>
-  <div class="col-md-4 mb-3">
-    <a href="/pvsyst_simulations" class="text-decoration-none">
-      <div class="card h-100 shadow-sm border-0 text-center p-3">
-        <div class="card-body">
-          <div class="display-4 mb-2">&#9728;</div>
-          <h5 class="card-title">Simulations</h5>
-          <p class="card-text text-muted small">View hourly PVsyst simulation output.</p>
-        </div>
-      </div>
+
+  <div class="col-md-4 mb-4">
+    <a href="/pvsyst_simulations" class="e-card">
+      <div class="e-card-icon">&#9728;&#65039;</div>
+      <h5>Simulations</h5>
+      <p>View hourly PVsyst simulation output and compare against actual performance.</p>
+      <span class="e-arrow">View simulations &rarr;</span>
     </a>
   </div>
-  <div class="col-md-4 mb-3">
-    <a href="/event_data" class="text-decoration-none">
-      <div class="card h-100 shadow-sm border-primary border text-center p-3">
-        <div class="card-body">
-          <div class="display-4 mb-2">&#128200;</div>
-          <h5 class="card-title text-primary">Event Data Explorer</h5>
-          <p class="card-text text-muted small">Explore SCADA measurement series by period and station.</p>
-        </div>
-      </div>
+
+  <div class="col-md-4 mb-4">
+    <a href="/event_data" class="e-card">
+      <div class="e-card-icon">&#128200;</div>
+      <h5>Event Data Explorer</h5>
+      <p>Drill into SCADA measurement series by time period and station across your portfolio.</p>
+      <span class="e-arrow">Open explorer &rarr;</span>
     </a>
   </div>
 </div>
