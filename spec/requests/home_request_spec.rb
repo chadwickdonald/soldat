@@ -3,10 +3,9 @@ require 'rails_helper'
 RSpec.describe "Homes", type: :request do
   describe "GET /index" do
     context "when unauthenticated" do
-      it "redirects to login" do
+      it "returns http success (home is public)" do
         get "/home/index"
-        expect(response).to have_http_status(:redirect)
-        expect(response).to redirect_to(new_session_path)
+        expect(response).to have_http_status(:success)
       end
     end
 

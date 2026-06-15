@@ -58,6 +58,8 @@
                     class: "btn btn-outline-light btn-sm",
                     form: { style: "display:inline" } %>
             </div>
+          <% else %>
+            <%= link_to "Login", new_session_path, class: "btn btn-outline-light btn-sm" %>
           <% end %>
         </div>
       </div>
