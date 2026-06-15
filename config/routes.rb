@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resource :session
   resources :passwords, param: :token
   resources :users
+  get 'dashboard', to: 'dashboard#index', as: :dashboard
   get 'home/index'
   root "home#index"
   resources :pvsysts, only: [:index]
