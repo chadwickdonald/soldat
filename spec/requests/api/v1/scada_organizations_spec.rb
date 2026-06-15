@@ -27,7 +27,7 @@ RSpec.describe "ScadaOrganizations API", type: :request do
       it "returns a 404 not found error" do
         get "/api/v1/scada_organizations/9999", headers: headers
         expect(response).to have_http_status(:not_found)
-        expect(JSON.parse(response.body)).to include("error" => "Couldn't find ScadaOrganization with 'id'=9999")
+        expect(JSON.parse(response.body)).to include("error" => "Couldn't find ScadaOrganization with 'id'=\"9999\"")
       end
     end
   end
