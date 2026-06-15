@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resource :session
+  resources :passwords, param: :token
+  resources :users
   get 'home/index'
   root "home#index"
   resources :pvsysts, only: [:index]

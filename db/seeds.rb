@@ -242,3 +242,10 @@ pvsyst1 = Pvsyst.create({
 
 units = ["W/m²", "°C", "m/s", "kW", "V"]
 units.each { |str| Unit.create(description: str) }
+
+# Seed users (only if none exist)
+if User.none?
+  User.create!(email_address: "admin@enthasys.com", password: "changeme123!", role: :admin)
+  User.create!(email_address: "user@enthasys.com",  password: "changeme123!", role: :user)
+  puts "Created admin@enthasys.com and user@enthasys.com (password: changeme123!)"
+end
