@@ -1,178 +1,315 @@
-<table>
-	<tbody>
-		<% @projects.each do |project| %>
-			<tr>
-				<td>Project Name: <%= project.project %></td>
-			</tr>
-			<tr>
-				<td>Simulation Date: <%= project.simulation_date.strftime("%m/%d/%Y at %I:%M%p") %></td>
-			</tr>
-			<% project.pvsysts.each do |pvsyst| %>
-				<tr>
-					<td><h3>---------------------------------------</h3></td>
-				</tr>
-				<tr>
-					<td>Pvsyst Id: </td>
-					<td><%= pvsyst.id %></td>
-				</tr>
-				<tr>
-					<td>Situation Latitude: </td>
-					<td><%= pvsyst.situation_latitude %></td>
-				</tr>
-				<tr>
-					<td>Situation Longitude: </td>
-					<td><%= pvsyst.situation_longitude %></td>
-				</tr>
-				<tr>
-					<td>Time Defined as: </td>
-					<td><%= pvsyst.time_defined_as %></td>
-				</tr>
-				<tr>
-					<td>Altitude: </td>
-					<td><%= pvsyst.altitude %></td>
-				</tr>
-				<tr>
-					<td>Country: </td>
-					<td><%= pvsyst.country %></td>
-				</tr>
-				<tr>
-					<td>Axis Tilt: </td>
-					<td><%= pvsyst.axis_tilt %></td>
-				</tr>
-				<tr>
-					<td>Axis Azimuth: </td>
-					<td><%= pvsyst.axis_azimuth %></td>
-				</tr>
-				<tr>
-					<td>Minimum Phi: </td>
-					<td><%= pvsyst.minimum_phi %></td>
-				</tr>
-				<tr>
-					<td>Maximum Phi: </td>
-					<td><%= pvsyst.maximum_phi %></td>
-				</tr>
-				<tr>
-					<td>Tracking Algorithm: </td>
-					<td><%= pvsyst.tracking_algorithm %></td>
-				</tr>
-				<tr>
-					<td>Number of Trackers: </td>
-					<td><%= pvsyst.number_of_trackers %></td>
-				</tr>
-				<tr>
-					<td>Tracker Spacing: </td>
-					<td><%= pvsyst.tracker_spacing %></td>
-				</tr>
-				<tr>
-					<td>Collector Width: </td>
-					<td><%= pvsyst.collector_width %></td>
-				</tr>
-				<tr>
-					<td>Phi Limits: </td>
-					<td><%= pvsyst.phi_limits %></td>
-				</tr>
-				<tr>
-					<td>Ground Cover Ratio: </td>
-					<td><%= pvsyst.ground_cover_ratio %></td>
-				</tr>
-				<tr>
-					<td>Models Used: </td>
-					<td><%= pvsyst.models_used %></td>
-				</tr>
-								<tr>
-					<td>Horizon: </td>
-					<td><%= pvsyst.horizon %></td>
-				</tr>
-				<tr>
-					<td>Near Shadings: </td>
-					<td><%= pvsyst.near_shadings %></td>
-				</tr>
-				<tr>
-					<td>Users Needs: </td>
-					<td><%= pvsyst.users_needs %></td>
-				</tr>
-				<tr>
-					<td>Grid Power Limitation Active Power: </td>
-					<td><%= pvsyst.grid_power_limitation_active_power %></td>
-				</tr>
-				<tr>
-					<td>Grid Power Limitation Pnom Ratio: </td>
-					<td><%= pvsyst.grid_power_limitation_pnom_ratio %></td>
-				</tr>
-				<tr>
-					<td>Power Factor Cos: </td>
-					<td><%= pvsyst.power_factor_cos %></td>
-				</tr>
-				<tr>
-					<td>Power Factor Phi: </td>
-					<td><%= pvsyst.power_factor_phi %></td>
-				</tr>
-				<tr>
-					<td>PV Module: </td>
-					<td><%= pvsyst.pv_module %></td>
-				</tr>
-				<tr>
-					<td>Original Pysyst DB Manufacturer: </td>
-					<td><%= pvsyst.original_pysyst_db_manufacturer %></td>
-				</tr>				
-				<tr>
-					<td>PV Modules in Series: </td>
-					<td><%= pvsyst.pv_modules_in_series %></td>
-				</tr>
-				<tr>
-					<td>PV Modules in Parallel: </td>
-					<td><%= pvsyst.pv_modules_in_parallel %></td>
-				</tr>				
-				<tr>
-					<td>Total PV Modules: </td>
-					<td><%= pvsyst.total_pv_modules %></td>
-				</tr>
-				<tr>
-					<td>Module Unit Nom Power: </td>
-					<td><%= pvsyst.module_unit_nom_power %></td>
-				</tr>				
-				<tr>
-					<td>Global Power Nominal: </td>
-					<td><%= pvsyst.global_power_nominal %></td>
-				</tr>
-				<tr>
-					<td>Global Power Operating Cond: </td>
-					<td><%= pvsyst.global_power_operating_cond %></td>
-				</tr>				
-				<tr>
-					<td>U Mpp: </td>
-					<td><%= pvsyst.u_mpp %></td>
-				</tr>
-				<tr>
-					<td>I Mpp: </td>
-					<td><%= pvsyst.i_mpp %></td>
-				</tr>				
-				<tr>
-					<td>Module Area: </td>
-					<td><%= pvsyst.module_area %></td>
-				</tr>
-				<tr>
-					<td>Cell Area: </td>
-					<td><%= pvsyst.cell_area %></td>
-				</tr>				
-				<tr>
-					<td>Inverter Model: </td>
-					<td><%= pvsyst.inverter_model %></td>
-				</tr>
-				<tr>
-					<td>Custom Params Def Manufacturer: </td>
-					<td><%= pvsyst.custom_params_def_manufacturer %></td>
-				</tr>				
-				<tr>
-					<td>Operating Voltage: </td>
-					<td><%= pvsyst.operating_voltage %></td>
-				</tr>
-				<tr>
-					<td>Inverter Unit Nom Power: </td>
-					<td><%= pvsyst.inverter_unit_nom_power %></td>
-				</tr>				
-			<% end %>
-		<% end %>
-	</tbody>
-</table>
+<style>
+  .page-header { margin-bottom: 32px; }
+  .page-header h4 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.4px;
+    margin-bottom: 4px;
+  }
+  .page-header p { color: #64748b; font-size: 0.9rem; margin: 0; }
 
+  .project-block { margin-bottom: 36px; }
+  .project-header {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px 12px 0 0;
+    padding: 16px 24px;
+    border-bottom: 2px solid #d1fae5;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .project-header .project-icon {
+    width: 36px;
+    height: 36px;
+    background: #d1fae5;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+  .project-header h5 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 2px;
+  }
+  .project-header .project-meta { font-size: 0.78rem; color: #94a3b8; }
+  .project-header .project-meta span { margin-right: 14px; }
+
+  .pvsyst-entry {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-top: none;
+    padding: 20px 24px;
+  }
+  .pvsyst-entry:last-child { border-radius: 0 0 12px 12px; }
+  .pvsyst-entry + .pvsyst-entry { border-top: 1px solid #f1f5f9; }
+
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .stat-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 10px 14px;
+  }
+  .stat-box .stat-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #94a3b8;
+    margin-bottom: 3px;
+  }
+  .stat-box .stat-value {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: #0f172a;
+  }
+  .stat-box .stat-value.highlight { color: #059669; }
+
+  .detail-toggle {
+    font-size: 0.8rem;
+    color: #059669;
+    font-weight: 600;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    text-decoration: none;
+  }
+  .detail-toggle:hover { color: #047857; text-decoration: none; }
+
+  .detail-section { margin-top: 16px; }
+  .detail-section-title {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #059669;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #f1f5f9;
+  }
+  .param-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 6px 20px;
+    margin-bottom: 16px;
+  }
+  .param-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 0.8rem;
+    padding: 3px 0;
+    border-bottom: 1px solid #f8fafc;
+  }
+  .param-row .param-key { color: #64748b; flex-shrink: 0; margin-right: 8px; }
+  .param-row .param-val { color: #0f172a; font-weight: 500; text-align: right; word-break: break-word; }
+</style>
+
+<div class="page-header">
+  <h4>PVsyst Data</h4>
+  <p><%= @projects.count %> project<%= @projects.count == 1 ? '' : 's' %> with PVsyst parameters</p>
+</div>
+
+<% if @projects.empty? %>
+  <div class="text-center py-5 text-muted">
+    <div style="font-size:2rem; margin-bottom:12px;">&#128196;</div>
+    <p>No PVsyst data imported yet. Use the <a href="/imports">Import</a> page to upload a PVsyst PDF report.</p>
+  </div>
+<% end %>
+
+<% @projects.each do |project| %>
+  <% next if project.pvsysts.empty? %>
+  <div class="project-block">
+    <div class="project-header">
+      <div class="project-icon">&#9728;&#65039;</div>
+      <div>
+        <h5><%= project.project_description.presence || project.project %></h5>
+        <div class="project-meta">
+          <span>File: <strong><%= project.project %></strong></span>
+          <% if project.simulation_date %>
+            <span>Simulated: <strong><%= project.simulation_date.strftime("%b %-d, %Y") %></strong></span>
+          <% end %>
+          <span>PVsyst <strong><%= project.pvsyst_version %></strong></span>
+        </div>
+      </div>
+    </div>
+
+    <% project.pvsysts.each_with_index do |pv, idx| %>
+      <div class="pvsyst-entry">
+        <% collapse_id = "pv-#{project.id}-#{pv.id}" %>
+
+        <!-- Key stats -->
+        <div class="stat-grid">
+          <% if pv.situation_latitude.present? && pv.situation_longitude.present? %>
+            <div class="stat-box">
+              <div class="stat-label">Location</div>
+              <div class="stat-value"><%= "%.4f" % pv.situation_latitude %>, <%= "%.4f" % pv.situation_longitude %></div>
+            </div>
+          <% end %>
+          <% if pv.country.present? %>
+            <div class="stat-box">
+              <div class="stat-label">Country</div>
+              <div class="stat-value"><%= pv.country %></div>
+            </div>
+          <% end %>
+          <% if pv.total_pv_modules.present? %>
+            <div class="stat-box">
+              <div class="stat-label">Total Modules</div>
+              <div class="stat-value"><%= pv.total_pv_modules %></div>
+            </div>
+          <% end %>
+          <% if pv.tracking_algorithm.present? %>
+            <div class="stat-box">
+              <div class="stat-label">Tracking</div>
+              <div class="stat-value"><%= pv.tracking_algorithm %></div>
+            </div>
+          <% end %>
+          <% if pv.main_simulation_perf_ratio.present? %>
+            <div class="stat-box">
+              <div class="stat-label">Performance Ratio</div>
+              <div class="stat-value highlight"><%= "%.1f%" % (pv.main_simulation_perf_ratio.to_f * 100) %></div>
+            </div>
+          <% end %>
+          <% if pv.main_simulation_produced_energy.present? %>
+            <div class="stat-box">
+              <div class="stat-label">Produced Energy</div>
+              <div class="stat-value highlight"><%= number_with_delimiter(pv.main_simulation_produced_energy.to_f.round) %> kWh</div>
+            </div>
+          <% end %>
+          <% if pv.main_simulation_specific_prod.present? %>
+            <div class="stat-box">
+              <div class="stat-label">Specific Production</div>
+              <div class="stat-value"><%= pv.main_simulation_specific_prod %> kWh/kWp</div>
+            </div>
+          <% end %>
+        </div>
+
+        <a class="detail-toggle" data-toggle="collapse" href="#<%= collapse_id %>" role="button" aria-expanded="false">
+          Show all parameters ▾
+        </a>
+
+        <div class="collapse detail-section" id="<%= collapse_id %>">
+
+          <!-- Location & Site -->
+          <div class="detail-section-title mt-3">Location &amp; Site</div>
+          <div class="param-grid">
+            <% {
+              "Latitude"      => pv.situation_latitude,
+              "Longitude"     => pv.situation_longitude,
+              "Altitude"      => pv.altitude,
+              "Country"       => pv.country,
+              "Time Zone"     => pv.time_zone,
+              "Time Defined"  => pv.time_defined_as
+            }.each do |label, val| %>
+              <% next if val.blank? %>
+              <div class="param-row">
+                <span class="param-key"><%= label %></span>
+                <span class="param-val"><%= val %></span>
+              </div>
+            <% end %>
+          </div>
+
+          <!-- Array & Tracking -->
+          <div class="detail-section-title">Array &amp; Tracking</div>
+          <div class="param-grid">
+            <% {
+              "Axis Tilt"          => pv.axis_tilt,
+              "Axis Azimuth"       => pv.axis_azimuth,
+              "Min Phi"            => pv.minimum_phi,
+              "Max Phi"            => pv.maximum_phi,
+              "Phi Limits"         => pv.phi_limits,
+              "Tracking Algorithm" => pv.tracking_algorithm,
+              "No. Trackers"       => pv.number_of_trackers,
+              "Tracker Spacing"    => pv.tracker_spacing,
+              "Collector Width"    => pv.collector_width,
+              "GCR"                => pv.ground_cover_ratio
+            }.each do |label, val| %>
+              <% next if val.blank? %>
+              <div class="param-row">
+                <span class="param-key"><%= label %></span>
+                <span class="param-val"><%= val %></span>
+              </div>
+            <% end %>
+          </div>
+
+          <!-- PV Module -->
+          <div class="detail-section-title">PV Module</div>
+          <div class="param-grid">
+            <% {
+              "Module"              => pv.pv_module,
+              "Manufacturer"        => pv.original_pysyst_db_manufacturer,
+              "Modules in Series"   => pv.pv_modules_in_series,
+              "Modules in Parallel" => pv.pv_modules_in_parallel,
+              "Total Modules"       => pv.total_pv_modules,
+              "Unit Nom Power"      => pv.module_unit_nom_power,
+              "Global Pnom"         => pv.global_power_nominal,
+              "Global Pnom (Oper.)" => pv.global_power_operating_cond,
+              "U Mpp"               => pv.u_mpp,
+              "I Mpp"               => pv.i_mpp,
+              "Module Area"         => pv.module_area,
+              "Cell Area"           => pv.cell_area
+            }.each do |label, val| %>
+              <% next if val.blank? %>
+              <div class="param-row">
+                <span class="param-key"><%= label %></span>
+                <span class="param-val"><%= val %></span>
+              </div>
+            <% end %>
+          </div>
+
+          <!-- Inverter -->
+          <div class="detail-section-title">Inverter</div>
+          <div class="param-grid">
+            <% {
+              "Model"        => pv.inverter_model,
+              "Manufacturer" => pv.custom_params_def_manufacturer,
+              "Oper. Voltage"=> pv.operating_voltage,
+              "Unit Nom Power"=> pv.inverter_unit_nom_power
+            }.each do |label, val| %>
+              <% next if val.blank? %>
+              <div class="param-row">
+                <span class="param-key"><%= label %></span>
+                <span class="param-val"><%= val %></span>
+              </div>
+            <% end %>
+          </div>
+
+          <!-- System & Grid -->
+          <div class="detail-section-title">System &amp; Grid</div>
+          <div class="param-grid">
+            <% {
+              "System Type"         => pv.system_type,
+              "Models Used"         => pv.models_used,
+              "Horizon"             => pv.horizon,
+              "Near Shadings"       => pv.near_shadings,
+              "Users Needs"         => pv.users_needs,
+              "Grid Pwr Limit (kW)" => pv.grid_power_limitation_active_power,
+              "Grid Pwr Limit (%)"  => pv.grid_power_limitation_pnom_ratio,
+              "Power Factor Cos"    => pv.power_factor_cos,
+              "Power Factor Phi"    => pv.power_factor_phi
+            }.each do |label, val| %>
+              <% next if val.blank? %>
+              <div class="param-row">
+                <span class="param-key"><%= label %></span>
+                <span class="param-val"><%= val %></span>
+              </div>
+            <% end %>
+          </div>
+
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
