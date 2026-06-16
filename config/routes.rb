@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :passwords, param: :token
   resources :users
   get 'dashboard', to: 'dashboard#index', as: :dashboard
+  get 'contact',   to: 'pages#contact',   as: :contact
   get 'home/index'
   root "home#index"
   resources :pvsysts, only: [:index]
