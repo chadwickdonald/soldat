@@ -155,7 +155,7 @@
           <% if pv.situation_latitude.present? && pv.situation_longitude.present? %>
             <div class="stat-box">
               <div class="stat-label">Location</div>
-              <div class="stat-value"><%= "%.4f" % pv.situation_latitude %>, <%= "%.4f" % pv.situation_longitude %></div>
+              <div class="stat-value"><%= pv.situation_latitude %>, <%= pv.situation_longitude %></div>
             </div>
           <% end %>
           <% if pv.country.present? %>
