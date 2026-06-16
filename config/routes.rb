@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :passwords, param: :token
   resources :users
   get 'dashboard', to: 'dashboard#index', as: :dashboard
+  resources :scada_sites, only: %i[new create]
   get  'about',          to: 'pages#about',        as: :about
   get  'contact',        to: 'pages#contact',      as: :contact
   post 'contact',        to: 'pages#send_contact',  as: :send_contact

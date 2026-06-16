@@ -16,9 +16,9 @@ RSpec.describe "Homes", type: :request do
         post session_path, params: { email_address: user.email_address, password: "password123!" }
       end
 
-      it "returns http success" do
+      it "redirects to dashboard" do
         get "/home/index"
-        expect(response).to have_http_status(:success)
+        expect(response).to redirect_to(dashboard_path)
       end
     end
   end

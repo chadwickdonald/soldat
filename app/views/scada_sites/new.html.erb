@@ -1,0 +1,84 @@
+<div class="row justify-content-center">
+  <div class="col-md-7">
+    <div class="d-flex align-items-center mb-4">
+      <%= link_to "&larr; Back".html_safe, dashboard_path, class: "text-muted small mr-3" %>
+      <h4 class="font-weight-bold mb-0">Add SCADA Site</h4>
+    </div>
+
+    <%= form_with model: @scada_site, url: scada_sites_path do |f| %>
+      <% if @scada_site.errors.any? %>
+        <div class="alert alert-danger">
+          <% @scada_site.errors.full_messages.each do |msg| %>
+            <div><%= msg %></div>
+          <% end %>
+        </div>
+      <% end %>
+
+      <div class="card border-0 shadow-sm p-4 mb-3">
+        <h6 class="font-weight-bold text-muted text-uppercase small mb-3">Site Details</h6>
+
+        <div class="form-group">
+          <%= f.label :name, "Site Name *" %>
+          <%= f.text_field :name, class: "form-control", required: true, placeholder: "e.g. Perry Solar Farm" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :organization_id, "Organization *" %>
+          <%= f.select :organization_id,
+                options_from_collection_for_select(@organizations, :id, :name, @scada_site.organization_id),
+                { prompt: "Select an organization" },
+                class: "form-control", required: true %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :uuid, "UUID (leave blank to auto-generate)" %>
+          <%= f.text_field :uuid, class: "form-control", placeholder: "e.g. 550e8400-e29b-41d4-a716-446655440000" %>
+        </div>
+      </div>
+
+      <div class="card border-0 shadow-sm p-4 mb-4">
+        <h6 class="font-weight-bold text-muted text-uppercase small mb-3">Location</h6>
+
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <%= f.label :city, "City" %>
+            <%= f.text_field :city, class: "form-control", placeholder: "Perry" %>
+          </div>
+          <div class="form-group col-md-3">
+            <%= f.label :state, "State" %>
+            <%= f.text_field :state, class: "form-control", placeholder: "GA" %>
+          </div>
+          <div class="form-group col-md-3">
+            <%= f.label :country, "Country" %>
+            <%= f.text_field :country, class: "form-control", placeholder: "US" %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :address, "Address" %>
+          <%= f.text_field :address, class: "form-control", placeholder: "123 Solar Way" %>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <%= f.label :latitude, "Latitude" %>
+            <%= f.text_field :latitude, class: "form-control", placeholder: "32.36" %>
+          </div>
+          <div class="form-group col-md-4">
+            <%= f.label :longitude, "Longitude" %>
+            <%= f.text_field :longitude, class: "form-control", placeholder: "-83.77" %>
+          </div>
+          <div class="form-group col-md-4">
+            <%= f.label :timezone, "Timezone" %>
+            <%= f.text_field :timezone, class: "form-control", placeholder: "America/New_York" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-between">
+        <%= link_to "Cancel", dashboard_path, class: "btn btn-outline-secondary" %>
+        <%= f.submit "Create site", class: "btn btn-success" %>
+      </div>
+    <% end %>
+  </div>
+</div>
