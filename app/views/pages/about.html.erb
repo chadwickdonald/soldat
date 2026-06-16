@@ -1,0 +1,170 @@
+<style>
+  .contact-hero {
+    background: linear-gradient(135deg, #0f172a 0%, #065f46 100%);
+    border-radius: 16px;
+    padding: 56px 48px;
+    color: #fff;
+    margin-bottom: 48px;
+  }
+  .contact-hero .eyebrow {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #6ee7b7;
+    margin-bottom: 14px;
+  }
+  .contact-hero h1 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+  .contact-hero p {
+    color: #94a3b8;
+    font-size: 1rem;
+    max-width: 540px;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .offer-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 28px 24px;
+    height: 100%;
+  }
+  .offer-icon {
+    width: 44px;
+    height: 44px;
+    background: #d1fae5;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    margin-bottom: 14px;
+  }
+  .offer-card h5 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 6px;
+  }
+  .offer-card p {
+    font-size: 0.85rem;
+    color: #64748b;
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  .section-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #059669;
+    margin-bottom: 6px;
+  }
+  .section-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+  }
+  .section-sub {
+    color: #64748b;
+    font-size: 0.9rem;
+    line-height: 1.65;
+    margin-bottom: 32px;
+  }
+
+  .contact-block {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 32px;
+  }
+  .contact-block h5 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 4px;
+  }
+  .contact-block p {
+    font-size: 0.875rem;
+    color: #64748b;
+    margin-bottom: 16px;
+  }
+  .contact-block a {
+    color: #059669;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+</style>
+
+<!-- Hero -->
+<div class="contact-hero">
+  <div class="eyebrow">About Enthasys</div>
+  <h1>Solar Data Intelligence,<br>Built for Operators.</h1>
+  <p>Enthasys is a purpose-built platform for solar energy asset teams. We connect directly to your SCADA system to deliver clean, queryable measurement data — so you spend less time wrangling exports and more time making decisions.</p>
+</div>
+
+<!-- What we offer -->
+<div class="mb-5">
+  <div class="section-label">What We Offer</div>
+  <div class="section-title">A full data stack for solar portfolios</div>
+  <p class="section-sub">From raw SCADA event streams to simulation comparisons, Enthasys handles the data pipeline end-to-end.</p>
+
+  <div class="row">
+    <div class="col-md-3 mb-3">
+      <div class="offer-card">
+        <div class="offer-icon">&#128225;</div>
+        <h5>SCADA Integration</h5>
+        <p>Automated nightly sync with solarpark-online IFMS pulls events, measurements, and hierarchy data across all facilities.</p>
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <div class="offer-card">
+        <div class="offer-icon">&#128200;</div>
+        <h5>Event Data Explorer</h5>
+        <p>Query and visualize measurement series by station, time period, and engineering unit across your entire portfolio.</p>
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <div class="offer-card">
+        <div class="offer-icon">&#9728;&#65039;</div>
+        <h5>PVsyst Analysis</h5>
+        <p>Import simulation files and compare projected output against actual SCADA performance data to identify deviations.</p>
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <div class="offer-card">
+        <div class="offer-icon">&#128274;</div>
+        <h5>Secure Access</h5>
+        <p>Role-based access control keeps operational data in the right hands, with admin controls for user and import management.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Contact -->
+<div class="row">
+  <div class="col-md-6 mb-4">
+    <div class="contact-block">
+      <h5>Get in touch</h5>
+      <p>Interested in Enthasys for your solar portfolio? We'd love to hear from you.</p>
+      <a href="mailto:hello@enthasys.com">hello@enthasys.com</a>
+    </div>
+  </div>
+  <div class="col-md-6 mb-4">
+    <div class="contact-block">
+      <h5>Already a user?</h5>
+      <p>Log in to access your dashboard, or reach out to your administrator for account setup.</p>
+      <%= link_to "Sign in &rarr;".html_safe, new_session_path %>
+    </div>
+  </div>
+</div>
