@@ -4,9 +4,10 @@ class EventDataExplorer
 
   PERIOD_BUCKETS = { "1m" => "1m", "5m" => "5m" }.freeze
 
-  def initialize(start_date: DEFAULT_START, end_date: DEFAULT_END)
+  def initialize(start_date: DEFAULT_START, end_date: DEFAULT_END, site_uuid: nil)
     @start_date = start_date
     @end_date   = end_date
+    @site_uuid  = site_uuid
   end
 
   def series_by_period
@@ -24,7 +25,7 @@ class EventDataExplorer
   end
 
   def events_for(measurement_source_uuid)
-    source = ScadaMeasurementSource.find_by(uuid: measurement_source_uuid)
+    source = scada_measurement_sources_scope.find_by(uuid: measurement_source_uuid)
     return [] unless source
 
     source.scada_events
@@ -36,8 +37,18 @@ class EventDataExplorer
 
   private
 
+  def scada_measurement_sources_scope
+    scope = ScadaMeasurementSource.all
+    if @site_uuid.present?
+      scope = scope
+        .joins(scada_measurement: { scada_mloc: :scada_segment })
+        .where(scada_segments: { site_id: @site_uuid })
+    end
+    scope
+  end
+
   def measurement_sources_with_metadata
-    ScadaMeasurementSource
+    scada_measurement_sources_scope
       .joins(scada_measurement: :field_alias)
       .includes(scada_measurement: :field_alias)
       .where.not(calc_period: [nil, ""])
