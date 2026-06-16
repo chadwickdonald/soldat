@@ -1,22 +1,143 @@
-<h6>Import Files</h6>
+<style>
+  .page-header { margin-bottom: 32px; }
+  .page-header h4 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.4px;
+    margin-bottom: 4px;
+  }
+  .page-header p { color: #64748b; font-size: 0.9rem; margin: 0; }
 
-<div class="border-top my-3"></div>
-<h6>Pvsyst Simulation Import (.csv)</h6>
+  .import-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 28px 24px;
+    height: 100%;
+  }
+  .import-card-icon {
+    width: 48px;
+    height: 48px;
+    background: #d1fae5;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
+    margin-bottom: 16px;
+  }
+  .import-card h5 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 4px;
+  }
+  .import-card .card-desc {
+    font-size: 0.85rem;
+    color: #64748b;
+    line-height: 1.55;
+    margin-bottom: 20px;
+  }
 
-<%= form_tag '/pvsyst_simulations/import', :multipart => true do %>
-   <label for="file" class="form-label"></label> <%= file_field_tag "file" %>
-   <%= submit_tag %>
-<% end %>
+  .file-input-wrapper { position: relative; }
+  .file-input-wrapper input[type="file"] {
+    display: block;
+    width: 100%;
+    font-size: 0.85rem;
+    color: #0f172a;
+    border: 1.5px dashed #cbd5e1;
+    border-radius: 8px;
+    padding: 10px 12px;
+    background: #f8fafc;
+    cursor: pointer;
+  }
+  .file-input-wrapper input[type="file"]:hover { border-color: #059669; }
 
-<div class="border-top my-3"></div>
-<h6>Pvsyst Import (.pdf)</h6>
+  .btn-import {
+    background: #059669;
+    color: #fff;
+    border: none;
+    padding: 9px 20px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 14px;
+    display: inline-block;
+  }
+  .btn-import:hover { background: #047857; }
 
-<%= form_tag '/pvsysts/import', :multipart => true do %>
-   <label class='form-label' for="file"></label> <%= file_field_tag "file" %>
-   <%= submit_tag %>
-<% end %>
-<div class="border-top my-3"></div>
-<form class='button-to' method='post' action='/imports/1'>
-  <input type='hidden' name='_method' value='delete'>
-  <input type='submit' value='Delete Everything!'>
-</form>
+  .danger-zone {
+    background: #fff;
+    border: 1px solid #fecaca;
+    border-radius: 12px;
+    padding: 24px 24px;
+    margin-top: 36px;
+  }
+  .danger-zone h6 {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #dc2626;
+    margin-bottom: 10px;
+  }
+  .danger-zone p { font-size: 0.85rem; color: #64748b; margin-bottom: 16px; }
+  .btn-danger-action {
+    background: #fff;
+    color: #dc2626;
+    border: 1.5px solid #fca5a5;
+    padding: 7px 16px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .btn-danger-action:hover { background: #fef2f2; border-color: #dc2626; }
+</style>
+
+<div class="page-header">
+  <h4>Import Data</h4>
+  <p>Upload PVsyst files to populate simulation and project data.</p>
+</div>
+
+<div class="row">
+  <div class="col-md-6 mb-4">
+    <div class="import-card">
+      <div class="import-card-icon">&#128202;</div>
+      <h5>PVsyst Simulation</h5>
+      <p class="card-desc">Import hourly simulation output from a PVsyst <code>.csv</code> export file.</p>
+      <%= form_tag '/pvsyst_simulations/import', multipart: true do %>
+        <div class="file-input-wrapper">
+          <%= file_field_tag "file", accept: ".csv" %>
+        </div>
+        <input type="submit" value="Upload CSV" class="btn-import">
+      <% end %>
+    </div>
+  </div>
+
+  <div class="col-md-6 mb-4">
+    <div class="import-card">
+      <div class="import-card-icon">&#128196;</div>
+      <h5>PVsyst Project File</h5>
+      <p class="card-desc">Import system parameters and project metadata from a PVsyst <code>.pdf</code> report.</p>
+      <%= form_tag '/pvsysts/import', multipart: true do %>
+        <div class="file-input-wrapper">
+          <%= file_field_tag "file", accept: ".pdf" %>
+        </div>
+        <input type="submit" value="Upload PDF" class="btn-import">
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="danger-zone">
+  <h6>Danger Zone</h6>
+  <p>Permanently delete all project records from the database. This action cannot be undone.</p>
+  <form class="button-to" method="post" action="/imports/1" onsubmit="return confirm('Delete all project data? This cannot be undone.');">
+    <input type="hidden" name="_method" value="delete">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <input type="submit" value="Delete All Projects" class="btn-danger-action">
+  </form>
+</div>
