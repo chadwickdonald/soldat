@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'dashboard#index', as: :dashboard
   resources :scada_sites,        only: %i[new create]
   resources :user_organizations, only: %i[new create]
+  resource  :scada_site_selection, only: %i[update]
   get  'about',          to: 'pages#about',        as: :about
   get  'contact',        to: 'pages#contact',      as: :contact
   post 'contact',        to: 'pages#send_contact',  as: :send_contact

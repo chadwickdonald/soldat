@@ -1,7 +1,5 @@
 <style>
-  .dash-header {
-    margin-bottom: 36px;
-  }
+  .dash-header { margin-bottom: 28px; }
   .dash-header h4 {
     font-size: 1.5rem;
     font-weight: 800;
@@ -9,11 +7,65 @@
     letter-spacing: -0.5px;
     margin-bottom: 4px;
   }
-  .dash-header p {
-    color: #64748b;
-    font-size: 0.9rem;
-    margin: 0;
+  .dash-header p { color: #64748b; font-size: 0.9rem; margin: 0; }
+
+  .site-context {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 18px 24px;
+    margin-bottom: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
   }
+  .site-context .site-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #94a3b8;
+    margin-bottom: 4px;
+  }
+  .site-context .site-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0f172a;
+  }
+  .site-context .site-name .arrow {
+    color: #059669;
+    margin: 0 6px;
+  }
+  .site-context .no-site {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    font-style: italic;
+  }
+  .site-select-form select {
+    border: 1.5px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 7px 12px;
+    font-size: 0.85rem;
+    color: #0f172a;
+    margin-right: 8px;
+  }
+  .site-select-form select:focus {
+    border-color: #059669;
+    outline: none;
+  }
+  .btn-switch {
+    background: #059669;
+    color: #fff;
+    border: none;
+    padding: 7px 16px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .btn-switch:hover { background: #047857; }
 
   .e-card {
     background: #fff;
@@ -32,6 +84,10 @@
     text-decoration: none;
     color: inherit;
   }
+  .e-card.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
   .e-card-icon {
     width: 48px;
     height: 48px;
@@ -43,25 +99,9 @@
     font-size: 1.35rem;
     margin-bottom: 16px;
   }
-  .e-card h5 {
-    font-size: 1rem;
-    font-weight: 700;
-    color: #0f172a;
-    margin-bottom: 6px;
-  }
-  .e-card p {
-    font-size: 0.85rem;
-    color: #64748b;
-    line-height: 1.6;
-    margin: 0;
-  }
-  .e-card .e-arrow {
-    font-size: 0.8rem;
-    color: #059669;
-    font-weight: 600;
-    margin-top: 14px;
-    display: block;
-  }
+  .e-card h5 { font-size: 1rem; font-weight: 700; color: #0f172a; margin-bottom: 6px; }
+  .e-card p  { font-size: 0.85rem; color: #64748b; line-height: 1.6; margin: 0; }
+  .e-arrow   { font-size: 0.8rem; color: #059669; font-weight: 600; margin-top: 14px; display: block; }
 </style>
 
 <div class="dash-header">
@@ -69,9 +109,39 @@
   <p>Select a module to get started.</p>
 </div>
 
+<!-- Site context bar -->
+<div class="site-context">
+  <div>
+    <div class="site-label">Active Site</div>
+    <% if @current_site %>
+      <div class="site-name">
+        <%= @current_org.name %>
+        <span class="arrow">&rarr;</span>
+        <%= @current_site.name %>
+      </div>
+    <% else %>
+      <div class="no-site">No site selected — choose one to access data</div>
+    <% end %>
+  </div>
+
+  <% if @available_sites.any? %>
+    <%= form_with url: scada_site_selection_path, method: :patch, class: "site-select-form d-flex align-items-center" do |f| %>
+      <%= f.select :current_scada_site_id,
+            @available_sites.map { |s| ["#{s.scada_organization.name} → #{s.name}", s.id] },
+            { selected: @current_site&.id, prompt: @current_site ? nil : "Select a site…" },
+            class: "" %>
+      <%= f.submit "Switch", class: "btn-switch" %>
+    <% end %>
+  <% elsif @current_site.nil? %>
+    <span class="small text-muted">No sites associated with your account yet.</span>
+  <% end %>
+</div>
+
+<!-- Module cards -->
+<% site_id = @current_site&.id %>
 <div class="row">
-  <div class="col-md-4 mb-4">
-    <a href="/projects" class="e-card">
+  <div class="col-md-3 mb-4">
+    <a href="/projects" class="e-card <%= 'disabled' unless @current_site %>">
       <div class="e-card-icon">&#128451;</div>
       <h5>Projects</h5>
       <p>Browse PVsyst project files, metadata, and associated simulation data.</p>
@@ -79,8 +149,8 @@
     </a>
   </div>
 
-  <div class="col-md-4 mb-4">
-    <a href="/pvsyst_simulations" class="e-card">
+  <div class="col-md-3 mb-4">
+    <a href="/pvsyst_simulations" class="e-card <%= 'disabled' unless @current_site %>">
       <div class="e-card-icon">&#9728;&#65039;</div>
       <h5>Simulations</h5>
       <p>View hourly PVsyst simulation output and compare against actual performance.</p>
@@ -88,8 +158,8 @@
     </a>
   </div>
 
-  <div class="col-md-4 mb-4">
-    <a href="/event_data" class="e-card">
+  <div class="col-md-3 mb-4">
+    <a href="/event_data<%= "?site_id=#{site_id}" if site_id %>" class="e-card <%= 'disabled' unless @current_site %>">
       <div class="e-card-icon">&#128200;</div>
       <h5>Event Data Explorer</h5>
       <p>Drill into SCADA measurement series by time period and station across your portfolio.</p>
@@ -97,8 +167,8 @@
     </a>
   </div>
 
-  <div class="col-md-4 mb-4">
-    <a href="/pvsysts" class="e-card">
+  <div class="col-md-3 mb-4">
+    <a href="/pvsysts" class="e-card <%= 'disabled' unless @current_site %>">
       <div class="e-card-icon">&#9889;</div>
       <h5>PVsyst Data</h5>
       <p>View and manage PVsyst parameter data linked to your projects.</p>
