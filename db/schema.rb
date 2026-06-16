@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_06_15_220907) do
+ActiveRecord::Schema[8.1].define(version: 2026_06_16_020438) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -523,6 +523,16 @@ ActiveRecord::Schema[8.1].define(version: 2026_06_15_220907) do
     t.index ["user_id"], name: "index_sessions_on_user_id"
   end
 
+  create_table "user_organizations", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.bigint "scada_organization_id", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.index ["scada_organization_id"], name: "index_user_organizations_on_scada_organization_id"
+    t.index ["user_id", "scada_organization_id"], name: "index_user_organizations_on_user_id_and_scada_organization_id", unique: true
+    t.index ["user_id"], name: "index_user_organizations_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.string "email_address", null: false
@@ -533,4 +543,6 @@ ActiveRecord::Schema[8.1].define(version: 2026_06_15_220907) do
   end
 
   add_foreign_key "sessions", "users"
+  add_foreign_key "user_organizations", "scada_organizations"
+  add_foreign_key "user_organizations", "users"
 end

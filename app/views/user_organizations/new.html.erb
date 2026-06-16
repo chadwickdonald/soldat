@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <div class="d-flex align-items-center mb-4">
+      <%= link_to "&larr; Back".html_safe, dashboard_path, class: "text-muted small mr-3" %>
+      <h4 class="font-weight-bold mb-0">Associate User with Organization</h4>
+    </div>
+
+    <%= form_with model: @user_organization, url: user_organizations_path do |f| %>
+      <% if @user_organization.errors.any? %>
+        <div class="alert alert-danger">
+          <% @user_organization.errors.full_messages.each do |msg| %>
+            <div><%= msg %></div>
+          <% end %>
+        </div>
+      <% end %>
+
+      <div class="card border-0 shadow-sm p-4">
+        <div class="form-group">
+          <%= f.label :user_id, "User *" %>
+          <%= f.select :user_id,
+                options_from_collection_for_select(@users, :id, :email_address, @user_organization.user_id),
+                { prompt: "Select a user" },
+                class: "form-control", required: true %>
+        </div>
+
+        <div class="form-group mb-0">
+          <%= f.label :scada_organization_id, "SCADA Organization *" %>
+          <%= f.select :scada_organization_id,
+                options_from_collection_for_select(@organizations, :id, :name, @user_organization.scada_organization_id),
+                { prompt: "Select an organization" },
+                class: "form-control", required: true %>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-between mt-4">
+        <%= link_to "Cancel", dashboard_path, class: "btn btn-outline-secondary" %>
+        <%= f.submit "Associate", class: "btn btn-success" %>
+      </div>
+    <% end %>
+  </div>
+</div>

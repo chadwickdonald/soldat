@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   has_secure_password
   has_many :sessions, dependent: :destroy
+  has_many :user_organizations, dependent: :destroy
+  has_many :scada_organizations, through: :user_organizations
 
   normalizes :email_address, with: ->(e) { e.strip.downcase }
 
