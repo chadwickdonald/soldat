@@ -6,6 +6,14 @@
     color: #fff;
     margin-bottom: 40px;
   }
+  .e-hero-inner {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+  }
+  .e-hero-text { flex: 1; min-width: 0; }
+  .e-hero-graphic { flex-shrink: 0; width: 360px; opacity: 0.95; }
+  @media (max-width: 900px) { .e-hero-graphic { display: none; } }
   .e-hero .badge-pill {
     background: rgba(255,255,255,0.15);
     color: #d1fae5;
@@ -132,11 +140,90 @@
 
 <!-- Hero -->
 <div class="e-hero">
-  <span class="badge-pill">Solar Data Platform</span>
-  <h1>Solar Facility Intelligence,<br>Simplified.</h1>
-  <p>Connect to your SCADA system, explore event measurements, and analyze PVsyst simulations — all in one place.</p>
-  <a href="/event_data" class="btn-hero-primary">Explore Event Data &rarr;</a>
-  <a href="/projects" class="btn-hero-outline">View Projects</a>
+  <div class="e-hero-inner">
+    <div class="e-hero-text">
+      <span class="badge-pill">Solar Data Platform</span>
+      <h1>Solar Facility Intelligence,<br>Simplified.</h1>
+      <p>Connect to your SCADA system, explore event measurements, and analyze PVsyst simulations — all in one place.</p>
+      <a href="/event_data" class="btn-hero-primary">Explore Event Data &rarr;</a>
+      <a href="/projects" class="btn-hero-outline">View Projects</a>
+    </div>
+
+    <div class="e-hero-graphic">
+      <svg width="100%" viewBox="0 0 360 230" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#34d399" stop-opacity="0.45"/>
+            <stop offset="100%" stop-color="#34d399" stop-opacity="0"/>
+          </linearGradient>
+          <clipPath id="cClip">
+            <rect x="16" y="58" width="328" height="122"/>
+          </clipPath>
+        </defs>
+
+        <!-- Panel -->
+        <rect width="360" height="230" rx="14" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.11)" stroke-width="1"/>
+
+        <!-- Header label -->
+        <text x="16" y="22" font-size="9" font-family="system-ui,sans-serif" font-weight="600" fill="rgba(255,255,255,0.38)" letter-spacing="1.3">ENERGY OUTPUT</text>
+
+        <!-- Stat -->
+        <text x="16" y="46" font-size="24" font-family="system-ui,sans-serif" font-weight="700" fill="white">847.3 kWh</text>
+
+        <!-- Change badge -->
+        <rect x="162" y="32" width="56" height="18" rx="4" fill="rgba(52,211,153,0.18)"/>
+        <text x="190" y="44" font-size="10" font-family="system-ui,sans-serif" font-weight="700" fill="#34d399" text-anchor="middle">&#x25B2; 12.4%</text>
+
+        <!-- Chips -->
+        <rect x="238" y="32" width="54" height="18" rx="4" fill="rgba(255,255,255,0.07)"/>
+        <text x="265" y="44" font-size="9" font-family="system-ui,sans-serif" fill="rgba(255,255,255,0.45)" text-anchor="middle">12 segments</text>
+        <rect x="298" y="32" width="46" height="18" rx="4" fill="rgba(255,255,255,0.07)"/>
+        <text x="321" y="44" font-size="9" font-family="system-ui,sans-serif" fill="rgba(255,255,255,0.45)" text-anchor="middle">1m period</text>
+
+        <!-- Grid lines -->
+        <line x1="16" y1="70"  x2="344" y2="70"  stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+        <line x1="16" y1="100" x2="344" y2="100" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+        <line x1="16" y1="130" x2="344" y2="130" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+        <line x1="16" y1="160" x2="344" y2="160" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+        <line x1="16" y1="180" x2="344" y2="180" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+
+        <!-- Area fill -->
+        <g clip-path="url(#cClip)">
+          <path d="M16,180 L16,162 C50,148 68,128 100,112 C130,97 150,102 188,86 C214,75 240,80 270,68 C294,58 318,62 344,58 L344,180 Z" fill="url(#areaGrad)"/>
+        </g>
+
+        <!-- Actual line (green) -->
+        <path d="M16,162 C50,148 68,128 100,112 C130,97 150,102 188,86 C214,75 240,80 270,68 C294,58 318,62 344,58" stroke="#34d399" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+        <!-- Expected line (blue dashed) -->
+        <path d="M16,172 C50,165 68,156 100,148 C130,140 150,144 188,134 C214,127 240,131 270,122 C294,115 318,118 344,114" stroke="#60a5fa" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5 3"/>
+
+        <!-- Data points -->
+        <circle cx="100" cy="112" r="3.5" fill="#34d399" stroke="rgba(10,30,35,0.9)" stroke-width="1.5"/>
+        <circle cx="188" cy="86"  r="3.5" fill="#34d399" stroke="rgba(10,30,35,0.9)" stroke-width="1.5"/>
+        <circle cx="270" cy="68"  r="3.5" fill="#34d399" stroke="rgba(10,30,35,0.9)" stroke-width="1.5"/>
+
+        <!-- Tooltip at peak -->
+        <line x1="270" y1="46" x2="270" y2="64" stroke="rgba(52,211,153,0.45)" stroke-width="1" stroke-dasharray="3 2"/>
+        <rect x="234" y="28" width="72" height="18" rx="4" fill="rgba(10,20,25,0.75)" stroke="rgba(52,211,153,0.4)" stroke-width="1"/>
+        <text x="270" y="40" font-size="10.5" font-family="system-ui,sans-serif" font-weight="700" fill="#34d399" text-anchor="middle">312.1 kWh</text>
+
+        <!-- X-axis labels -->
+        <text x="16"  y="196" font-size="9" font-family="system-ui,sans-serif" fill="rgba(255,255,255,0.28)" text-anchor="middle">Mon</text>
+        <text x="82"  y="196" font-size="9" font-family="system-ui,sans-serif" fill="rgba(255,255,255,0.28)" text-anchor="middle">Tue</text>
+        <text x="148" y="196" font-size="9" font-family="system-ui,sans-serif" fill="rgba(255,255,255,0.28)" text-anchor="middle">Wed</text>
+        <text x="214" y="196" font-size="9" font-family="system-ui,sans-serif" fill="rgba(255,255,255,0.28)" text-anchor="middle">Thu</text>
+        <text x="280" y="196" font-size="9" font-family="system-ui,sans-serif" fill="rgba(255,255,255,0.28)" text-anchor="middle">Fri</text>
+        <text x="344" y="196" font-size="9" font-family="system-ui,sans-serif" fill="rgba(255,255,255,0.28)" text-anchor="middle">Sat</text>
+
+        <!-- Legend -->
+        <circle cx="16"  cy="214" r="3"  fill="#34d399"/>
+        <text x="24"  y="217" font-size="9" font-family="system-ui,sans-serif" fill="rgba(255,255,255,0.4)">Actual</text>
+        <line x1="68" y1="214" x2="80" y2="214" stroke="#60a5fa" stroke-width="1.5" stroke-dasharray="4 3"/>
+        <text x="85" y="217" font-size="9" font-family="system-ui,sans-serif" fill="rgba(255,255,255,0.4)">Expected</text>
+      </svg>
+    </div>
+  </div>
 </div>
 
 <!-- Navigation Cards -->
