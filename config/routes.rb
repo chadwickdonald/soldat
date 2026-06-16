@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   get  'event_data',              to: 'event_data#index'
   get  'event_data/series_data',  to: 'event_data#series_data'
   get  'event_data/events_data',  to: 'event_data#events_data'
+  get   'data_editor',            to: 'data_editor#index',  as: :data_editor
+  patch 'data_editor/:id',        to: 'data_editor#update', as: :data_editor_record
   resources :pvsyst_simulations do
     get 'table_data', on: :collection
   end
