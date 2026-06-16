@@ -25,18 +25,6 @@
             <li class="nav-item">
               <a class="nav-link" href="<%= current_user ? dashboard_path : root_path %>">Home</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/projects">Projects</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/pvsyst_simulations">Simulations</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/pvsysts">PvSyst Data</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/event_data">Event Data</a>
-            </li>
             <% if current_user&.admin? %>
               <li class="nav-item">
                 <a class="nav-link" href="/imports">Import</a>
