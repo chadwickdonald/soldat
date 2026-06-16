@@ -1,8 +1,9 @@
 class EventDataController < ApplicationController
   def index
-    @start_date = params.fetch(:start_date, EventDataExplorer::DEFAULT_START)
-    @end_date   = params.fetch(:end_date,   EventDataExplorer::DEFAULT_END)
-    @periods    = %w[1m 5m other]
+    @start_date   = params.fetch(:start_date, EventDataExplorer::DEFAULT_START)
+    @end_date     = params.fetch(:end_date,   EventDataExplorer::DEFAULT_END)
+    @periods      = %w[1m 5m other]
+    @current_site = current_user.current_scada_site
   end
 
   def series_data
