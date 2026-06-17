@@ -139,22 +139,23 @@
 
 <!-- Module cards -->
 <% site_id = @current_site&.id %>
+
 <div class="row">
   <div class="col-md-3 mb-4">
-    <a href="/projects" class="e-card <%= 'disabled' unless @current_site %>">
-      <div class="e-card-icon">&#128451;</div>
-      <h5>Projects</h5>
-      <p>Browse PVsyst project files, metadata, and associated simulation data.</p>
-      <span class="e-arrow">View projects &rarr;</span>
+    <a href="/events_chart" class="e-card <%= 'disabled' unless @current_site %>">
+      <div class="e-card-icon">&#128448;</div>
+      <h5>Events Visualization</h5>
+      <p>Plot SCADA event data over time. Choose a parameter, resolution, and date window.</p>
+      <span class="e-arrow">Open chart &rarr;</span>
     </a>
   </div>
 
   <div class="col-md-3 mb-4">
-    <a href="/pvsyst_simulations" class="e-card <%= 'disabled' unless @current_site %>">
-      <div class="e-card-icon">&#9728;&#65039;</div>
-      <h5>Simulations</h5>
-      <p>View hourly PVsyst simulation output and compare against actual performance.</p>
-      <span class="e-arrow">View simulations &rarr;</span>
+    <a href="/data_editor" class="e-card <%= 'disabled' unless @current_site %>">
+      <div class="e-card-icon">&#9998;</div>
+      <h5>Data Editor</h5>
+      <p>Review and edit SCADA measurement source metadata one record at a time.</p>
+      <span class="e-arrow">Open editor &rarr;</span>
     </a>
   </div>
 
@@ -179,19 +180,20 @@
 
 <div class="row">
   <div class="col-md-3 mb-4">
-    <a href="/data_editor" class="e-card <%= 'disabled' unless @current_site %>">
-      <div class="e-card-icon">&#9998;</div>
-      <h5>Data Editor</h5>
-      <p>Review and edit SCADA measurement source metadata one record at a time.</p>
-      <span class="e-arrow">Open editor &rarr;</span>
+    <a href="/projects" class="e-card <%= 'disabled' unless @current_site %>">
+      <div class="e-card-icon">&#128451;</div>
+      <h5>Projects</h5>
+      <p>Browse PVsyst project files, metadata, and associated simulation data.</p>
+      <span class="e-arrow">View projects &rarr;</span>
     </a>
   </div>
+
   <div class="col-md-3 mb-4">
-    <a href="/events_chart" class="e-card <%= 'disabled' unless @current_site %>">
-      <div class="e-card-icon">&#128448;</div>
-      <h5>Events Visualization</h5>
-      <p>Plot SCADA event data over time. Choose a parameter, resolution, and date window.</p>
-      <span class="e-arrow">Open chart &rarr;</span>
+    <a href="/pvsyst_simulations" class="e-card <%= 'disabled' unless @current_site %>">
+      <div class="e-card-icon">&#9728;&#65039;</div>
+      <h5>Simulations</h5>
+      <p>View hourly PVsyst simulation output and compare against actual performance.</p>
+      <span class="e-arrow">View simulations &rarr;</span>
     </a>
   </div>
 </div>

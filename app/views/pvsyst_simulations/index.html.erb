@@ -1,52 +1,145 @@
-<link href="https://unpkg.com/tabulator-tables@5.5.0/dist/css/tabulator.min.css" rel="stylesheet">
-<script type="text/javascript" src="https://unpkg.com/tabulator-tables@5.5.0/dist/js/tabulator.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/luxon/3.4.1/luxon.min.js" integrity="sha512-pLpg+nu4NcwVDWeET7iDkouvX+70FrqLGgd1QUZCMLgCTzQ6V0PAAG4c4uLi9xM5QRlhvVlCqLaNBbfshLkJKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link href="https://unpkg.com/tabulator-tables@5.5.0/dist/css/tabulator_bootstrap5.min.css" rel="stylesheet">
+<script src="https://unpkg.com/tabulator-tables@5.5.0/dist/js/tabulator.min.js"></script>
 
-<% project = @project %>
-<h6>Project Name: <%= project.project %></h6>
-<h6>Simulation Date: <%= project.simulation_date.strftime("%m/%d/%Y at %I:%M%p") %></h6>
+<style>
+  .page-header { margin-bottom: 32px; }
+  .page-header h4 {
+    font-size: 1.4rem; font-weight: 800; color: #0f172a;
+    letter-spacing: -0.4px; margin-bottom: 4px;
+  }
+  .page-header p { color: #64748b; font-size: 0.9rem; margin: 0; }
 
-<div id='simulations-table'></div>
+  .project-meta-bar {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 16px 24px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .meta-item .meta-label {
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em;
+    text-transform: uppercase; color: #94a3b8; margin-bottom: 3px;
+  }
+  .meta-item .meta-value { font-size: 0.9rem; font-weight: 600; color: #0f172a; }
+
+  .table-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .table-card-header {
+    padding: 16px 24px;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .table-card-header span {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em;
+    text-transform: uppercase; color: #059669;
+  }
+  .table-card-header small { font-size: 0.78rem; color: #94a3b8; }
+
+  .tabulator { border: none !important; border-radius: 0 !important; font-size: 0.84rem !important; }
+  .tabulator .tabulator-header { background: #f8fafc !important; border-bottom: 2px solid #e2e8f0 !important; }
+  .tabulator .tabulator-header .tabulator-col { background: #f8fafc !important; border-right: 1px solid #e2e8f0 !important; }
+  .tabulator .tabulator-header .tabulator-col-title { font-weight: 700 !important; color: #475569 !important; font-size: 0.75rem !important; letter-spacing: 0.04em !important; text-transform: uppercase !important; }
+  .tabulator-row { border-bottom: 1px solid #f1f5f9 !important; }
+  .tabulator-row:hover { background: #f0fdf4 !important; }
+  .tabulator-row .tabulator-cell { color: #0f172a !important; border-right: 1px solid #f8fafc !important; }
+  .tabulator-footer { background: #f8fafc !important; border-top: 1px solid #e2e8f0 !important; font-size: 0.8rem !important; }
+  .tabulator-page.active { background: #059669 !important; border-color: #059669 !important; color: #fff !important; border-radius: 5px !important; }
+  .tabulator-page { border-radius: 5px !important; }
+</style>
+
+<div class="page-header">
+  <h4>PVsyst Simulations</h4>
+  <p>Hourly simulation output data for the active project.</p>
+</div>
+
+<% if @project %>
+  <div class="project-meta-bar">
+    <div class="meta-item">
+      <div class="meta-label">Project</div>
+      <div class="meta-value"><%= @project.project_description.presence || @project.project %></div>
+    </div>
+    <% if @project.simulation_date %>
+      <div class="meta-item">
+        <div class="meta-label">Simulation Date</div>
+        <div class="meta-value"><%= @project.simulation_date.strftime("%b %-d, %Y") %></div>
+      </div>
+    <% end %>
+    <% if @project.pvsyst_version.present? %>
+      <div class="meta-item">
+        <div class="meta-label">PVsyst Version</div>
+        <div class="meta-value"><%= @project.pvsyst_version %></div>
+      </div>
+    <% end %>
+    <% if @project.satelite_data.present? %>
+      <div class="meta-item">
+        <div class="meta-label">Satellite Data</div>
+        <div class="meta-value"><%= @project.satelite_data %></div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+<div class="table-card">
+  <div class="table-card-header">
+    <span>Hourly Records</span>
+    <small id="sim-count"></small>
+  </div>
+  <div id="simulations-table"></div>
+</div>
 
 <script>
-  var dataSource = '/pvsyst_simulations/table_data';
-
   var simulationsTable = new Tabulator("#simulations-table", {
-    height: 700,
-    laytout: 'fitColumns',
-    ajaxURL: dataSource,
+    height: 560,
+    layout: "fitColumns",
+    ajaxURL: "/pvsyst_simulations/table_data",
     pagination: true,
     paginationSize: 48,
     paginationSizeSelector: [12, 24, 48, 96],
+    placeholder: "No simulation data found.",
+    dataLoaded: function (data) {
+      var el = document.getElementById("sim-count");
+      if (el) el.textContent = data.length.toLocaleString() + " hourly records";
+    },
     columns: [
-      {title: 'Simulation Time', field: 'simulation_time', formatter: 'datetime', formatterParams: {inputFormat:'yyyy-MM-dd\'T\'HH:mm:ss.SSS\'Z\''}, width: 150},
-      {title: 'GlobHor (W/m²)', field: 'glob_hor', width: 150},
-      {title: 'DiffHor (W/m²)', field: 'diff_hor', width: 150},
-      {title: 'BeamHor (W/m²)', field: 'beam_hor', width: 150},
-      {title: 'TAmb (°C)',    field: 't_amb', width: 150},
-      {title: 'WindVel (m/s)', field: 'wind_vel', width: 150},
-      {title: 'GlobInc (W/m²)', field: 'glob_inc', width: 150},
-      {title: 'ShdLoss (W/m²)', field: 'shd_loss', width: 150},
-      {title: 'IamLoss (W/m²)', field: 'iam_loss', width: 150},
-      {title: 'SlgLoss (W/m²)', field: 'slg_loss', width: 150},
-      {title: 'GlobEff (W/m²)', field: 'glob_eff', width: 150},
-      {title: 'EArrNom (kW)', field: 'e_arr_nom', width: 150},
-      {title: 'GIncLss (kW)', field: 'g_inc_lss', width: 150},
-      {title: 'TempLss (kW)', field: 'temp_lss', width: 150},
-      {title: 'ModQual (kW)', field: 'mod_qual', width: 150},
-      {title: 'MisLoss (kW)', field: 'mis_loss', width: 150},
-      {title: 'OhmLoss (kW)', field: 'ohm_loss', width: 150},
-      {title: 'EArrMpp (kW)', field: 'e_arr_mpp', width: 150},
-      {title: 'EArray (kW)',  field: 'e_array', width: 150},
-      {title: 'TArray (°C)',  field: 't_array', width: 150},
-      {title: 'IlOper (kW)',  field: 'il_oper', width: 150},
-      {title: 'IlPmin (kW)',  field: 'il_pmin', width: 150},
-      {title: 'IlPmax (kW)',  field: 'il_pmax', width: 150},
-      {title: 'IlVmin (kW)',  field: 'il_vmin', width: 150},
-      {title: 'EOutInv (kW)', field: 'e_out_inv', width: 150},
-      {title: 'EGrid (kW)',   field: 'e_grid', width: 150},
-      {title: 'UArray (V)',  field: 'u_array', width: 150},
+      { title: "Simulation Time", field: "simulation_time", width: 160,
+        formatter: "datetime",
+        formatterParams: { inputFormat: "iso", outputFormat: "dd MMM yyyy HH:mm", invalidPlaceholder: "—", timezone: "UTC" } },
+      { title: "GlobHor (W/m²)", field: "glob_hor",   width: 130 },
+      { title: "DiffHor (W/m²)", field: "diff_hor",   width: 130 },
+      { title: "BeamHor (W/m²)", field: "beam_hor",   width: 130 },
+      { title: "TAmb (°C)",      field: "t_amb",      width: 110 },
+      { title: "WindVel (m/s)",  field: "wind_vel",   width: 120 },
+      { title: "GlobInc (W/m²)", field: "glob_inc",   width: 130 },
+      { title: "ShdLoss (W/m²)", field: "shd_loss",   width: 130 },
+      { title: "IamLoss (W/m²)", field: "iam_loss",   width: 130 },
+      { title: "SlgLoss (W/m²)", field: "slg_loss",   width: 130 },
+      { title: "GlobEff (W/m²)", field: "glob_eff",   width: 130 },
+      { title: "EArrNom (kW)",   field: "e_arr_nom",  width: 120 },
+      { title: "GIncLss (kW)",   field: "g_inc_lss",  width: 120 },
+      { title: "TempLss (kW)",   field: "temp_lss",   width: 120 },
+      { title: "ModQual (kW)",   field: "mod_qual",   width: 120 },
+      { title: "MisLoss (kW)",   field: "mis_loss",   width: 120 },
+      { title: "OhmLoss (kW)",   field: "ohm_loss",   width: 120 },
+      { title: "EArrMpp (kW)",   field: "e_arr_mpp",  width: 120 },
+      { title: "EArray (kW)",    field: "e_array",    width: 110 },
+      { title: "TArray (°C)",    field: "t_array",    width: 110 },
+      { title: "IlOper (kW)",    field: "il_oper",    width: 110 },
+      { title: "IlPmin (kW)",    field: "il_pmin",    width: 110 },
+      { title: "IlPmax (kW)",    field: "il_pmax",    width: 110 },
+      { title: "IlVmin (kW)",    field: "il_vmin",    width: 110 },
+      { title: "EOutInv (kW)",   field: "e_out_inv",  width: 120 },
+      { title: "EGrid (kW)",     field: "e_grid",     width: 110 },
+      { title: "UArray (V)",     field: "u_array",    width: 110 },
     ],
   });
 </script>
-
