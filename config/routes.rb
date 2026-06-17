@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resource :session
+  resource :account, only: [:show, :update]
   resources :passwords, param: :token
   resources :users
   get 'dashboard', to: 'dashboard#index', as: :dashboard
