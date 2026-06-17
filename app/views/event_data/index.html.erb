@@ -1,113 +1,198 @@
 <link href="https://unpkg.com/tabulator-tables@5.5.0/dist/css/tabulator_bootstrap5.min.css" rel="stylesheet">
-<script type="text/javascript" src="https://unpkg.com/tabulator-tables@5.5.0/dist/js/tabulator.min.js"></script>
+<script src="https://unpkg.com/tabulator-tables@5.5.0/dist/js/tabulator.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/luxon@3/build/global/luxon.min.js"></script>
 
 <style>
-  .period-badge {
-    font-size: 0.75rem;
-    padding: 0.2rem 0.55rem;
-    border-radius: 999px;
+  .page-header { margin-bottom: 32px; }
+  .page-header h4 {
+    font-size: 1.4rem; font-weight: 800; color: #0f172a;
+    letter-spacing: -0.4px; margin-bottom: 4px;
+  }
+  .page-header p { color: #64748b; font-size: 0.9rem; margin: 0; }
+
+  .period-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  .period-tab {
+    padding: 7px 20px;
+    border-radius: 8px;
+    border: 1.5px solid #e2e8f0;
+    background: #fff;
+    font-size: 0.84rem;
     font-weight: 600;
-    letter-spacing: 0.03em;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.15s;
   }
-  .relevance-pill {
-    font-size: 0.7rem;
-    padding: 0.15rem 0.45rem;
-    border-radius: 999px;
+  .period-tab:hover { border-color: #a7f3d0; color: #059669; }
+  .period-tab.active {
+    background: #059669;
+    border-color: #059669;
+    color: #fff;
   }
-  .events-panel {
-    border-left: 3px solid #007bff;
-    animation: slideDown 0.2s ease-out;
+
+  .table-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 24px;
   }
+  .table-card-header {
+    padding: 16px 24px;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .table-card-header span {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em;
+    text-transform: uppercase; color: #059669;
+  }
+  .table-card-header small { font-size: 0.78rem; color: #94a3b8; }
+  .table-card-hint { font-size: 0.78rem; color: #94a3b8; padding: 0 24px 12px; }
+
+  .period-panel { display: none; }
+  .period-panel.active { display: block; }
+
+  .events-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-left: 3px solid #059669;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 24px;
+    display: none;
+  }
+  .events-card.visible { display: block; animation: slideDown 0.18s ease-out; }
   @keyframes slideDown {
-    from { opacity: 0; transform: translateY(-8px); }
+    from { opacity: 0; transform: translateY(-6px); }
     to   { opacity: 1; transform: translateY(0); }
   }
-  .tab-pane { min-height: 300px; }
-  .stat-card { border-left: 4px solid; }
-  .stat-card.blue  { border-color: #007bff; }
-  .stat-card.green { border-color: #28a745; }
-  .stat-card.orange{ border-color: #fd7e14; }
-  #events-table .tabulator { font-size: 0.85rem; }
-  .series-label { font-family: monospace; font-size: 0.82rem; color: #495057; }
+  .events-card-header {
+    padding: 14px 20px;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f8fafc;
+  }
+  .events-card-header .events-title {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em;
+    text-transform: uppercase; color: #059669;
+  }
+  .events-label {
+    font-size: 0.82rem; font-family: monospace; color: #475569; margin-left: 10px;
+  }
+  .events-close {
+    background: none; border: 1.5px solid #e2e8f0; border-radius: 6px;
+    padding: 4px 12px; font-size: 0.78rem; color: #64748b;
+    cursor: pointer; font-weight: 600;
+  }
+  .events-close:hover { border-color: #94a3b8; color: #0f172a; }
+
+  .relevance-pill {
+    display: inline-block;
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.04em;
+    text-transform: uppercase; padding: 2px 8px; border-radius: 999px;
+  }
+  .rel-high    { background: #fef2f2; color: #dc2626; }
+  .rel-detail  { background: #eff6ff; color: #2563eb; }
+  .rel-alarms  { background: #f1f5f9; color: #64748b; }
+  .rel-unknown { background: #f8fafc; color: #94a3b8; border: 1px solid #e2e8f0; }
+
+  .tabulator { border: none !important; border-radius: 0 !important; font-size: 0.84rem !important; }
+  .tabulator .tabulator-header { background: #f8fafc !important; border-bottom: 2px solid #e2e8f0 !important; }
+  .tabulator .tabulator-header .tabulator-col { background: #f8fafc !important; border-right: 1px solid #e2e8f0 !important; }
+  .tabulator .tabulator-header .tabulator-col-title { font-weight: 700 !important; color: #475569 !important; font-size: 0.75rem !important; letter-spacing: 0.04em !important; text-transform: uppercase !important; }
+  .tabulator-row { border-bottom: 1px solid #f1f5f9 !important; }
+  .tabulator-row:hover { background: #f0fdf4 !important; cursor: pointer; }
+  .tabulator-row.tabulator-selected { background: #dcfce7 !important; }
+  .tabulator-row .tabulator-cell { color: #0f172a !important; border-right: 1px solid #f8fafc !important; }
+  .tabulator-footer { background: #f8fafc !important; border-top: 1px solid #e2e8f0 !important; font-size: 0.8rem !important; }
+  .tabulator-page.active { background: #059669 !important; border-color: #059669 !important; color: #fff !important; border-radius: 5px !important; }
+  .tabulator-page { border-radius: 5px !important; }
+
+  .site-badge {
+    font-size: 0.78rem; color: #64748b;
+    background: #f8fafc; border: 1px solid #e2e8f0;
+    border-radius: 8px; padding: 5px 12px;
+  }
+  .site-badge strong { color: #0f172a; }
+  .date-range-badge {
+    display: inline-block;
+    font-size: 0.78rem; color: #64748b;
+    background: #f8fafc; border: 1px solid #e2e8f0;
+    border-radius: 8px; padding: 5px 12px;
+  }
 </style>
 
-<div class="d-flex justify-content-between align-items-start mb-4">
-  <div>
-    <h2 class="mb-1">Event Data Explorer</h2>
-    <p class="text-muted mb-0">
-      SCADA measurement series &mdash;
-      <span class="badge badge-light border">
-        <%= Date.parse(@start_date).strftime("%b %-d, %Y") %> &rarr; <%= Date.parse(@end_date).strftime("%b %-d, %Y") %>
-      </span>
-    </p>
-  </div>
-  <div class="d-flex align-items-center">
-    <% if @current_site %>
-      <span class="text-muted small mr-3">
-        Site: <strong><%= @current_site.scada_organization.name %> &rarr; <%= @current_site.name %></strong>
-      </span>
-    <% end %>
-    <%= link_to "← Back", root_path, class: "btn btn-outline-secondary btn-sm" %>
-  </div>
+<div class="page-header">
+  <h4>Event Data Explorer</h4>
+  <p>Drill into SCADA measurement series by time period and station across your portfolio.</p>
+</div>
+
+<div style="display:flex; align-items:center; gap:12px; margin-bottom:24px; flex-wrap:wrap;">
+  <span class="date-range-badge">
+    <%= Date.parse(@start_date).strftime("%b %-d, %Y") %> &rarr; <%= Date.parse(@end_date).strftime("%b %-d, %Y") %>
+  </span>
+  <% if @current_site %>
+    <span class="site-badge">
+      <strong><%= @current_site.scada_organization.name %></strong>
+      &rarr;
+      <strong><%= @current_site.name %></strong>
+    </span>
+  <% end %>
 </div>
 
 <!-- Period Tabs -->
-<ul class="nav nav-tabs" id="periodTabs" role="tablist">
+<div class="period-tabs">
   <% @periods.each_with_index do |period, i| %>
-    <li class="nav-item" role="presentation">
-      <a class="nav-link <%= i == 0 ? 'active' : '' %>"
-         id="tab-<%= period %>-link"
-         data-toggle="tab"
-         href="#tab-<%= period %>"
-         role="tab"
-         data-period="<%= period %>"
-         aria-selected="<%= i == 0 %>">
-        <% if period == '1m' %>
-          <span class="period-badge badge badge-primary">1m</span> 1-Minute
-        <% elsif period == '5m' %>
-          <span class="period-badge badge badge-success">5m</span> 5-Minute
-        <% else %>
-          <span class="period-badge badge badge-warning text-dark">~</span> Other
-        <% end %>
-      </a>
-    </li>
-  <% end %>
-</ul>
-
-<div class="tab-content border border-top-0 rounded-bottom bg-white px-3 pt-3 pb-2 mb-4 shadow-sm" id="periodTabContent">
-  <% @periods.each_with_index do |period, i| %>
-    <div class="tab-pane fade <%= i == 0 ? 'show active' : '' %>"
-         id="tab-<%= period %>"
-         role="tabpanel">
-      <div class="d-flex justify-content-between align-items-center mb-2 mt-1">
-        <span class="text-muted small">
-          Click a row to view its time-series events below.
-        </span>
-        <span class="text-muted small" id="count-<%= period %>"></span>
-      </div>
-      <div id="table-<%= period %>"></div>
-    </div>
+    <button class="period-tab <%= i == 0 ? 'active' : '' %>"
+            data-period="<%= period %>"
+            onclick="switchPeriod('<%= period %>')">
+      <% if period == '1m' %>1-Minute
+      <% elsif period == '5m' %>5-Minute
+      <% else %><%= period %>
+      <% end %>
+    </button>
   <% end %>
 </div>
 
+<!-- Period Panels -->
+<% @periods.each_with_index do |period, i| %>
+  <div class="period-panel <%= i == 0 ? 'active' : '' %>" id="panel-<%= period %>">
+    <div class="table-card">
+      <div class="table-card-header">
+        <span>
+          <% if period == '1m' %>1-Minute Series
+          <% elsif period == '5m' %>5-Minute Series
+          <% else %><%= period %> Series
+          <% end %>
+        </span>
+        <small id="count-<%= period %>"></small>
+      </div>
+      <div class="table-card-hint">Click a row to view its time-series events below.</div>
+      <div id="table-<%= period %>"></div>
+    </div>
+  </div>
+<% end %>
+
 <!-- Events Detail Panel -->
-<div id="events-panel" class="card events-panel shadow-sm d-none mb-4">
-  <div class="card-header d-flex justify-content-between align-items-center py-2">
-    <div>
-      <span class="font-weight-bold">Time-Series Events</span>
-      <span class="series-label ml-2" id="events-label"></span>
+<div id="events-card" class="events-card">
+  <div class="events-card-header">
+    <div style="display:flex; align-items:center;">
+      <span class="events-title">Time-Series Events</span>
+      <span class="events-label" id="events-label"></span>
     </div>
-    <div class="d-flex align-items-center">
-      <span class="text-muted small mr-3" id="events-count"></span>
-      <button class="btn btn-sm btn-outline-secondary" id="events-close">
-        &times; Close
-      </button>
+    <div style="display:flex; align-items:center; gap:12px;">
+      <small id="events-count" style="font-size:0.78rem; color:#94a3b8;"></small>
+      <button class="events-close" id="events-close">&times; Close</button>
     </div>
   </div>
-  <div class="card-body p-2">
-    <div class="row mb-2 px-2" id="events-stats" style="display:none!important"></div>
-    <div id="events-table"></div>
-  </div>
+  <div id="events-table"></div>
 </div>
 
 <script>
@@ -125,18 +210,18 @@
     "alarms_notifications_diagnostics": "Alarms / Diagnostics",
     "unknown":                          "Unknown"
   };
-  var relevanceBadge = {
-    "high_priority":                    "badge-danger",
-    "detailed_analysis":                "badge-primary",
-    "alarms_notifications_diagnostics": "badge-secondary",
-    "unknown":                          "badge-light border"
+  var relevanceClass = {
+    "high_priority":                    "rel-high",
+    "detailed_analysis":                "rel-detail",
+    "alarms_notifications_diagnostics": "rel-alarms",
+    "unknown":                          "rel-unknown"
   };
 
   function relevanceFormatter(cell) {
-    var val = cell.getValue();
+    var val   = cell.getValue();
     var label = relevanceLabels[val] || val;
-    var cls   = relevanceBadge[val]  || "badge-light border";
-    return '<span class="badge relevance-pill ' + cls + '">' + label + '</span>';
+    var cls   = relevanceClass[val]  || "rel-unknown";
+    return '<span class="relevance-pill ' + cls + '">' + label + '</span>';
   }
 
   function buildSeriesTable(period) {
@@ -181,13 +266,13 @@
   }
 
   function loadEvents(series) {
-    var panel   = document.getElementById("events-panel");
+    var card    = document.getElementById("events-card");
     var labelEl = document.getElementById("events-label");
     var countEl = document.getElementById("events-count");
-    panel.classList.remove("d-none");
+    card.classList.add("visible");
     labelEl.textContent = series.label || "";
     countEl.textContent = "Loading…";
-    panel.scrollIntoView({ behavior: "smooth", block: "start" });
+    card.scrollIntoView({ behavior: "smooth", block: "start" });
 
     var url = "/event_data/events_data?uuid=" + encodeURIComponent(series.uuid) +
               "&start_date=" + encodeURIComponent(startDate) +
@@ -240,14 +325,22 @@
   }
 
   document.getElementById("events-close").addEventListener("click", function() {
-    document.getElementById("events-panel").classList.add("d-none");
+    document.getElementById("events-card").classList.remove("visible");
     if (selectedRow) {
       try { selectedRow.deselect(); } catch(ex) {}
       selectedRow = null;
     }
   });
 
-  // Build all period tables on load
   periods.forEach(function(period) { buildSeriesTable(period); });
 })();
+
+function switchPeriod(period) {
+  document.querySelectorAll(".period-tab").forEach(function(btn) {
+    btn.classList.toggle("active", btn.dataset.period === period);
+  });
+  document.querySelectorAll(".period-panel").forEach(function(panel) {
+    panel.classList.toggle("active", panel.id === "panel-" + period);
+  });
+}
 </script>
