@@ -54,6 +54,11 @@ class EventsChartController < ApplicationController
 
     return render json: { error: "Source not found" }, status: :not_found unless source
 
+    date_format = /\A\d{4}-\d{2}-\d{2}\z/
+    unless start_date.match?(date_format) && end_date.match?(date_format)
+      return render json: { error: "Invalid dates" }, status: :bad_request
+    end
+
     start_dt = Time.zone.parse("#{start_date}T00:00:00Z") rescue nil
     end_dt   = Time.zone.parse("#{end_date}T23:59:59Z")   rescue nil
 
