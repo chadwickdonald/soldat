@@ -1,0 +1,334 @@
+<link href="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/css/tom-select.bootstrap4.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/js/tom-select.complete.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts@3.49.0/dist/apexcharts.min.js"></script>
+
+<style>
+  .page-header { margin-bottom: 32px; }
+  .page-header h4 {
+    font-size: 1.4rem; font-weight: 800; color: #0f172a;
+    letter-spacing: -0.4px; margin-bottom: 4px;
+  }
+  .page-header p { color: #64748b; font-size: 0.9rem; margin: 0; }
+
+  .controls-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-bottom: 24px;
+  }
+  .controls-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .ctrl-group { display: flex; flex-direction: column; gap: 6px; }
+  .ctrl-group label {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.07em;
+    text-transform: uppercase; color: #64748b;
+  }
+
+  .period-toggle { display: flex; gap: 0; }
+  .period-btn {
+    padding: 8px 20px;
+    font-size: 0.85rem; font-weight: 600;
+    border: 1.5px solid #e2e8f0;
+    background: #fff; color: #64748b;
+    cursor: pointer; transition: all 0.15s;
+  }
+  .period-btn:first-child { border-radius: 8px 0 0 8px; }
+  .period-btn:last-child  { border-radius: 0 8px 8px 0; border-left: none; }
+  .period-btn.active {
+    background: #059669; color: #fff;
+    border-color: #059669;
+  }
+  .period-btn:not(.active):hover { border-color: #059669; color: #059669; }
+
+  .date-input {
+    border: 1.5px solid #e2e8f0; border-radius: 8px;
+    padding: 8px 12px; font-size: 0.85rem; color: #0f172a;
+    background: #fff; cursor: pointer;
+  }
+  .date-input:focus { outline: none; border-color: #059669; box-shadow: 0 0 0 3px rgba(5,150,105,0.12); }
+
+  .param-wrap { flex: 1; min-width: 280px; max-width: 520px; }
+  .ts-wrapper.single .ts-control {
+    border: 1.5px solid #e2e8f0 !important;
+    border-radius: 8px !important;
+    padding: 7px 12px !important;
+    font-size: 0.85rem !important;
+  }
+  .ts-wrapper.single.focus .ts-control {
+    border-color: #059669 !important;
+    box-shadow: 0 0 0 3px rgba(5,150,105,0.12) !important;
+  }
+  .ts-dropdown { border: 1.5px solid #e2e8f0 !important; border-radius: 8px !important; margin-top: 4px !important; }
+  .ts-dropdown .option { padding: 10px 14px !important; }
+  .ts-dropdown .option.active { background: #f0fdf4 !important; color: #059669 !important; }
+  .option-main { font-size: 0.85rem; font-weight: 600; color: #0f172a; }
+  .option-sub  { font-size: 0.75rem; color: #94a3b8; margin-top: 1px; }
+
+  .btn-plot {
+    background: #059669; color: #fff; border: none;
+    padding: 9px 24px; border-radius: 8px;
+    font-size: 0.85rem; font-weight: 600; cursor: pointer;
+    white-space: nowrap; align-self: flex-end;
+  }
+  .btn-plot:hover { background: #047857; }
+  .btn-plot:disabled { background: #a7f3d0; cursor: default; }
+
+  .chart-card {
+    background: #fff; border: 1px solid #e2e8f0;
+    border-radius: 12px; overflow: hidden;
+  }
+  .chart-header {
+    padding: 18px 24px 0;
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;
+  }
+  .chart-title { font-size: 1rem; font-weight: 700; color: #0f172a; margin: 0; }
+  .chart-meta  { display: flex; align-items: center; gap: 10px; }
+  .meta-badge {
+    font-size: 0.72rem; font-weight: 700; padding: 3px 10px;
+    border-radius: 999px; letter-spacing: 0.04em;
+  }
+  .badge-period { background: #d1fae5; color: #065f46; }
+  .badge-unit   { background: #f1f5f9; color: #475569; }
+  .badge-count  { background: #eff6ff; color: #1d4ed8; }
+
+  #chart-container { padding: 8px 8px 0; }
+
+  .chart-empty {
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    min-height: 320px; color: #94a3b8;
+    font-size: 0.9rem;
+  }
+  .chart-empty .icon { font-size: 2.5rem; margin-bottom: 12px; }
+
+  .loading-bar {
+    height: 3px; background: linear-gradient(90deg, #059669 0%, #34d399 50%, #059669 100%);
+    background-size: 200% 100%;
+    animation: shimmer 1.2s infinite linear;
+    border-radius: 0;
+  }
+  @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+</style>
+
+<div class="page-header">
+  <h4>Events Visualization</h4>
+  <p>Plot SCADA event data over time. Select a parameter, resolution, and date window then click Plot.</p>
+</div>
+
+<!-- Controls -->
+<div class="controls-card">
+  <div class="controls-row">
+    <div class="ctrl-group">
+      <label>Resolution</label>
+      <div class="period-toggle">
+        <button class="period-btn active" id="btn-5m" data-period="5m" type="button">5m</button>
+        <button class="period-btn"        id="btn-1m" data-period="1m" type="button">1m</button>
+      </div>
+    </div>
+
+    <div class="ctrl-group param-wrap">
+      <label>Parameter</label>
+      <select id="param-select" placeholder="Type to search…"></select>
+    </div>
+
+    <div class="ctrl-group">
+      <label>From</label>
+      <input type="date" id="start-date" class="date-input" value="<%= @default_start %>">
+    </div>
+    <div class="ctrl-group">
+      <label>To</label>
+      <input type="date" id="end-date" class="date-input" value="<%= @default_end %>">
+    </div>
+
+    <button class="btn-plot" id="plot-btn" disabled>Plot</button>
+  </div>
+</div>
+
+<!-- Chart -->
+<div class="chart-card" id="chart-card">
+  <div id="loading-bar" class="loading-bar" style="display:none;"></div>
+  <div class="chart-header" id="chart-header" style="display:none;">
+    <div class="chart-title" id="chart-title"></div>
+    <div class="chart-meta">
+      <span class="meta-badge badge-period" id="badge-period"></span>
+      <span class="meta-badge badge-unit"   id="badge-unit"></span>
+      <span class="meta-badge badge-count"  id="badge-count"></span>
+    </div>
+  </div>
+  <div id="chart-container">
+    <div class="chart-empty" id="chart-empty">
+      <div class="icon">&#128200;</div>
+      <p>Select a parameter and click <strong>Plot</strong> to visualise event data.</p>
+    </div>
+    <div id="apex-chart" style="display:none;"></div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var sourcesUrl  = "<%= events_chart_sources_path %>";
+  var dataUrl     = "<%= events_chart_data_path %>";
+  var currentPeriod = "5m";
+  var chart = null;
+  var selectedUnit = "—";
+
+  // ── Tom Select ──────────────────────────────────────────────────────────────
+  var ts = new TomSelect("#param-select", {
+    valueField:   "value",
+    labelField:   "text",
+    searchField:  ["text", "subtext"],
+    placeholder:  "Type to search parameters…",
+    load: function (query, callback) {
+      if (query.length < 2) return callback();
+      fetch(sourcesUrl + "?period=" + currentPeriod + "&q=" + encodeURIComponent(query))
+        .then(function (r) { return r.json(); })
+        .then(function (data) { callback(data); })
+        .catch(function () { callback(); });
+    },
+    render: {
+      option: function (data) {
+        return '<div class="option">' +
+          '<div class="option-main">' + data.text + '</div>' +
+          '<div class="option-sub">'  + (data.subtext || "") + '</div>' +
+          '</div>';
+      },
+      item: function (data) {
+        return '<div>' + data.text + '</div>';
+      }
+    },
+    onChange: function (val) {
+      var opt = ts.options[val];
+      selectedUnit = opt ? opt.eng_unit : "—";
+      document.getElementById("plot-btn").disabled = !val;
+    }
+  });
+
+  // ── Period toggle ────────────────────────────────────────────────────────────
+  document.querySelectorAll(".period-btn").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      document.querySelectorAll(".period-btn").forEach(function (b) { b.classList.remove("active"); });
+      btn.classList.add("active");
+      currentPeriod = btn.dataset.period;
+      ts.clear();
+      ts.clearOptions();
+      document.getElementById("plot-btn").disabled = true;
+    });
+  });
+
+  // ── Plot button ──────────────────────────────────────────────────────────────
+  document.getElementById("plot-btn").addEventListener("click", function () {
+    var uuid      = ts.getValue();
+    var startDate = document.getElementById("start-date").value;
+    var endDate   = document.getElementById("end-date").value;
+    if (!uuid || !startDate || !endDate) return;
+
+    setLoading(true);
+
+    var url = dataUrl + "?uuid=" + encodeURIComponent(uuid) +
+              "&start_date=" + encodeURIComponent(startDate) +
+              "&end_date="   + encodeURIComponent(endDate);
+
+    fetch(url)
+      .then(function (r) { return r.json(); })
+      .then(function (resp) {
+        setLoading(false);
+        if (resp.error || !resp.points) {
+          showEmpty("No data returned: " + (resp.error || "unknown error"));
+          return;
+        }
+        if (resp.points.length === 0) {
+          showEmpty("No events found for this parameter in the selected date range.");
+          return;
+        }
+        renderChart(resp);
+      })
+      .catch(function (err) {
+        setLoading(false);
+        showEmpty("Error fetching data. Please try again.");
+      });
+  });
+
+  // ── Chart ────────────────────────────────────────────────────────────────────
+  function renderChart(resp) {
+    document.getElementById("chart-empty").style.display  = "none";
+    document.getElementById("apex-chart").style.display   = "block";
+    document.getElementById("chart-header").style.display = "flex";
+
+    document.getElementById("chart-title").textContent = resp.label;
+    document.getElementById("badge-period").textContent = resp.period;
+    document.getElementById("badge-unit").textContent   = resp.eng_unit;
+    document.getElementById("badge-count").textContent  = resp.count.toLocaleString() + " points";
+
+    var options = {
+      series: [{ name: resp.label, data: resp.points }],
+      chart: {
+        type: "area",
+        height: 380,
+        toolbar: { show: true, tools: { download: true, zoom: true, zoomin: true, zoomout: true, pan: true, reset: true } },
+        animations: { enabled: true, speed: 400 },
+        fontFamily: "system-ui, -apple-system, sans-serif"
+      },
+      dataLabels: { enabled: false },
+      stroke: { curve: "smooth", width: 2 },
+      colors: ["#059669"],
+      fill: {
+        type: "gradient",
+        gradient: {
+          shadeIntensity: 1, opacityFrom: 0.35, opacityTo: 0.02, stops: [0, 95]
+        }
+      },
+      xaxis: {
+        type: "datetime",
+        labels: {
+          style: { colors: "#94a3b8", fontSize: "11px" },
+          datetimeUTC: true
+        },
+        axisBorder: { show: false },
+        axisTicks:  { show: false }
+      },
+      yaxis: {
+        title: {
+          text: resp.eng_unit !== "—" ? resp.eng_unit : undefined,
+          style: { color: "#94a3b8", fontSize: "11px", fontWeight: 600 }
+        },
+        labels: { style: { colors: "#94a3b8", fontSize: "11px" } }
+      },
+      tooltip: {
+        x: { format: "dd MMM yyyy HH:mm" },
+        y: { formatter: function (val) { return val !== null ? val.toFixed(4) + " " + resp.eng_unit : "—"; } }
+      },
+      grid: {
+        borderColor: "#f1f5f9",
+        strokeDashArray: 4,
+        xaxis: { lines: { show: false } }
+      },
+      markers: { size: resp.points.length <= 60 ? 4 : 0, colors: ["#059669"], strokeColors: "#fff", strokeWidth: 2 }
+    };
+
+    if (chart) {
+      chart.updateOptions(options);
+    } else {
+      chart = new ApexCharts(document.getElementById("apex-chart"), options);
+      chart.render();
+    }
+  }
+
+  function showEmpty(msg) {
+    document.getElementById("chart-empty").style.display  = "flex";
+    document.getElementById("chart-empty").querySelector("p").innerHTML = msg;
+    document.getElementById("apex-chart").style.display   = "none";
+    document.getElementById("chart-header").style.display = "none";
+    if (chart) { chart.destroy(); chart = null; }
+  }
+
+  function setLoading(on) {
+    document.getElementById("loading-bar").style.display = on ? "block" : "none";
+    document.getElementById("plot-btn").disabled = on;
+  }
+})();
+</script>
