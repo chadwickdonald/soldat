@@ -1,9 +1,57 @@
-<h1>Update your password</h1>
+<style>
+  .login-card {
+    max-width: 420px;
+    margin: 60px auto 0;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 40px;
+    background: #fff;
+  }
+  .login-brand { font-size: 1.5rem; font-weight: 800; color: #059669; letter-spacing: -0.5px; margin-bottom: 6px; }
+  .login-tagline { color: #64748b; font-size: 0.875rem; margin-bottom: 28px; }
+  .login-card .form-control {
+    border-radius: 8px;
+    border: 1.5px solid #e2e8f0;
+    padding: 10px 14px;
+    font-size: 0.9rem;
+  }
+  .login-card .form-control:focus {
+    border-color: #059669;
+    box-shadow: 0 0 0 3px rgba(5,150,105,0.1);
+  }
+  .btn-login {
+    background: #059669;
+    color: #fff;
+    border: none;
+    width: 100%;
+    padding: 11px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-top: 4px;
+  }
+  .btn-login:hover { background: #047857; color: #fff; }
+</style>
 
-<%= tag.div(flash[:alert], style: "color:red") if flash[:alert] %>
+<div class="login-card shadow-sm">
+  <div class="login-brand">Enthasys</div>
+  <div class="login-tagline">Choose a new password</div>
 
-<%= form_with url: password_path(params[:token]), method: :put do |form| %>
-  <%= form.password_field :password, required: true, autocomplete: "new-password", placeholder: "Enter new password", maxlength: 72 %><br>
-  <%= form.password_field :password_confirmation, required: true, autocomplete: "new-password", placeholder: "Repeat new password", maxlength: 72 %><br>
-  <%= form.submit "Save" %>
-<% end %>
+  <% if flash[:alert] %>
+    <div class="alert alert-danger py-2 small"><%= flash[:alert] %></div>
+  <% end %>
+
+  <%= form_with url: password_path(params[:token]), method: :put do |f| %>
+    <div class="form-group">
+      <%= f.label :password, "New password", class: "small font-weight-600 text-muted" %>
+      <%= f.password_field :password, class: "form-control", required: true,
+            autocomplete: "new-password", placeholder: "••••••••••••", maxlength: 72 %>
+    </div>
+    <div class="form-group">
+      <%= f.label :password_confirmation, "Confirm new password", class: "small font-weight-600 text-muted" %>
+      <%= f.password_field :password_confirmation, class: "form-control", required: true,
+            autocomplete: "new-password", placeholder: "••••••••••••", maxlength: 72 %>
+    </div>
+    <%= f.submit "Update password", class: "btn btn-login" %>
+  <% end %>
+</div>
