@@ -107,17 +107,30 @@
 
   .pagination-bar {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    padding: 14px 24px;
+    gap: 12px;
+    padding: 16px 24px;
     border-top: 1px solid #e2e8f0;
     background: #f8fafc;
   }
-  .pagination-bar .record-counter {
+  .pagination-pages {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .pagination-nav {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .record-counter {
     font-size: 0.82rem;
     color: #64748b;
   }
-  .pagination-bar .record-counter strong { color: #0f172a; }
+  .record-counter strong { color: #0f172a; }
   .btn-page {
     background: #fff;
     border: 1.5px solid #e2e8f0;
@@ -131,6 +144,11 @@
   }
   .btn-page:hover { border-color: #059669; color: #059669; text-decoration: none; }
   .btn-page.disabled { color: #cbd5e1; border-color: #f1f5f9; pointer-events: none; }
+  .btn-page.active {
+    background: #059669; border-color: #059669; color: #fff;
+  }
+  .btn-page.active:hover { background: #047857; border-color: #047857; color: #fff; }
+  .page-ellipsis { font-size: 0.82rem; color: #94a3b8; padding: 0 4px; }
 </style>
 
 <div class="page-header">
@@ -247,21 +265,42 @@
     <% end %>
 
     <div class="pagination-bar">
-      <% if @page > 1 %>
-        <%= link_to "← Previous", data_editor_path(page: @page - 1), class: "btn-page" %>
-      <% else %>
-        <span class="btn-page disabled">← Previous</span>
-      <% end %>
+      <%
+        window    = ([@page - 2, 1].max)...([@page + 3, @total + 1].min)
+        pages     = ([1, 2] + window.to_a + [@total - 1, @total]).select { |p| p >= 1 && p <= @total }.uniq.sort
+      %>
+      <div class="pagination-pages">
+        <% prev_p = nil %>
+        <% pages.each do |p| %>
+          <% if prev_p && p - prev_p > 1 %>
+            <span class="page-ellipsis">…</span>
+          <% end %>
+          <% if p == @page %>
+            <span class="btn-page active"><%= p %></span>
+          <% else %>
+            <%= link_to p, data_editor_path(page: p), class: "btn-page" %>
+          <% end %>
+          <% prev_p = p %>
+        <% end %>
+      </div>
 
-      <span class="record-counter">
-        Record <strong><%= @page %></strong> of <strong><%= @total %></strong>
-      </span>
+      <div class="pagination-nav">
+        <% if @page > 1 %>
+          <%= link_to "← Previous", data_editor_path(page: @page - 1), class: "btn-page" %>
+        <% else %>
+          <span class="btn-page disabled">← Previous</span>
+        <% end %>
 
-      <% if @page < @total %>
-        <%= link_to "Next →", data_editor_path(page: @page + 1), class: "btn-page" %>
-      <% else %>
-        <span class="btn-page disabled">Next →</span>
-      <% end %>
+        <span class="record-counter">
+          Record <strong><%= @page %></strong> of <strong><%= @total %></strong>
+        </span>
+
+        <% if @page < @total %>
+          <%= link_to "Next →", data_editor_path(page: @page + 1), class: "btn-page" %>
+        <% else %>
+          <span class="btn-page disabled">Next →</span>
+        <% end %>
+      </div>
     </div>
   </div>
 
