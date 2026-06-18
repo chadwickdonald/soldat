@@ -158,7 +158,7 @@ class FieldRenamer2
       measurement_type:  categorized_data['Measurement Type'],
       engineering_unit:  categorized_data['Engineering Unit'],
       station_type:      categorized_data['Station Type'],
-      station_id:        categorized_data['Station Id']
+      station_id:        StationIdExtractor.call(measurement.segment_name)
     )
   end
 end
