@@ -296,7 +296,10 @@
           text: resp.eng_unit !== "—" ? resp.eng_unit : undefined,
           style: { color: "#94a3b8", fontSize: "11px", fontWeight: 600 }
         },
-        labels: { style: { colors: "#94a3b8", fontSize: "11px" } }
+        labels: {
+          style: { colors: "#94a3b8", fontSize: "11px" },
+          formatter: function (val) { return val !== null ? val.toFixed(1) : ""; }
+        }
       },
       tooltip: {
         x: { format: "dd MMM yyyy HH:mm" },
