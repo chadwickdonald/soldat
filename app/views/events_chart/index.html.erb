@@ -253,6 +253,19 @@
       });
   });
 
+  // ── Unit formatter ───────────────────────────────────────────────────────────
+  var supMap = { '0':'⁰','1':'¹','2':'²','3':'³','4':'⁴','5':'⁵','6':'⁶','7':'⁷','8':'⁸','9':'⁹' };
+  function toSup(n) { return n.split('').map(function(c){ return supMap[c]||c; }).join(''); }
+  function formatUnit(str) {
+    if (!str || str === "—") return str;
+    // W*m^-2  →  W/m²
+    str = str.replace(/\*([a-zA-Z]+)\^-(\d+)/g, function(_, u, e){ return '/'+u+toSup(e); });
+    // remaining ^N  →  superscript
+    str = str.replace(/\^(\d+)/g, function(_, e){ return toSup(e); });
+    // remaining *  →  ·
+    return str.replace(/\*/g, '·');
+  }
+
   // ── Chart ────────────────────────────────────────────────────────────────────
   function renderChart(resp) {
     document.getElementById("chart-empty").style.display  = "none";
@@ -261,7 +274,7 @@
 
     document.getElementById("chart-title").textContent = resp.label;
     document.getElementById("badge-period").textContent = resp.period;
-    document.getElementById("badge-unit").textContent   = resp.eng_unit;
+    document.getElementById("badge-unit").textContent   = formatUnit(resp.eng_unit);
     document.getElementById("badge-count").textContent  = resp.count.toLocaleString() + " points";
 
     var options = {
@@ -293,7 +306,7 @@
       },
       yaxis: {
         title: {
-          text: resp.eng_unit !== "—" ? resp.eng_unit : undefined,
+          text: resp.eng_unit !== "—" ? formatUnit(resp.eng_unit) : undefined,
           style: { color: "#94a3b8", fontSize: "11px", fontWeight: 600 }
         },
         labels: {
@@ -303,7 +316,7 @@
       },
       tooltip: {
         x: { format: "dd MMM yyyy HH:mm" },
-        y: { formatter: function (val) { return val !== null ? val.toFixed(4) + " " + resp.eng_unit : "—"; } }
+        y: { formatter: function (val) { return val !== null ? val.toFixed(4) + " " + formatUnit(resp.eng_unit) : "—"; } }
       },
       grid: {
         borderColor: "#f1f5f9",
