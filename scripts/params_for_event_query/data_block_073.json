@@ -1,63 +1,63 @@
 {
-  "028": [
+  "073": [
     {
       "segment_apcode": "ArrayGroup",
-      "segment_name": "Solar Inverter Block 028",
+      "segment_name": "Solar Inverter Block 073",
       "mloc_apcode": "ArrayOutputPower",
       "source_calc_period": "5m",
       "station_type": "PVGEN",
       "station_element": "ACPWR",
-      "station_id": "28",
+      "station_id": "73",
       "relevance": 1
     },
     {
       "segment_apcode": "ArrayGroup",
-      "segment_name": "Solar Inverter Block 028",
+      "segment_name": "Solar Inverter Block 073",
       "mloc_apcode": "CumulativeArrayOutputEnergy",
       "source_calc_period": "5m",
       "station_type": "PVGEN",
       "station_element": "ACENRGTOT",
-      "station_id": "28",
+      "station_id": "73",
       "relevance": 1
     },
     {
       "segment_apcode": "InverterModule",
-      "segment_name": "Inverter module 028-1",
+      "segment_name": "Inverter module 073-1",
       "mloc_apcode": "ArrayOutputPower",
       "source_calc_period": "5m",
       "station_type": "PVGEN",
       "station_element": "MOD1-ACPWR",
-      "station_id": "28",
+      "station_id": "73",
       "relevance": 1
     },
     {
       "segment_apcode": "InverterModule",
-      "segment_name": "Inverter module 028-1",
+      "segment_name": "Inverter module 073-1",
       "mloc_apcode": "PanelGroupOutputVoltage",
       "source_calc_period": "5m",
       "station_type": "PVGEN",
       "station_element": "MOD1-DCVOLT",
-      "station_id": "28",
+      "station_id": "73",
       "relevance": 1
     },
     {
       "segment_apcode": "InverterModule",
-      "segment_name": "Inverter module 028-2",
+      "segment_name": "Inverter module 073-2",
       "mloc_apcode": "ArrayOutputPower",
       "source_calc_period": "5m",
       "station_type": "PVGEN",
       "station_element": "MOD2-ACPWR",
-      "station_id": "28",
+      "station_id": "73",
       "relevance": 1
     },
     {
       "segment_apcode": "InverterModule",
-      "segment_name": "Inverter module 028-2",
+      "segment_name": "Inverter module 073-2",
       "mloc_apcode": "PanelGroupOutputVoltage",
       "source_calc_period": "5m",
       "station_type": "PVGEN",
       "station_element": "MOD2-DCVOLT",
-      "station_id": "28",
+      "station_id": "73",
       "relevance": 1
     }
   ]
