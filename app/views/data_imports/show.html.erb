@@ -1,0 +1,159 @@
+<% if @import.pending? || @import.processing? %>
+  <meta http-equiv="refresh" content="4">
+<% end %>
+
+<style>
+  .import-show-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+    max-width: 640px;
+  }
+  .import-show-header {
+    padding: 20px 28px;
+    border-bottom: 2px solid #d1fae5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .import-show-header h5 { font-size: 1rem; font-weight: 700; color: #0f172a; margin: 0; }
+  .import-body { padding: 24px 28px; }
+  .stat-row {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+  .stat { text-align: center; }
+  .stat-value { font-size: 1.6rem; font-weight: 800; color: #0f172a; line-height: 1; }
+  .stat-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #94a3b8; margin-top: 4px; }
+  .status-badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 999px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .status-pending    { background: #fef9c3; color: #854d0e; }
+  .status-processing { background: #dbeafe; color: #1d4ed8; }
+  .status-completed  { background: #d1fae5; color: #065f46; }
+  .status-failed     { background: #fee2e2; color: #991b1b; }
+  .spinner {
+    display: inline-block;
+    width: 10px; height: 10px;
+    border: 2px solid #1d4ed8;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .download-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
+  .btn-download {
+    display: inline-block;
+    background: #059669;
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 7px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .btn-download:hover { background: #047857; color: #fff; text-decoration: none; }
+  .error-box {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+    padding: 14px 18px;
+    font-size: 0.82rem;
+    color: #991b1b;
+    font-family: monospace;
+    white-space: pre-wrap;
+    margin-top: 12px;
+  }
+  .meta-row { font-size: 0.82rem; color: #64748b; margin-bottom: 6px; }
+  .meta-row strong { color: #0f172a; }
+  .page-header { margin-bottom: 28px; }
+  .page-header h4 { font-size: 1.4rem; font-weight: 800; color: #0f172a; margin-bottom: 4px; }
+  .page-header p  { color: #64748b; font-size: 0.9rem; margin: 0; }
+</style>
+
+<div class="page-header">
+  <h4>Import Job #<%= @import.id %></h4>
+  <p><%= link_to "← New import", new_data_import_path %> &nbsp;|&nbsp; <%= link_to "All imports", data_imports_path %></p>
+</div>
+
+<div class="import-show-card">
+  <div class="import-show-header">
+    <h5>Status</h5>
+    <span class="status-badge status-<%= @import.status %>">
+      <% if @import.processing? %><span class="spinner"></span><% end %>
+      <%= @import.status.capitalize %>
+    </span>
+  </div>
+
+  <div class="import-body">
+    <div class="meta-row">
+      <strong>Date range:</strong> <%= @import.start_date %> → <%= @import.end_date %>
+    </div>
+    <div class="meta-row">
+      <strong>Queued:</strong> <%= @import.created_at.strftime("%b %-d %Y at %H:%M") %>
+    </div>
+    <% if @import.started_at %>
+      <div class="meta-row">
+        <strong>Started:</strong> <%= @import.started_at.strftime("%H:%M:%S") %>
+      </div>
+    <% end %>
+    <% if @import.completed_at && @import.duration %>
+      <div class="meta-row">
+        <strong>Duration:</strong> <%= @import.duration.round(1) %>s
+      </div>
+    <% end %>
+
+    <% if @import.completed? %>
+      <div class="stat-row mt-4">
+        <div class="stat">
+          <div class="stat-value"><%= @import.station_count || 0 %></div>
+          <div class="stat-label">Specs</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value"><%= @import.event_count || 0 %></div>
+          <div class="stat-label">Events imported</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value"><%= @import.skipped_count || 0 %></div>
+          <div class="stat-label">Already in DB</div>
+        </div>
+      </div>
+
+      <% if @import.csv_1m.attached? || @import.csv_5m.attached? %>
+        <div class="mt-3">
+          <p class="meta-row"><strong>Downloads:</strong></p>
+          <div class="download-row">
+            <% if @import.csv_1m.attached? %>
+              <%= link_to "Download 1m CSV", rails_blob_path(@import.csv_1m, disposition: :attachment), class: "btn-download" %>
+            <% end %>
+            <% if @import.csv_5m.attached? %>
+              <%= link_to "Download 5m CSV", rails_blob_path(@import.csv_5m, disposition: :attachment), class: "btn-download" %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+
+    <% if @import.pending? || @import.processing? %>
+      <p class="meta-row mt-4" style="color:#1d4ed8;">
+        <span class="spinner"></span>
+        This page refreshes automatically every 4 seconds…
+      </p>
+    <% end %>
+
+    <% if @import.failed? && @import.error_message.present? %>
+      <div class="error-box"><%= @import.error_message %></div>
+    <% end %>
+  </div>
+</div>

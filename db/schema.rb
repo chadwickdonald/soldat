@@ -10,15 +10,61 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_06_16_021307) do
+ActiveRecord::Schema[8.1].define(version: 2026_06_20_000342) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
+
+  create_table "active_storage_attachments", force: :cascade do |t|
+    t.bigint "blob_id", null: false
+    t.datetime "created_at", null: false
+    t.string "name", null: false
+    t.bigint "record_id", null: false
+    t.string "record_type", null: false
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+  end
+
+  create_table "active_storage_blobs", force: :cascade do |t|
+    t.bigint "byte_size", null: false
+    t.string "checksum"
+    t.string "content_type"
+    t.datetime "created_at", null: false
+    t.string "filename", null: false
+    t.string "key", null: false
+    t.text "metadata"
+    t.string "service_name", null: false
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "active_storage_variant_records", force: :cascade do |t|
+    t.bigint "blob_id", null: false
+    t.string "variation_digest", null: false
+    t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
 
   create_table "api_clients", force: :cascade do |t|
     t.string "api_key", null: false
     t.datetime "created_at", null: false
     t.string "name"
     t.datetime "updated_at", null: false
+  end
+
+  create_table "data_imports", force: :cascade do |t|
+    t.datetime "completed_at"
+    t.datetime "created_at", null: false
+    t.string "end_date"
+    t.text "error_message"
+    t.integer "event_count"
+    t.boolean "generate_csv"
+    t.integer "skipped_count"
+    t.string "start_date"
+    t.datetime "started_at"
+    t.integer "station_count"
+    t.integer "status"
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.index ["status"], name: "index_data_imports_on_status"
+    t.index ["user_id"], name: "index_data_imports_on_user_id"
   end
 
   create_table "field_aliases", force: :cascade do |t|
@@ -352,6 +398,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_06_16_021307) do
     t.string "site_id"
     t.datetime "updated_at", null: false
     t.float "val"
+    t.index ["measurement_source_id", "date"], name: "index_scada_events_on_source_and_date", unique: true
   end
 
   create_table "scada_measurement_sources", force: :cascade do |t|
@@ -543,6 +590,8 @@ ActiveRecord::Schema[8.1].define(version: 2026_06_16_021307) do
     t.index ["email_address"], name: "index_users_on_email_address", unique: true
   end
 
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "sessions", "users"
   add_foreign_key "user_organizations", "scada_organizations"
   add_foreign_key "user_organizations", "users"
