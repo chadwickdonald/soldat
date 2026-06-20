@@ -10,8 +10,8 @@ class DataImportJob < ApplicationJob
 
     result = DataImportService.new(
       stations_json: stations,
-      start_date:    import.start_date,
-      end_date:      import.end_date,
+      start_date:    to_api_date(import.start_date),
+      end_date:      to_api_date(import.end_date),
       generate_csv:  import.generate_csv
     ).call
 
@@ -36,6 +36,11 @@ class DataImportJob < ApplicationJob
   end
 
   private
+
+  def to_api_date(date_str)
+    return date_str if date_str.match?(/\A\d{8}T\d{6}Z\z/)
+    Date.parse(date_str).strftime("%Y%m%dT000000Z")
+  end
 
   def parse_stations_json(text)
     clean = text.lines.reject { |l| l.strip.start_with?("//") }.join
