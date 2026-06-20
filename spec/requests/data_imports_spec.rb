@@ -33,8 +33,8 @@ RSpec.describe "DataImports", type: :request do
   describe "POST /data_imports" do
     before { login(admin) }
 
-    it "creates import and enqueues job" do
-      expect(DataImportJob).to receive(:perform_later)
+    it "creates import and runs job" do
+      expect(DataImportJob).to receive(:perform_now)
       post data_imports_path, params: {
         data_import: {
           start_date:   "20250901T000000Z",
@@ -56,11 +56,12 @@ RSpec.describe "DataImports", type: :request do
 
   describe "GET /data_imports/:id" do
     it "shows the import status" do
-      imp = DataImport.create!(
+      imp = DataImport.new(
         user: admin, start_date: "20250901T000000Z",
         end_date: "20250908T000000Z", status: :completed
       )
       imp.input_json.attach(io: StringIO.new("{}"), filename: "t.json", content_type: "application/json")
+      imp.save!
       login(admin)
       get data_import_path(imp)
       expect(response).to have_http_status(:ok)

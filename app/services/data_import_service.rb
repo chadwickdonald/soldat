@@ -1,9 +1,6 @@
-require 'concurrent'
 require 'csv'
 
 class DataImportService
-  THREAD_POOL_SIZE = 5
-
   Result = Struct.new(:event_count, :skipped_count, :station_count, :csv_1m, :csv_5m, keyword_init: true)
 
   def initialize(stations_json:, start_date:, end_date:, generate_csv: false, site_name: nil)
@@ -43,21 +40,7 @@ class DataImportService
   end
 
   def process_in_parallel(datums)
-    pool    = Concurrent::ThreadPoolExecutor.new(min_threads: 1, max_threads: THREAD_POOL_SIZE, max_queue: datums.size)
-    mutex   = Mutex.new
-    items   = []
-    futures = datums.map do |datum|
-      Concurrent::Future.execute(executor: pool) { process_datum(datum) }
-    end
-
-    futures.each do |f|
-      result = f.value
-      mutex.synchronize { items << result } if result
-      raise f.reason if f.rejected?
-    end
-
-    pool.shutdown
-    items.compact
+    datums.filter_map { |datum| process_datum(datum) }
   end
 
   def process_datum(datum)
@@ -77,7 +60,7 @@ class DataImportService
                         .find_by(calc_period: datum["source_calc_period"])
     return nil unless source
 
-    site_uuid = segment.scada_site_id
+    site_uuid = segment.site_id
 
     existing_count = source.scada_events.between(@start_date, @end_date).count
 
@@ -131,7 +114,7 @@ class DataImportService
     ScadaEvent.upsert_all(
       rows,
       unique_by: :index_scada_events_on_source_and_date,
-      update_only: [:val, :updated_at]
+      update_only: [:val]
     )
 
     source.scada_events.between(@start_date, @end_date).ordered.to_a

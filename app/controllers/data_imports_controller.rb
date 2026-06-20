@@ -14,9 +14,9 @@ class DataImportsController < ApplicationController
     @import.user = current_user
 
     if @import.save
-      DataImportJob.perform_later(@import.id)
+      DataImportJob.perform_now(@import.id)
       redirect_to data_import_path(@import),
-                  notice: "Import queued — this may take several minutes. This page will update automatically."
+                  notice: "Import complete."
     else
       render :new, status: :unprocessable_entity
     end
