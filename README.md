@@ -30,7 +30,7 @@ Solar facility data platform for ingesting, storing, and analyzing SCADA telemet
 
 ```bash
 git clone <repo>
-cd soldat
+cd enthasys
 
 bundle install
 npm install

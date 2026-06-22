@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-Soldat is a Rails 7.1 application for managing solar facility data from an external SCADA system (solarpark-online.com/ifms). It fetches, stores, and exposes hierarchical measurement data across organizations, sites, segments, measurement locations, and measurements/events.
+Enthasys is a Rails 7.1 application for managing solar facility data from an external SCADA system (solarpark-online.com/ifms). It fetches, stores, and exposes hierarchical measurement data across organizations, sites, segments, measurement locations, and measurements/events.
 
 ## Commands
 
